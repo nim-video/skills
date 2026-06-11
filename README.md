@@ -47,7 +47,7 @@ registered on install; you'll complete Nim authentication on first use.
 | Skill              | Invoke                  | What it does                                                                                                                                                                                           |
 | ------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `nim-generate`     | `/nim:nim-generate`     | Generate and edit images **and** video — text-to-image, image editing, text-to-video, and image-to-video. Discovers the right model, follows its contract, handles references, and returns the result. |
-| `b-roll-seedance`  | `/nim:b-roll-seedance`  | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
+| `nim-b-roll-seedance` | `/nim:nim-b-roll-seedance` | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
 
 The skill drives model discovery (`models_explore`), generation (`generate_image` /
 `generate_video`), reference uploads (`media_upload`), and status polling

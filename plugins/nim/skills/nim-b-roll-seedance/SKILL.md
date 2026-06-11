@@ -1,5 +1,5 @@
 ---
-name: b-roll-seedance
+name: nim-b-roll-seedance
 description: Use when creating product or lifestyle b-roll videos from a user brief with optional product, character, and location reference images, especially when the output should be generated with Nim Seedance. Handles brief intake, missing-input checks, reference mapping, Seedance prompt drafting, approval checkpoints, Nim upload/generation, and iteration.
 ---
 
