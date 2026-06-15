@@ -1,5 +1,5 @@
 ---
-name: hookgen-seedance
+name: nim-hookgen-seedance
 description: >-
   Author a production-ready Seedance 2 hook video for short-form UGC (TikTok /
   Reels / Shorts) and generate it through the Nim MCP. Use when the user wants a
@@ -14,12 +14,8 @@ description: >-
 
 # HookGen Seedance
 
-Turn a product brief into one spoken-hook UGC video. This skill replaces the
-intermediate "LLM" stages of the Hook Generator pipeline (`hook-generator/`):
-the agent itself plays the role of the LLM that (a) writes the spoken hooks and
-(b) rewrites the assembled brief into the final Seedance prompt. All prompts
-below are reused 1:1 from `hook-generator/prompt_content.yaml` and
-`hook-generator/prompts.py`.
+Turn a product brief into one spoken-hook UGC video. This skill writes the spoken hooks and
+ rewrites the assembled brief into the final Seedance prompt.
 
 ## UX rules
 
@@ -33,7 +29,7 @@ below are reused 1:1 from `hook-generator/prompt_content.yaml` and
 5. **Never invent the result link.** `generate_video` returns no link; only the
    URL from `get_generation_status` is real.
 
-## Fixed defaults (from the repo)
+## Fixed defaults
 
 These mirror the verbal-hook path of the pipeline. Do not change unless the user
 asks.
@@ -63,7 +59,7 @@ desired vibe. Then infer two values (ask only if truly ambiguous):
 
 Keep the raw brief text as `{brand_brief}`. Pick a concrete shootable scene
 sentence for `{scene_text}` from the brief (one sentence, concrete, reused
-across the hook) — this is the repo `scene_pick` step:
+across the hook) — this is the `scene_pick` step:
 
 ```text
 Pick one concise physical room/environment for a 3-5 second short-form hook video.
@@ -83,10 +79,9 @@ the image reference instead (see Stage 3).
 
 ### Stage 2 — Propose 5 spoken hooks
 
-Act as the hook-writer LLM. Run the verbal-hook writer prompt below internally
-(1:1 from the repo). It is designed to produce 10 hooks; **present the 5
-strongest to the user as a numbered list** of the spoken line only (drop type /
-rationale unless asked). Then ask: pick a number, or type your own hook.
+Act as the hook-writer LLM. Run the verbal-hook writer prompt below internally. It is designed to produce 10 hooks; **present the 5 strongest to the user as a numbered list** of the spoken line only (drop type /
+rationale unless asked). 
+Then ask: pick a number, or type your own hook.
 
 The chosen line becomes `{content}` (the verbatim spoken hook). If the user
 types their own, use it verbatim.
@@ -248,12 +243,12 @@ References must be attachments or accessible local files/URLs — inline-only
 images cannot be uploaded. If a role has no image, continue prompt-only for that
 role.
 
-**Reference order is fixed and must match the repo** (`prompts.py`): character
+**Reference order is fixed** (`prompts`): character
 first, then location, then product. Number them `@Image1`, `@Image2`, … in that
 order, skipping absent roles, and upload to Nim in the exact same order so
 `fileInputs` lines up with the `@Image` labels.
 
-Build the reference clauses exactly as the repo does
+Build the reference clauses exactly as
 (`actor_reference_text` / `scene_reference_text` / `product_reference_text`):
 
 - **Character (actor)** — let `n` = count of character images:
@@ -345,7 +340,6 @@ SCENE FLOW:
 Wide shot. Boutique interior. She walks slowly along the displays, observing jewelry. Ambient silence, delicate footsteps. First whisper slips into her mind, soft and close.
 EARRINGS (VO): “Hey… psst… can you hear us? Yeah… it’s us.”
 
-(… the repo embeds the full earrings example here as a structural reference …)
 END: Feels like an intrusive luxury thought you can’t escape.
 ```
 
