@@ -51,7 +51,7 @@ codex plugin marketplace upgrade nim
 codex plugin add nim@nim --json
 ```
 
-Read `installedPath` from the JSON output of `codex plugin add nim@nim --json`. Use that path for verification. Do not guess a versioned cache directory such as `0.1.0`.
+Read `installedPath` from the JSON output of `codex plugin add nim@nim --json`, set `TARGET_NIM_PLUGIN` to that path, and use it for verification. Do not guess a versioned cache directory such as `0.1.0`.
 
 If the normal refresh fails and the user approves a stronger reinstall, use:
 
@@ -172,7 +172,7 @@ If copying fails after deleting the target, restore the backup before reporting 
 
 ## Verification
 
-After any adapter or fallback, verify the active installed plugin path. For native adapters, rediscover the path from the command output or host state instead of reusing an old path.
+After any adapter or fallback, verify the active installed plugin path. For native adapters, rediscover the path from the command output or host state instead of reusing an old path, then set `TARGET_NIM_PLUGIN` to that active path before running the checks below.
 
 Always verify:
 
