@@ -35,7 +35,8 @@
       "Turn this image into a 5-second video with Nim",
       "Create a 9:16 social ad for my brand with Nim",
       "Create a 15-second Seedance b-roll ad from my product brief and references",
-      "Give me 4 concept variations for this idea with Nim"
+      "Give me 4 concept variations for this idea with Nim",
+      "Update my Nim plugin and skills from GitHub"
     ],
     "brandColor": "#FE28A7",
     "composerIcon": "./assets/icon.png",

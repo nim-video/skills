@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nim Plugin Updater"
+  short_description: "Refresh the installed Nim plugin from GitHub"
+  default_prompt: "Use $nim-update-plugin to update my installed Nim plugin from GitHub."
