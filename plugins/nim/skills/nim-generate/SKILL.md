@@ -31,6 +31,10 @@ discovery is shared, and the only real branch is image vs. video.
    run (high resolution, long video, large `batchSize`).
 6. **Never invent Nim URLs.** `generate_image` / `generate_video` return no link. Get the
    result by polling `get_generation_status` and report only the URL it actually returns.
+7. **No upload, no reference generation.** For any edit, image reference, or
+   image-to-video request, do not call `generate_image` / `generate_video` until
+   every reference has a real Nim `file_url` from a successful `media_upload`
+   upload. MCP generation tools and widgets do not upload local files for you.
 
 ## Workflow
 
@@ -47,6 +51,8 @@ discovery is shared, and the only real branch is image vs. video.
    - Call `media_upload`, run the returned `curl_example` against the local path or
      Claude attachment, then pass the response `file_url` in `fileInputs`.
    - Never pass a local filesystem path straight to a generation tool.
+   - If the file is not actually readable by the agent, follow
+     [When uploading media](#when-uploading-media).
 3. **Generate.** Call `generate_image` or `generate_video` and pass **only** params the
    `generationContract` allows. Submit `model_name` alongside `model_id` for clearer
    user-facing status.
@@ -82,6 +88,28 @@ Pass a param only when the selected model's `generationContract` lists it.
 | `fps`, `keepSound` | video | Only when the model supports them. |
 | `seed` | both | Omit or `-1` to randomize; reuse a value to reproduce. |
 | `batchSize` | both | 1–4 variations in one call. Use for ideation / options. |
+
+## When uploading media
+
+- Never pass local filesystem paths directly to `generate_image` or
+  `generate_video`; use `media_upload` and pass the returned `file_url`.
+- If a request depends on a reference file and upload fails, stop before
+  generation. Do not call `generate_image` or `generate_video` without the
+  reference just because the Nim MCP widget or generation tool is available.
+- In Claude Cowork, paths from the user's computer are never readable by the
+  agent unless the file is in the current Cowork Working folder. If a referenced
+  file cannot be read, stop and ask the user to add it to the current Cowork
+  Working folder, then retry from that accessible file.
+- Inline previews or images visible in chat are not always uploadable files. If
+  no actual file path/attachment/source is available, ask for one before upload.
+- If `media_upload` returns an upload URL but the actual upload is blocked by
+  DNS, network egress, CSP, sandboxing, or allowlist restrictions, stop. Do not
+  try alternate domains, proxy URLs, guessed endpoints, custom upload formats,
+  or invented `fileInputs` values such as `upload:/path`, local paths, or
+  placeholder URLs. Do not claim the Nim widget can upload the file directly.
+  Tell the user to add `*.nim.video` to their allowlist; the setup page is
+  `https://nim.video/mcp`. Retry only after they confirm the environment is
+  fixed.
 
 ## Variations & ideation
 
