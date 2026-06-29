@@ -387,6 +387,21 @@ skills):
    product order), then the optional voice audio, call `media_upload`, run the
    returned `curl_example` against the local path/attachment, and collect each
    `file_url`. Never pass a local path straight to generation.
+   - In Claude Cowork, paths from the user's computer are never readable by the
+     agent unless the file is in the current Cowork Working folder. If a
+     referenced file cannot be read, stop and ask the user to add it to the
+     current Cowork Working folder, then retry from that accessible file.
+   - Inline previews or images visible in chat are not always uploadable files.
+     If no actual file path/attachment/source is available, ask for one before
+     upload.
+   - If `media_upload` returns an upload URL but the actual upload is blocked by
+     DNS, network egress, CSP, sandboxing, or allowlist restrictions, stop
+     before generation. Do not try alternate domains, proxy URLs, guessed
+     endpoints, custom upload formats, or invented `fileInputs` values such as
+     `upload:/path`, local paths, or placeholder URLs. Do not claim the Nim
+     widget can upload the file directly. Tell the user to add `*.nim.video` to
+     their allowlist; the setup page is `https://nim.video/mcp`. Retry only
+     after they confirm the environment is fixed.
 4. **Generate.** Call `generate_video` passing only contract-allowed params:
    - `prompt`: the final Seedance prompt from Stage 5.
    - `model_id` (+ `model_name`).

@@ -23,6 +23,8 @@ Create controlled product/lifestyle b-roll videos from a brief and reference ima
 
 - Images that should be used as visual references must be attachments or accessible local files. Inline-only visible images are not enough for upload.
 - If the user expects an inline-only image to be used, ask them to attach it as a file or provide a local path/URL. Do not pretend it was uploaded.
+- In Claude Cowork, paths from the user's computer are never readable by the agent unless the file is in the current Cowork Working folder. If a referenced file cannot be read, stop and ask the user to add it to the current Cowork Working folder, then retry from that accessible file.
+- If `media_upload` returns an upload URL but the actual upload is blocked by DNS, network egress, CSP, sandboxing, or allowlist restrictions, stop before generation. Do not try alternate domains, proxy URLs, guessed endpoints, custom upload formats, or invented `fileInputs` values such as `upload:/path`, local paths, or placeholder URLs. Do not claim the Nim widget can upload the file directly. Tell the user to add `*.nim.video` to their allowlist; the setup page is `https://nim.video/mcp`. Retry only after they confirm the environment is fixed.
 - If no reference image is available for a role, continue prompt-only for that role when the user approves or says they have no more assets.
 - Never let attachment order silently define creative meaning. The internal `reference_map` is canonical.
 - The prompt labels and Nim `fileInputs` order must match the internal `reference_map` exactly.
@@ -149,6 +151,7 @@ Use the Nim MCP video workflow.
 - Always inspect the current Nim model contract with `models_explore action=get` before generation.
 - Defaults unless the user asks otherwise: `requestedAspectRatio: 9:16`, `resolution: 720p`, `mediaLength: 15000`.
 - Upload local/attachment references with `media_upload`; use the returned file URLs in confirmed `@img` order.
+- Never pass local filesystem paths directly to `generate_video`; use `media_upload` and pass the returned `file_url`.
 - Pass only parameters allowed by the model contract.
 - Poll with `get_generation_status` until `finished`, `failed`, or `cancelled`. Do not describe a queued/running job as done.
 - 15s Seedance generation usually takes 5-6 minutes, is rarely faster than 4 minutes, and can take longer. Use a sparse polling cadence:
