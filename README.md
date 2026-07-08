@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-6-orange.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-7-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -63,6 +63,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | Skill              | Invoke                  | What it does                                                                                                                                                                                           |
 | ------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `nim-generate`     | `/nim:nim-generate`     | Generate and edit images **and** video — text-to-image, image editing, text-to-video, and image-to-video. Discovers the right model, follows its contract, handles references, and returns the result. |
+| `nim-character-consistency` | `/nim:nim-character-consistency` | Create new images of an existing character, person, product, or object while preserving visual identity across scenes, poses, lighting, and styles. |
 | `nim-b-roll-seedance` | `/nim:nim-b-roll-seedance` | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
 | `nim-hookgen-seedance` | `/nim:nim-hookgen-seedance` | Write and generate talking-head "hook" UGC ad clips for short-form (TikTok / Reels / Shorts). Proposes spoken hook options, maps character/product/location references, and generates with Seedance 2 through Nim. |
 | `nim-human-generation` | `/nim:nim-human-generation` | Generate believable editorial young-adult human portraits and fashion/UGC character images. Intakes age, gender presentation, and look; defaults to Nano Banana Pro in 9:16 and supports user-specified models. |
@@ -79,6 +80,8 @@ reference uploads (`media_upload`), credits, and status polling
 - **Generate** — images and videos from a prompt, in any aspect ratio the model supports.
 - **Animate** — bring a still image to motion with image-to-video models.
 - **Edit & restyle** — feed reference media and let Nim edit or restyle it.
+- **Keep identity consistent** — generate the same character, person, product, or
+  object in new scenes from references.
 - **Run templates** — browse Nim templates, collect their required inputs, and run
   repeatable creative workflows.
 - **Manage credits** — check your Nim balance and resolve insufficient-credit states.
