@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nim UGC Prompts"
+  short_description: "Nim UGC video prompt builder with reference roles"
+  default_prompt: "Use $nim-ugc-prompts to turn this creator/video brief into a copy-ready Nim UGC prompt with reference roles, camera behavior, timing, and negatives."

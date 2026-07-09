@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-6-orange.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-7-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -66,6 +66,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-b-roll-seedance` | `/nim:nim-b-roll-seedance` | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
 | `nim-hookgen-seedance` | `/nim:nim-hookgen-seedance` | Write and generate talking-head "hook" UGC ad clips for short-form (TikTok / Reels / Shorts). Proposes spoken hook options, maps character/product/location references, and generates with Seedance 2 through Nim. |
 | `nim-human-generation` | `/nim:nim-human-generation` | Generate believable editorial young-adult human portraits and fashion/UGC character images. Intakes age, gender presentation, and look; defaults to Nano Banana Pro in 9:16 and supports user-specified models. |
+| `nim-ugc-prompts` | `/nim:nim-ugc-prompts` | Build copy-ready UGC video prompts for creator ads, selfie hooks, mirror try-ons, street interviews, iPhone footage, VO, lip sync, and reference-driven Nim generation. |
 | `nim-template-runner` | `/nim:nim-template-runner` | Browse, inspect, and run Nim templates. Collects template inputs, uploads references, calls `run_template`, and polls for final media. |
 | `nim-credits` | `/nim:nim-credits` | Check Nim credit balance, explain insufficient-credit failures, and help users buy packs or upgrade through Nim MCP. |
 
