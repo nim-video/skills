@@ -18,6 +18,7 @@
         "mcp",
         "image-generation",
         "video-generation",
+        "character-consistency",
         "ideation"
       ]
     }

@@ -16,6 +16,7 @@
     "video-generation",
     "img2vid",
     "ideation",
+    "character-consistency",
     "ugc",
     "creator-ads",
     "prompt-quality",
@@ -36,6 +37,7 @@
     "websiteURL": "https://nim.video",
     "defaultPrompt": [
       "Generate a cinematic product shot with Nim",
+      "Create a consistent character image from these references",
       "Improve this video prompt and reference-frame plan with Nim",
       "Turn this image into a 5-second video with Nim",
       "Create a 9:16 social ad for my brand with Nim",
