@@ -63,6 +63,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | Skill              | Invoke                  | What it does                                                                                                                                                                                           |
 | ------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `nim-generate`     | `/nim:nim-generate`     | Generate and edit images **and** video — text-to-image, image editing, text-to-video, and image-to-video. Discovers the right model, follows its contract, handles references, and returns the result. |
+| `nim-character-consistency` | `/nim:nim-character-consistency` | Create new images of an existing character, person, product, or object while preserving visual identity across scenes, poses, lighting, and styles. |
 | `nim-b-roll-seedance` | `/nim:nim-b-roll-seedance` | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
 | `nim-hookgen-seedance` | `/nim:nim-hookgen-seedance` | Write and generate talking-head "hook" UGC ad clips for short-form (TikTok / Reels / Shorts). Proposes spoken hook options, maps character/product/location references, and generates with Seedance 2 through Nim. |
 | `nim-long-video-chain` | `/nim:nim-long-video-chain` | Chain multiple 15s Seedance clips into one continuous longer video (roughly 15s–5 min). Plans segments, writes shared-world prompts, generates in batches of up to 3, and hands off ffmpeg stitching to the user. |
@@ -81,6 +82,8 @@ reference uploads (`media_upload`), credits, and status polling
 - **Animate** — bring a still image to motion with image-to-video models.
 - **Long-form video** — chain multiple 15s Seedance clips into one continuous story (up to ~5 minutes), then stitch locally with ffmpeg.
 - **Edit & restyle** — feed reference media and let Nim edit or restyle it.
+- **Keep identity consistent** — generate the same character, person, product, or
+  object in new scenes from references.
 - **Run templates** — browse Nim templates, collect their required inputs, and run
   repeatable creative workflows.
 - **Manage credits** — check your Nim balance and resolve insufficient-credit states.
