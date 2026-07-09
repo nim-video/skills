@@ -13,9 +13,7 @@ description: >-
 
 # Long Video Chain (Nim multi-segment Seedance)
 
-Turn a "make me a 1-minute video" request into a chain of 15-second Nim
-Seedance clips that tell one continuous story, then hand the final cut off to
-the user instead of stitching it on our side.
+Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance2 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.
 
 ## When this triggers
 
