@@ -1,8 +1,8 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-8-orange.svg)](#skills)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Skills](https://img.shields.io/badge/skills-12-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Nim Quality Prompts"
-  short_description: "Multi-bank Nim prompt quality, LUT, camera, and scene grammar"
-  default_prompt: "Use $nim-quality-prompts to analyze this prompt against the quality databases, choose improvement directions, and return the final copy-ready prompt."
