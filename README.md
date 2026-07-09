@@ -1,8 +1,8 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-7-orange.svg)](#skills)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Skills](https://img.shields.io/badge/skills-12-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -68,6 +68,8 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-hookgen-seedance` | `/nim:nim-hookgen-seedance` | Write and generate talking-head "hook" UGC ad clips for short-form (TikTok / Reels / Shorts). Proposes spoken hook options, maps character/product/location references, and generates with Seedance 2 through Nim. |
 | `nim-long-video-chain` | `/nim:nim-long-video-chain` | Chain multiple 15s Seedance clips into one continuous longer video (roughly 15s–5 min). Plans segments, writes shared-world prompts, generates in batches of up to 3, and hands off ffmpeg stitching to the user. |
 | `nim-human-generation` | `/nim:nim-human-generation` | Generate believable editorial young-adult human portraits and fashion/UGC character images. Intakes age, gender presentation, and look; defaults to Nano Banana Pro in 9:16 and supports user-specified models. |
+| `nim-ugc-prompts` | `/nim:nim-ugc-prompts` | Build copy-ready UGC video prompts for creator ads, selfie hooks, mirror try-ons, street interviews, iPhone footage, VO, lip sync, and reference-driven Nim generation. |
+| `nim-quality-prompts` | `/nim:nim-quality-prompts` | Improve image reference prompts and video prompts with Nim MCP rules, reference-frame planning, LUTs, camera quality, cinematic grammar, and multi-bank prompt retrieval. |
 | `nim-template-runner` | `/nim:nim-template-runner` | Browse, inspect, and run Nim templates. Collects template inputs, uploads references, calls `run_template`, and polls for final media. |
 | `nim-credits` | `/nim:nim-credits` | Check Nim credit balance, explain insufficient-credit failures, and help users buy packs or upgrade through Nim MCP. |
 | `nim-product-creative` | `/nim:nim-product-creative` | Easy way to create a creative imagery with your product. |

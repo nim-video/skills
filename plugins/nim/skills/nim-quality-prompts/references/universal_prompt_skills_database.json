@@ -1,0 +1,587 @@
+{
+  "cameras": [
+    {
+      "Category": "Medium Format",
+      "Camera": "Phase One XF IQ4 150MP",
+      "Key specs / factual base": "151MP BSI sensor, 15 f-stops dynamic range, ISO 50–25600, full-frame medium format",
+      "Style note": "Maximum resolving power and tonal headroom for ultra-detailed editorial and luxury stills",
+      "Prompt skill": "shot on Phase One XF IQ4 150MP medium format, hyper-detailed skin, couture textile fidelity, immense tonal latitude, surgical micro-contrast",
+      "Best use": "luxury fashion, beauty, jewelry, still life, ultra-high-detail portraits",
+      "Sources": "https://www.phaseone.com/applications/bespoke-photography/studio-photography-xf-camera-system/features-and-specifications/ | https://www.phaseone.com/solutions/photographic-cameras/"
+    },
+    {
+      "Category": "Medium Format",
+      "Camera": "Hasselblad X2D II 100C",
+      "Key specs / factual base": "100MP medium format, AF-C continuous autofocus, HDR-focused flagship generation, 1TB SSD class platform",
+      "Style note": "Natural color, elegant highlight handling, refined premium tonality",
+      "Prompt skill": "shot on Hasselblad X2D II 100C medium format, natural lifelike color, elegant highlight roll-off, refined luxury tonality",
+      "Best use": "beauty, premium portraiture, calm luxury editorials, polished commercial work",
+      "Sources": "https://www.hasselblad.com/x-system/x2d-ii-100c | https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/"
+    },
+    {
+      "Category": "Medium Format",
+      "Camera": "Hasselblad X2D 100C",
+      "Key specs / factual base": "100MP medium format, built-in 1TB SSD, high-speed storage, Hasselblad Natural Colour Solution",
+      "Style note": "True-to-life colour and smooth transitions with a very clean luxury feel",
+      "Prompt skill": "shot on Hasselblad X2D 100C medium format, true-to-life colour, smooth tonal transitions, clean 16-bit luxury detail",
+      "Best use": "beauty, fashion portraits, still life, color-critical luxury work",
+      "Sources": "https://www.hasselblad.com/x-system/x2d-100c/ | https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/"
+    },
+    {
+      "Category": "Medium Format",
+      "Camera": "Fujifilm GFX100 II",
+      "Key specs / factual base": "102MP 43.8×32.9mm sensor, faster readout, X-Processor 5, up to 8 fps",
+      "Style note": "Modern medium-format sharpness with versatile editorial and cinematic crossover",
+      "Prompt skill": "shot on Fujifilm GFX100 II medium format, refined detail, crisp texture separation, modern medium-format depth, film-simulation-ready color",
+      "Best use": "fashion editorials, portrait campaigns, hybrid photo-video looks",
+      "Sources": "https://www.fujifilm-x.com/global/products/cameras/gfx100-ii/specifications/ | https://www.fujifilm-x.com/global/products/cameras/gfx100-ii/"
+    },
+    {
+      "Category": "Full Frame",
+      "Camera": "Sony α1 II",
+      "Key specs / factual base": "50.1MP full-frame stacked sensor, AI subject recognition, up to 30 fps, 8K 30p",
+      "Style note": "Crisp flagship sharpness with fast modern commercial clarity",
+      "Prompt skill": "shot on Sony α1 II full frame, flagship clarity, responsive subject separation, modern crisp editorial sharpness",
+      "Best use": "fast-moving fashion, glossy campaigns, luxury sports-fashion hybrid looks",
+      "Sources": "https://www.sony.com/za/electronics/interchangeable-lens-cameras/ilce-1m2 | https://pro.sony/en_GB/technology/full-frame-sensor"
+    },
+    {
+      "Category": "Full Frame",
+      "Camera": "Canon EOS R5 Mark II",
+      "Key specs / factual base": "45MP stacked sensor, 30 fps shooting, 8K RAW up to 60p, neural-network support",
+      "Style note": "Clean, glossy commercial detail with strong hybrid capture language",
+      "Prompt skill": "shot on Canon EOS R5 Mark II full frame, glossy commercial detail, precise texture capture, premium hybrid campaign sharpness",
+      "Best use": "fashion campaigns, beauty, commercial portraits, creator-forward luxury visuals",
+      "Sources": "https://www.canon-europe.com/cameras/eos-r5-mark-ii/specifications/ | https://cam.start.canon/en/C017/manual/html/UG-10_Reference_0110.html"
+    },
+    {
+      "Category": "Full Frame",
+      "Camera": "Nikon Z9",
+      "Key specs / factual base": "45.7MP full frame, up to 120 fps, subject detection for 9 types, RAW video up to 8.3K/60p",
+      "Style note": "Powerful, robust flagship look with crisp detail and confidence",
+      "Prompt skill": "shot on Nikon Z9 full frame, bold flagship clarity, robust contrast, decisive high-end editorial sharpness",
+      "Best use": "power portraits, action-fashion, strong commercial and editorial imagery",
+      "Sources": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_9/ | https://www.nikonusa.com/p/z-9/1669"
+    },
+    {
+      "Category": "Full Frame",
+      "Camera": "Leica SL3",
+      "Key specs / factual base": "60MP sensor, up to 240MP multishot, up to 15 stops dynamic range, ISO up to 100000",
+      "Style note": "Minimalist premium rendering with strong micro-contrast and sculpted clarity",
+      "Prompt skill": "shot on Leica SL3 full frame, sculpted micro-contrast, premium minimalist clarity, high-resolution tonal precision",
+      "Best use": "minimal luxury editorials, monochrome fashion, clean premium portraiture",
+      "Sources": "https://leica-camera.com/en-int/photography/cameras/sl/sl3-black | https://leica-camera.com/en-int/photography/cameras/sl/sl3-black/technical-specification"
+    },
+    {
+      "Category": "Cinema",
+      "Camera": "ARRI ALEXA 35",
+      "Key specs / factual base": "17 stops dynamic range, REVEAL Color Science, natural skin-tone rendering, improved saturated color handling",
+      "Style note": "Gold-standard cinema skin, highlight roll-off, and narrative depth",
+      "Prompt skill": "captured on ARRI ALEXA 35, cinematic skin tones, graceful highlight roll-off, dense shadow color, prestige filmic depth",
+      "Best use": "cinematic fashion, prestige campaign frames, moody luxury film stills",
+      "Sources": "https://www.arri.com/en/camera-systems/cameras/legacy-camera-systems/alexa-35 | https://www.arri.com/en/learn-help/learn-help-camera-system/image-science/reveal-color-science"
+    },
+    {
+      "Category": "Cinema",
+      "Camera": "Sony BURANO",
+      "Key specs / factual base": "Full-frame 8.6K sensor, 16 stops dynamic range, VENICE color science, dual base ISO 800/3200",
+      "Style note": "Polished cinema luxury with natural skin and large-format bokeh",
+      "Prompt skill": "captured on Sony BURANO, polished cinema luxury, VENICE-like skin tones, expansive full-frame bokeh, elegant highlight retention",
+      "Best use": "fashion films, polished commercial portraits, cinematic high-end brand work",
+      "Sources": "https://pro.sony/en_AE/products/digital-cinema-cameras/burano | https://sony-cinematography.com/burano/"
+    },
+    {
+      "Category": "Cinema",
+      "Camera": "RED V-RAPTOR XL [X]",
+      "Key specs / factual base": "8K VV global shutter sensor, 17+ stops dynamic range, electronic ND, 8192×4320",
+      "Style note": "Hyper-clean blockbuster sharpness with bold contrast and speed",
+      "Prompt skill": "captured on RED V-RAPTOR XL [X], blockbuster clarity, high-energy global-shutter crispness, aggressive premium detail",
+      "Best use": "high-impact fashion, futuristic editorials, glossy cinematic action portraits",
+      "Sources": "https://www.red.com/v-raptor-xl-x-black | https://docs.red.com/955-0227/955-0227_V1.7%20Rev-A%20RED%20PS%2C%20V-RAPTOR%20XL%20%5BX%5D%208K%20VV%20Operation%20Guide%20HTML/Content/B_TechSpecs/Specs_V-RAPTOR_XL%20%5BX%5D.htm"
+    },
+    {
+      "Category": "Cinema",
+      "Camera": "Blackmagic URSA Cine 12K LF",
+      "Key specs / factual base": "Large-format 36×24mm RGBW sensor, 16 stops dynamic range, up to 440 fps in some configurations",
+      "Style note": "Extremely flexible large-format digital cinema detail for commercial frames",
+      "Prompt skill": "captured on Blackmagic URSA Cine 12K LF, ultra-clean large-format detail, flexible oversampled texture, commercial cinema precision",
+      "Best use": "commercial cinema stills, product-fashion hybrids, high-detail cinematic portraits",
+      "Sources": "https://www.blackmagicdesign.com/products/blackmagicursacine | https://www.blackmagicdesign.com/products/blackmagicursacine/techspecs"
+    },
+    {
+      "Category": "Cinema",
+      "Camera": "ARRI ALEXA 265",
+      "Key specs / factual base": "65mm format sensor, 15 stops dynamic range, improved low-light performance, 6560×3100 open-gate class capture",
+      "Style note": "Epic large-format cinematic scope with premium depth and presence",
+      "Prompt skill": "captured on ARRI ALEXA 265 65mm, epic large-format scope, expansive premium depth, majestic cinematic presence",
+      "Best use": "hero shots, prestige advertising, mythic and high-luxury cinematic portraits",
+      "Sources": "https://www.arrirental.com/en/cameras/digital-65-mm-cameras/alexa-265 | https://www.arri.com/en/company/press/press-releases-2024/arri-announces-the-small-and-lightweight-alexa-265-camera-revolutionizing-65-mm-cinematography"
+    }
+  ],
+  "lights": [
+    {
+      "Type": "Pattern",
+      "Technique": "Rembrandt lighting",
+      "What it does": "Creates a small triangle of light on the cheek opposite the key light; dramatic sculpting with restraint",
+      "Prompt skill": "dramatic Rembrandt lighting, sculpted face, shadow-side catchlight, classic triangle of light",
+      "Mood / use": "character, mystery, old-master portraiture, powerful editorial drama",
+      "Sources": "https://www.profoto.com/int/en/still-photography/tips-tricks/how-to-create-rembrandt-light | https://www.profoto.com/pt/en/still-photography/profoto-stories/race-for-the-gold-rembrandt-challenge"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "Butterfly lighting",
+      "What it does": "Main light above and centered over the face creates the signature butterfly shadow under the nose",
+      "Prompt skill": "Hollywood butterfly lighting, sculpted cheekbones, glamorous beauty highlights, centered top light",
+      "Mood / use": "beauty, glamour, high-fashion closeups, elegant bone structure",
+      "Sources": "https://www.profoto.com/int/en/still-photography/tips-tricks/how-to-create-butterfly-lighting | https://www.adobe.com/creativecloud/photography/discover/portrait-lighting.html"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "Loop lighting",
+      "What it does": "A slight loop-shaped nose shadow on the cheek from a light placed slightly above eye level and off-axis",
+      "Prompt skill": "loop lighting, flattering facial contour, natural editorial shaping, soft directional definition",
+      "Mood / use": "versatile portraiture, fashion, approachable luxury",
+      "Sources": "https://express.adobe.com/page/5dm32QjQKVAxp/ | https://digital-photography-school.com/6-portrait-lighting-patterns-every-photographer-should-know/"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "Split lighting",
+      "What it does": "Illuminates one half of the face while leaving the other half in shadow",
+      "Prompt skill": "split lighting, severe contrast, half-lit face, enigmatic dramatic separation",
+      "Mood / use": "dark elegance, menace, neo-noir, fantasy portraiture",
+      "Sources": "https://digital-photography-school.com/split-lighting-photography/ | https://www.adobe.com/creativecloud/photography/discover/portrait-lighting.html"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "Clamshell lighting",
+      "What it does": "Two lights facing the subject at about 45°—one angled down, one up—for flattering even fill",
+      "Prompt skill": "clamshell beauty lighting, polished skin, symmetrical catchlights, soft luxury fill",
+      "Mood / use": "beauty, cosmetics, polished editorial faces, premium headshots",
+      "Sources": "https://digital-photography-school.com/clamshell-lighting-two-light-setup/ | https://fstoppers.com/originals/how-photograph-headshot-clam-shell-lighting-100155"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "High-key lighting",
+      "What it does": "Bright highlights dominate while shadows are effectively minimized",
+      "Prompt skill": "high-key luxury campaign lighting, bright clean skin, airy premium finish, luminous whites",
+      "Mood / use": "beauty, skincare, optimistic luxury, commercial cleanliness",
+      "Sources": "https://www.adobe.com/creativecloud/video/discover/low-key-vs-high-key-lighting.html | https://www.bhphotovideo.com/explora/photography/buying-guide/high-key-and-low-key-photography"
+    },
+    {
+      "Type": "Pattern",
+      "Technique": "Low-key / chiaroscuro",
+      "What it does": "Uses deep shadows and strong light-dark contrast to create a dramatic, mysterious mood",
+      "Prompt skill": "low-key chiaroscuro lighting, dramatic contrast, museum-grade shadow depth, ominous mystery",
+      "Mood / use": "dark fantasy, noir, prestige drama, gothic editorials",
+      "Sources": "https://www.adobe.com/creativecloud/video/discover/low-key-vs-high-key-lighting.html | https://www.studiobinder.com/blog/what-is-chiaroscuro-definition-examples/"
+    },
+    {
+      "Type": "Support",
+      "Technique": "Soft diffused fill",
+      "What it does": "Lifts shadows with spread-out, flattering light while keeping form intact",
+      "Prompt skill": "soft diffused fill light, lifted shadows, gentle wraparound contrast, flattering skin rendition",
+      "Mood / use": "luxury beauty, editorial polish, soft naturalism",
+      "Sources": "https://www.adobe.com/creativecloud/photography/discover/portrait-lighting.html | https://www.profoto.com/int/en/shop/products/light-shaping-tools/softboxes/"
+    },
+    {
+      "Type": "Support",
+      "Technique": "Rim / hair light",
+      "What it does": "Highlights hair and shoulders from behind to separate the subject from the background",
+      "Prompt skill": "rim light creating a luminous halo around hair and shoulders, strong subject separation",
+      "Mood / use": "hero shots, luxury silhouettes, fantasy presence",
+      "Sources": "https://edverosky.com/understanding-the-key-light-fill-light-hair-light-for-portrait-photography/ | https://www.studiobinder.com/blog/film-lighting-techniques/"
+    },
+    {
+      "Type": "Support",
+      "Technique": "Backlight halo",
+      "What it does": "A rear light wraps edges and can create a halo or glow, especially with haze or textured hair",
+      "Prompt skill": "backlight halo effect, glowing edges, luminous silhouette separation, ethereal outline",
+      "Mood / use": "mythic portraiture, magical realism, prestige beauty",
+      "Sources": "https://www.studiobinder.com/blog/film-lighting-techniques/ | https://edverosky.com/understanding-the-key-light-fill-light-hair-light-for-portrait-photography/"
+    },
+    {
+      "Type": "Atmosphere",
+      "Technique": "Volumetric haze / god rays",
+      "What it does": "Haze or fog reveals visible beams and adds mood, depth, and atmosphere",
+      "Prompt skill": "volumetric haze, visible god rays, layered depth, atmospheric light beams",
+      "Mood / use": "fantasy, cinematic forest scenes, sacred or mythic spaces",
+      "Sources": "https://www.schoolofmotion.com/blog/create-depth-with-volumetrics | https://garagefarm.net/blog/volumetric-lighting-in-rendering-techniques-and-performance"
+    },
+    {
+      "Type": "Atmosphere",
+      "Technique": "Diffused overcast window light",
+      "What it does": "Clouds act as diffusion for beautiful, even natural light",
+      "Prompt skill": "soft overcast window light, natural diffusion, gentle skin wrap, elegant realism",
+      "Mood / use": "editorial realism, calm portraits, lifestyle luxury",
+      "Sources": "https://www.adobe.com/creativecloud/photography/discover/portrait-lighting.html"
+    },
+    {
+      "Type": "Color",
+      "Technique": "Dual-color gel lighting",
+      "What it does": "Contrasting color lighting creates stylized edge separation and modern cinematic energy",
+      "Prompt skill": "dual-tone gel lighting, cool blue shadows, warm crimson kicker, stylized color contrast",
+      "Mood / use": "neo-noir fashion, sci-fi editorials, stylized beauty campaigns",
+      "Sources": "https://www.adobe.com/learn/photoshop/in-app/add-colorful-dual-lighting-effect"
+    },
+    {
+      "Type": "Projection",
+      "Technique": "Gobo projection lighting",
+      "What it does": "Projects patterned shapes like windows, fire, ripple, or scatter into the scene",
+      "Prompt skill": "gobo-projected window pattern, sculpted light architecture, patterned shadow design",
+      "Mood / use": "editorial set design, fashion drama, theatrical luxury",
+      "Sources": "https://aputure.com/products/10-gobo-kit | https://aputure.com/products/spotlight-max-10-piece-gobo-kit"
+    },
+    {
+      "Type": "Focused beam",
+      "Technique": "Fresnel spotlight",
+      "What it does": "Uses an optical lens to tighten and focus the beam for punch and theatrical control",
+      "Prompt skill": "focused Fresnel beam, theatrical edge, punchy falloff, controlled spotlight drama",
+      "Mood / use": "runway drama, theater, cinematic hero framing, strong shapes",
+      "Sources": "https://aputure.com/collections/fresnel-lenses | https://help.aputure.com/en/motorized-f14-fresnel-overview"
+    }
+  ],
+  "modifiers": [
+    {
+      "Modifier": "Beauty Dish",
+      "What it adds": "Creamy yet crisp beauty light with slightly defined shadows",
+      "Prompt skill": "beauty dish key light, creamy yet crisp beauty glow, pristine fashion skin, elegant facial sculpting",
+      "Best use": "fashion, beauty, cheekbone definition, premium portraits",
+      "Sources": "https://www.profoto.com/us/en/still-photography/experience/beauty-dishes/ | https://www.profoto.com/int/en/shop/products/light-shaping-tools/beauty-dishes/"
+    },
+    {
+      "Modifier": "Octa / softbox",
+      "What it adds": "Soft, natural-looking wraparound light in multiple shapes",
+      "Prompt skill": "large octa softbox wrap, soft natural light, luxurious skin falloff, broad flattering coverage",
+      "Best use": "beauty, fashion portraits, polished commercial sets",
+      "Sources": "https://www.profoto.com/int/en/still-photography/experience/softboxes | https://www.profoto.com/int/en/shop/products/light-shaping-tools/softboxes/"
+    },
+    {
+      "Modifier": "Strip softbox",
+      "What it adds": "Long elegant highlight, ideal for edge/rim lighting and contours",
+      "Prompt skill": "strip softbox edge light, long elegant highlight, polished contour separation, refined rim definition",
+      "Best use": "rim light, hair light, glossy fashion body highlights, product edges",
+      "Sources": "https://www.bhphotovideo.com/c/product/1787981-REG/profoto_201503_strip_softbox_1_x.html | https://martcom.eu/en/product/profoto-clic-softbox-strip-1x3-30x90cm/"
+    },
+    {
+      "Modifier": "Deep silver umbrella",
+      "What it adds": "More contrast and precise shaping from a deeper, more controllable umbrella geometry",
+      "Prompt skill": "deep silver umbrella contrast, precise light shaping, punchy premium catchlights, controlled fashion highlights",
+      "Best use": "editorial portraits, high-contrast commercial fashion, quick premium setups",
+      "Sources": "https://www.profoto.com/int/en/shop/products/light-shaping-tools/umbrellas/umbrella-deep-silver-s-/"
+    },
+    {
+      "Modifier": "Fresnel lens",
+      "What it adds": "Focused beam control and output concentration for theatrical spotlight effects",
+      "Prompt skill": "Fresnel-focused spotlight, intensified beam, theatrical luxury contrast, sharp-edged directional control",
+      "Best use": "hero spots, stage-like drama, cinematic set pieces",
+      "Sources": "https://aputure.com/collections/fresnel-lenses | https://help.aputure.com/en/motorized-f14-fresnel-overview"
+    },
+    {
+      "Modifier": "Gobo kit / projection attachment",
+      "What it adds": "Patterned projection for windows, fire, scatter, ripple, or geometric shadows",
+      "Prompt skill": "gobo projector shadows, patterned light cast, editorial environmental texture, dramatic architectural projection",
+      "Best use": "set design, fantasy interiors, fashion drama, surreal storytelling",
+      "Sources": "https://aputure.com/products/10-gobo-kit | https://aputure.com/products/spotlight-max-10-piece-gobo-kit"
+    },
+    {
+      "Modifier": "Silver reflector",
+      "What it adds": "Stronger bounce for brighter shadow fill",
+      "Prompt skill": "silver reflector bounce, brighter under-chin fill, polished skin lift, crisp fill accent",
+      "Best use": "clamshell lighting, beauty, extra sparkle in eyes",
+      "Sources": "https://writelighting.com/learn/9/26/2016/a-simple-clamshell-lighting-tutorial"
+    },
+    {
+      "Modifier": "White reflector",
+      "What it adds": "Softer bounce with a more natural fill character",
+      "Prompt skill": "white reflector fill, soft bounce, gentle shadow lift, natural premium softness",
+      "Best use": "beauty, portraits, calm editorial realism",
+      "Sources": "https://writelighting.com/learn/9/26/2016/a-simple-clamshell-lighting-tutorial"
+    }
+  ],
+  "fx": [
+    {
+      "Effect": "Lens flare",
+      "What it adds": "Starburst or soft bokeh-style flare that adds sunlight, glamour, or dreamy atmosphere",
+      "Prompt skill": "controlled lens flare, warm optical bloom, premium sun-kissed glow, cinematic flare streaks",
+      "Best use": "golden hour luxury, dreamy beauty, cinematic romance",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/sun-flare.html"
+    },
+    {
+      "Effect": "Bokeh",
+      "What it adds": "Shallow-depth background blur that makes the subject pop",
+      "Prompt skill": "creamy background bokeh, isolated subject plane, shallow depth of field, dreamy blur separation",
+      "Best use": "portraits, jewelry, beauty, fashion closeups",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/bokeh.html | https://www.sony.com.sg/microsite/gofullframemirrorless/whyfullframe.html"
+    },
+    {
+      "Effect": "Film grain",
+      "What it adds": "Textured analog feel and nostalgic tone in clean digital imagery",
+      "Prompt skill": "subtle film-like grain, tactile analog texture, lived-in cinematic finish, refined noise structure",
+      "Best use": "editorial, vintage luxury, cinematic mood, texture-rich storytelling",
+      "Sources": "https://www.adobe.com/creativecloud/video/discover/film-grain.html"
+    },
+    {
+      "Effect": "Motion blur",
+      "What it adds": "Apparent streaking of moving subjects for energy and dynamic excitement",
+      "Prompt skill": "controlled motion blur, dynamic streaking, kinetic energy, fashion-in-motion tension",
+      "Best use": "runway, dance, action-fashion, supernatural movement",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/motion-blur.html | https://www.adobe.com/learn/photoshop/web/make-dynamic-movements"
+    },
+    {
+      "Effect": "Long exposure",
+      "What it adds": "Manipulates time, revealing motion and hidden detail",
+      "Prompt skill": "long-exposure atmosphere, temporal blur, layered light accumulation, surreal stillness-with-motion",
+      "Best use": "night portraits, magical trails, dreamscapes, ghosted motion",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/long-exposure.html | https://www.adobe.com/au/creativecloud/roc/blog/photography/long-exposure-photography.html"
+    },
+    {
+      "Effect": "Light trails",
+      "What it adds": "Vibrant streaks from moving lights during longer exposures",
+      "Prompt skill": "vibrant light trails, luminous ribbons of motion, nocturnal energy, graphic neon movement",
+      "Best use": "night editorials, cyberpunk, surreal motion scenes",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/long-exposure/light-trail.html"
+    },
+    {
+      "Effect": "Double exposure",
+      "What it adds": "Two images or exposures blended into one evocative composition",
+      "Prompt skill": "double-exposure layering, ghosted silhouette blend, surreal narrative overlap, poetic visual fusion",
+      "Best use": "art fashion, fantasy symbolism, album-cover style visuals",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/double-exposure.html | https://www.adobe.com/creativecloud/photography/discover/double-exposure-effect.html"
+    },
+    {
+      "Effect": "Prism refraction",
+      "What it adds": "Bent light, rainbow streaks, mirrored fragments, and dreamlike refractions",
+      "Prompt skill": "prism refractions, rainbow spectral streaks, fractured highlights, dreamy mirrored distortions",
+      "Best use": "surreal beauty, dream portraits, luxury fantasy accents",
+      "Sources": "https://www.adobe.com/creativecloud/photography/technique/prism.html | https://www.adobe.com/uk/creativecloud/photography/discover/prism-photography.html"
+    },
+    {
+      "Effect": "Chromatic aberration",
+      "What it adds": "Color fringing on edges for a stylized optical imperfection",
+      "Prompt skill": "subtle chromatic aberration, color-fringed edges, optical imperfection, stylized digital distortion",
+      "Best use": "futuristic editorials, techno-fantasy, edgy campaign art",
+      "Sources": "https://www.adobe.com/creativecloud/photography/discover/chromatic-aberration.html"
+    },
+    {
+      "Effect": "Fog / mist atmosphere",
+      "What it adds": "Haze, fog, or mist that adds mood and depth",
+      "Prompt skill": "ethereal fog layers, drifting mist, atmospheric depth, moody suspended air",
+      "Best use": "fantasy forests, gothic portraits, dreamlike landscapes",
+      "Sources": "https://lightroom.adobe.com/learn/tutorial/23225486-2bb4-4dff-aab4-ce25ba68f341 | https://helpx.adobe.com/ph_fil/lightroom-cc/how-to/bring-dull-colors-to-life.html"
+    },
+    {
+      "Effect": "Vignette",
+      "What it adds": "Darkened borders that guide the viewer’s eye to the subject",
+      "Prompt skill": "subtle vignette, guided eye focus, intimate frame falloff, center-weighted mood",
+      "Best use": "portraits, moody editorials, focused beauty shots",
+      "Sources": "https://www.adobe.com/uk/creativecloud/photography/discover/what-is-vignette-in-photography.html | https://blog.adobe.com/en/publish/2023/02/22/how-to-create-vignette-in-photoshop"
+    },
+    {
+      "Effect": "Glow / bloom",
+      "What it adds": "Soft glow that blooms around highlights for dreamy atmosphere",
+      "Prompt skill": "highlight bloom, dreamy glow, luminous softness, romantic atmospheric radiance",
+      "Best use": "fairy-tale fantasy, soft beauty, magical realism, ethereal fashion",
+      "Sources": "https://www.adobe.com/creativecloud/photography/hub/guides/how-to-create-a-glow-effect-in-photoshop.html"
+    },
+    {
+      "Effect": "Split toning",
+      "What it adds": "Different color moods in shadows and highlights to stylize the image",
+      "Prompt skill": "split-toned shadows and highlights, cinematic color separation, stylized mood contrast",
+      "Best use": "editorial grading, teal/warm palettes, luxe mood shaping",
+      "Sources": "https://helpx.adobe.com/ph_fil/lightroom-classic/how-to/stylize-photo-with-split-toning.html | https://www.adobe.com/products/premiere/color-correction.html"
+    },
+    {
+      "Effect": "Light leaks",
+      "What it adds": "Warm imperfect intrusions that evoke vintage film and soulful imperfection",
+      "Prompt skill": "subtle light leaks, warm film imperfections, nostalgic edge glow, vintage sensor-fog accents",
+      "Best use": "retro luxury, dreamy editorials, nostalgic fashion",
+      "Sources": "https://www.theschoolofphotography.com/tutorials/light-leak-photography | https://focus.picfair.com/articles/how-to-add-realistic-light-leaks-to-your-images-in-adobe-photoshop"
+    },
+    {
+      "Effect": "Floating dust / particles",
+      "What it adds": "Suspended particulate sparkle that catches light and deepens atmosphere",
+      "Prompt skill": "floating dust motes, suspended particles catching light, air texture, fine atmospheric sparkle",
+      "Best use": "enchanted forests, attic light beams, sacred interiors, old-world fantasy",
+      "Sources": "https://www.schoolofmotion.com/blog/create-depth-with-volumetrics | https://www.adobe.com/creativecloud/photography/technique/bokeh.html"
+    },
+    {
+      "Effect": "Magical sparkles / motes",
+      "What it adds": "Fine luminous particles for fantasy or supernatural ambience",
+      "Prompt skill": "subtle magical sparkles, luminous motes, supernatural particulate glow, enchanted air shimmer",
+      "Best use": "dark fantasy, fairytale luxury, witchcraft visuals, ethereal enchantment",
+      "Sources": "https://www.adobe.com/creativecloud/photography/hub/guides/how-to-create-a-glow-effect-in-photoshop.html | https://www.schoolofmotion.com/blog/create-depth-with-volumetrics"
+    }
+  ],
+  "color_quality": [
+    {
+      "Type": "Color science",
+      "Name": "Hasselblad Natural Colour",
+      "What it suggests": "True-to-life colours with smooth, detailed transitions",
+      "Prompt skill": "Hasselblad-like natural colour, genuine skin tones, smooth detailed transitions, true-to-life luxury palette",
+      "Best use": "beauty, luxury portraiture, premium product color, elegant realism",
+      "Sources": "https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/ | https://www.hasselblad.com/x-system/x2d-100c/"
+    },
+    {
+      "Type": "Color science",
+      "Name": "Fujifilm Film Simulation language",
+      "What it suggests": "Color, tone, and contrast inspired by classic analog films",
+      "Prompt skill": "film-simulation-informed color, analog-inspired tones and contrast, refined editorial film mood",
+      "Best use": "editorial, nostalgic luxury, fashion stories with film character",
+      "Sources": "https://www.fujifilm-x.com/en-gb/learning-centre/get-to-grips-with-film-simulation-modes/"
+    },
+    {
+      "Type": "Color science",
+      "Name": "ARRI REVEAL color science",
+      "What it suggests": "More accurate subtle color reproduction, natural skin tones, improved bright saturated colors",
+      "Prompt skill": "ARRI-like subtle color reproduction, natural skin tones, rich but controlled saturation, cinematic highlight behavior",
+      "Best use": "prestige campaigns, cinema-style fashion, premium skin rendering",
+      "Sources": "https://www.arri.com/en/learn-help/learn-help-camera-system/image-science/reveal-color-science | https://www.arri.com/en/applications/corporate-markets/creative-insights/perfecting-corporate-branding"
+    },
+    {
+      "Type": "Color workflow",
+      "Name": "LUT-first cinematic grade",
+      "What it suggests": "Use a LUT as a starting point, then refine with additional grading controls",
+      "Prompt skill": "cinematic LUT-based color grade, refined tonal separation, polished post-produced finish",
+      "Best use": "commercial campaigns, film stills, stylized luxury editorials",
+      "Sources": "https://helpx.adobe.com/premiere/desktop/correct-color/color-correction-fundamentals/basic-color-correction-options.html | https://www.adobe.com/products/premiere/color-correction.html"
+    },
+    {
+      "Type": "Palette",
+      "Name": "Teal shadows / warm highlights",
+      "What it suggests": "Classic cool-shadow / warm-highlight cinematic split-toning contrast",
+      "Prompt skill": "cool teal shadows, warm amber highlights, cinematic split-toning contrast, polished luxury mood",
+      "Best use": "cinematic editorials, fantasy, night luxury campaigns",
+      "Sources": "https://helpx.adobe.com/ph_fil/lightroom-classic/how-to/stylize-photo-with-split-toning.html"
+    },
+    {
+      "Type": "Palette",
+      "Name": "Jewel-tone luxury palette",
+      "What it suggests": "Dense emerald, burgundy, gold, sapphire, and amethyst hues for opulent visual language",
+      "Prompt skill": "rich jewel-tone palette, emerald and burgundy depth, antique gold accents, opulent cinematic saturation",
+      "Best use": "Gucci-like luxury fantasy, couture campaigns, regal portraiture",
+      "Sources": "https://www.adobe.com/products/premiere/color-correction.html | https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Photorealistic skin texture",
+      "What it suggests": "Very fine skin detail with pores and natural micro-contrast",
+      "Prompt skill": "photorealistic skin texture, visible pores, controlled micro-contrast, premium retouched realism",
+      "Best use": "beauty, luxury portraiture, close-up fashion shots",
+      "Sources": "https://www.phaseone.com/applications/bespoke-photography/studio-photography-xf-camera-system/features-and-specifications/ | https://www.hasselblad.com/learn/medium-format/"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Couture textile fidelity",
+      "What it suggests": "Intricate fabric weave, embroidery, brocade, velvet, and jewelry detail",
+      "Prompt skill": "intricate fabric detail, couture textile fidelity, visible embroidery and weave, luxury material precision",
+      "Best use": "fashion editorials, luxury campaigns, still life details",
+      "Sources": "https://www.phaseone.com/solutions/photographic-cameras/ | https://www.fujifilm-x.com/global/products/cameras/gfx100-ii/specifications/"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Controlled highlight roll-off",
+      "What it suggests": "Smooth transition in highlights without harsh clipping",
+      "Prompt skill": "controlled highlight roll-off, luminous highs, graceful tonal compression, premium cinematic sheen",
+      "Best use": "beauty, glossy luxury, candlelight, high-contrast portraiture",
+      "Sources": "https://www.arri.com/en/learn-help/learn-help-camera-system/image-science/reveal-color-science | https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Razor-sharp micro-contrast",
+      "What it suggests": "Fine local contrast and edge separation for premium sharpness",
+      "Prompt skill": "razor-sharp micro-contrast, crisp local detail, premium clarity, immaculate edge separation",
+      "Best use": "editorial sharpness, premium product-fashion, dramatic beauty",
+      "Sources": "https://www.phaseone.com/applications/bespoke-photography/studio-photography-xf-camera-system/features-and-specifications/ | https://leica-camera.com/en-int/photography/cameras/sl/sl3-black"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Medium-format tonality",
+      "What it suggests": "High resolution, color fidelity, and richer tonal information from larger sensors",
+      "Prompt skill": "medium-format tonal depth, rich color fidelity, expansive detail capture, elevated luxury rendering",
+      "Best use": "fashion, beauty, fine art, color-critical luxury stills",
+      "Sources": "https://www.phaseone.com/solutions/photographic-cameras/ | https://www.hasselblad.com/learn/medium-format/"
+    },
+    {
+      "Type": "Quality",
+      "Name": "Full-frame bokeh depth",
+      "What it suggests": "Shallower depth of field and smoother background blur",
+      "Prompt skill": "full-frame subject isolation, smooth background bokeh, elegant focus falloff, premium depth separation",
+      "Best use": "portraits, beauty, environmental editorial shots",
+      "Sources": "https://www.sony.com.sg/microsite/gofullframemirrorless/whyfullframe.html | https://pro.sony/en_GB/technology/full-frame-sensor"
+    },
+    {
+      "Type": "Finishing",
+      "Name": "Refined film grain finish",
+      "What it suggests": "Analog texture layered over clean digital capture",
+      "Prompt skill": "refined film-grain finish, subtle analog texture overlay, luxury editorial patina",
+      "Best use": "editorial, cinema stills, art-fashion, nostalgic luxury",
+      "Sources": "https://www.adobe.com/creativecloud/video/discover/film-grain.html"
+    },
+    {
+      "Type": "Finishing",
+      "Name": "Professional retouching finish",
+      "What it suggests": "Polished but believable editorial finishing with texture preserved",
+      "Prompt skill": "professional beauty retouching, polished yet believable finish, clean skin without plasticity, luxury magazine polish",
+      "Best use": "beauty, fashion magazines, premium campaign art",
+      "Sources": "https://www.adobe.com/products/premiere/color-correction.html | https://www.adobe.com/creativecloud/photography/discover/portrait-photography.html"
+    }
+  ],
+  "recipes": [
+    {
+      "Recipe": "Luxury editorial portrait",
+      "Camera skill": "shot on Phase One XF IQ4 150MP medium format, hyper-detailed skin, couture textile fidelity, immense tonal latitude, surgical micro-contrast",
+      "Lighting stack": "Hollywood butterfly lighting, sculpted cheekbones, glamorous beauty highlights, centered top light + soft diffused fill light, lifted shadows, gentle wraparound contrast, flattering skin rendition + rim light creating a luminous halo around hair and shoulders, strong subject separation",
+      "Modifier / FX / Color": "beauty dish key light, creamy yet crisp beauty glow, pristine fashion skin, elegant facial sculpting | creamy background bokeh, isolated subject plane, shallow depth of field, dreamy blur separation | rich jewel-tone palette, emerald and burgundy depth, antique gold accents, opulent cinematic saturation",
+      "Best for": "fashion covers, jewelry, rich wardrobe, prestige beauty"
+    },
+    {
+      "Recipe": "Dark fantasy couture",
+      "Camera skill": "captured on ARRI ALEXA 35, cinematic skin tones, graceful highlight roll-off, dense shadow color, prestige filmic depth",
+      "Lighting stack": "dramatic Rembrandt lighting, sculpted face, shadow-side catchlight, classic triangle of light + low-key chiaroscuro lighting, dramatic contrast, museum-grade shadow depth, ominous mystery + volumetric haze, visible god rays, layered depth, atmospheric light beams",
+      "Modifier / FX / Color": "Fresnel-focused spotlight, intensified beam, theatrical luxury contrast, sharp-edged directional control | ethereal fog layers, drifting mist, atmospheric depth, moody suspended air | subtle magical sparkles, luminous motes, supernatural particulate glow, enchanted air shimmer | rich jewel-tone palette, emerald and burgundy depth, antique gold accents, opulent cinematic saturation",
+      "Best for": "witches, folklore queens, gothic couture, mythic campaigns"
+    },
+    {
+      "Recipe": "Glossy beauty close-up",
+      "Camera skill": "shot on Hasselblad X2D 100C medium format, true-to-life colour, smooth tonal transitions, clean 16-bit luxury detail",
+      "Lighting stack": "clamshell beauty lighting, polished skin, symmetrical catchlights, soft luxury fill + soft diffused fill light, lifted shadows, gentle wraparound contrast, flattering skin rendition",
+      "Modifier / FX / Color": "beauty dish key light, creamy yet crisp beauty glow, pristine fashion skin, elegant facial sculpting | controlled lens flare, warm optical bloom, premium sun-kissed glow, cinematic flare streaks | Hasselblad-like natural colour, genuine skin tones, smooth detailed transitions, true-to-life luxury palette | photorealistic skin texture, visible pores, controlled micro-contrast, premium retouched realism",
+      "Best for": "skin, makeup, earrings, luxury accessories"
+    },
+    {
+      "Recipe": "Neo-noir fashion",
+      "Camera skill": "captured on RED V-RAPTOR XL [X], blockbuster clarity, high-energy global-shutter crispness, aggressive premium detail",
+      "Lighting stack": "split lighting, severe contrast, half-lit face, enigmatic dramatic separation + dual-tone gel lighting, cool blue shadows, warm crimson kicker, stylized color contrast + backlight halo effect, glowing edges, luminous silhouette separation, ethereal outline",
+      "Modifier / FX / Color": "deep silver umbrella contrast, precise light shaping, punchy premium catchlights, controlled fashion highlights | subtle chromatic aberration, color-fringed edges, optical imperfection, stylized digital distortion | cool teal shadows, warm amber highlights, cinematic split-toning contrast, polished luxury mood",
+      "Best for": "night editorials, cyber-noir, sleek brand campaigns"
+    },
+    {
+      "Recipe": "Mythic forest queen",
+      "Camera skill": "captured on ARRI ALEXA 265 65mm, epic large-format scope, expansive premium depth, majestic cinematic presence",
+      "Lighting stack": "dramatic Rembrandt lighting, sculpted face, shadow-side catchlight, classic triangle of light + volumetric haze, visible god rays, layered depth, atmospheric light beams + backlight halo effect, glowing edges, luminous silhouette separation, ethereal outline",
+      "Modifier / FX / Color": "gobo projector shadows, patterned light cast, editorial environmental texture, dramatic architectural projection | ethereal fog layers, drifting mist, atmospheric depth, moody suspended air | floating dust motes, suspended particles catching light, air texture, fine atmospheric sparkle | rich jewel-tone palette, emerald and burgundy depth, antique gold accents, opulent cinematic saturation",
+      "Best for": "folklore, fairytale luxury, ancient power portraits"
+    },
+    {
+      "Recipe": "Polished cinematic campaign",
+      "Camera skill": "captured on Sony BURANO, polished cinema luxury, VENICE-like skin tones, expansive full-frame bokeh, elegant highlight retention",
+      "Lighting stack": "loop lighting, flattering facial contour, natural editorial shaping, soft directional definition + soft diffused fill light, lifted shadows, gentle wraparound contrast, flattering skin rendition + rim light creating a luminous halo around hair and shoulders, strong subject separation",
+      "Modifier / FX / Color": "large octa softbox wrap, soft natural light, luxurious skin falloff, broad flattering coverage | subtle film-like grain, tactile analog texture, lived-in cinematic finish, refined noise structure | ARRI-like subtle color reproduction, natural skin tones, rich but controlled saturation, cinematic highlight behavior | cinematic LUT-based color grade, refined tonal separation, polished post-produced finish",
+      "Best for": "luxury advertising, premium editorial stills, prestige brand visuals"
+    },
+    {
+      "Recipe": "Dreamy surreal portrait",
+      "Camera skill": "shot on Fujifilm GFX100 II medium format, refined detail, crisp texture separation, modern medium-format depth, film-simulation-ready color",
+      "Lighting stack": "soft overcast window light, natural diffusion, gentle skin wrap, elegant realism + dual-tone gel lighting, cool blue shadows, warm crimson kicker, stylized color contrast",
+      "Modifier / FX / Color": "large octa softbox wrap, soft natural light, luxurious skin falloff, broad flattering coverage | prism refractions, rainbow spectral streaks, fractured highlights, dreamy mirrored distortions | highlight bloom, dreamy glow, luminous softness, romantic atmospheric radiance | film-simulation-informed color, analog-inspired tones and contrast, refined editorial film mood",
+      "Best for": "surreal beauty, album art, poetic fashion imagery"
+    },
+    {
+      "Recipe": "Heroic large-format myth",
+      "Camera skill": "captured on ARRI ALEXA 265 65mm, epic large-format scope, expansive premium depth, majestic cinematic presence",
+      "Lighting stack": "focused Fresnel beam, theatrical edge, punchy falloff, controlled spotlight drama + rim light creating a luminous halo around hair and shoulders, strong subject separation + volumetric haze, visible god rays, layered depth, atmospheric light beams",
+      "Modifier / FX / Color": "Fresnel-focused spotlight, intensified beam, theatrical luxury contrast, sharp-edged directional control | creamy background bokeh, isolated subject plane, shallow depth of field, dreamy blur separation | controlled highlight roll-off, luminous highs, graceful tonal compression, premium cinematic sheen",
+      "Best for": "epic hero shots, prestige fantasy advertising, monumental presence"
+    }
+  ]
+}

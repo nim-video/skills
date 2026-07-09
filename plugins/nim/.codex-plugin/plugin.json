@@ -17,6 +17,10 @@
     "img2vid",
     "ideation",
     "character-consistency",
+    "ugc",
+    "creator-ads",
+    "prompt-quality",
+    "reference-frames",
     "creative",
     "ai-video",
     "ai-image"
@@ -34,8 +38,10 @@
     "defaultPrompt": [
       "Generate a cinematic product shot with Nim",
       "Create a consistent character image from these references",
+      "Improve this video prompt and reference-frame plan with Nim",
       "Turn this image into a 5-second video with Nim",
       "Create a 9:16 social ad for my brand with Nim",
+      "Create a UGC creator video prompt with Nim",
       "Create a 15-second Seedance b-roll ad from my product brief and references",
       "Give me 4 concept variations for this idea with Nim"
     ],
