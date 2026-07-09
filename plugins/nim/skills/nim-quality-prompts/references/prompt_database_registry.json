@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "database_path": "prompt_quality_index.db",
+  "defaults": {
+    "top_k": 10,
+    "language": "en",
+    "output_format": "markdown"
+  },
+  "skill_roots": [
+    {
+      "id": "workspace-seedance-skills",
+      "path": "${SKILL_ROOT}",
+      "max_depth": 2,
+      "enabled": true,
+      "tags": [
+        "workspace",
+        "codex-skill"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "nim-quality-prompts-skill",
+      "title": "Nim Quality Prompts Skill",
+      "kind": "codex_skill",
+      "adapter": "codex_skill",
+      "path": "${SKILL_ROOT}",
+      "enabled": true,
+      "weight": 1.2,
+      "tags": [
+        "seedance",
+        "video",
+        "skill"
+      ]
+    },
+    {
+      "id": "seedance-lut-bank",
+      "title": "Seedance LUT Bank",
+      "kind": "json_bank",
+      "adapter": "seedance_lut",
+      "path": "${SKILL_ROOT}/references/LUT.json",
+      "enabled": true,
+      "weight": 1.3,
+      "tags": [
+        "seedance",
+        "lut",
+        "color",
+        "negative"
+      ]
+    },
+    {
+      "id": "seedance-camera-quality",
+      "title": "Seedance Camera Quality Styles",
+      "kind": "json_bank",
+      "adapter": "seedance_camera_quality",
+      "path": "${SKILL_ROOT}/references/Camera_quality.json",
+      "enabled": true,
+      "weight": 1.35,
+      "tags": [
+        "seedance",
+        "camera",
+        "lighting",
+        "quality"
+      ]
+    },
+    {
+      "id": "seedance-camera-angle-bank",
+      "title": "Seedance Camera Angle Knowledge",
+      "kind": "json_bank",
+      "adapter": "seedance_camera_angles",
+      "path": "${SKILL_ROOT}/references/camera_angle_knowledge_dataset_500.json",
+      "enabled": true,
+      "weight": 1.1,
+      "tags": [
+        "seedance",
+        "shot-list",
+        "camera-angle",
+        "sequence"
+      ]
+    },
+    {
+      "id": "seedance-camera-rulebook",
+      "title": "Seedance Camera Rulebook",
+      "kind": "markdown",
+      "adapter": "markdown_sections",
+      "path": "${SKILL_ROOT}/references/camera_angle_rulebook.md",
+      "enabled": true,
+      "weight": 1.0,
+      "tags": [
+        "seedance",
+        "continuity",
+        "rulebook"
+      ]
+    },
+    {
+      "id": "universal-prompt-skills",
+      "title": "Universal Prompt Skills Database",
+      "kind": "json_bank",
+      "adapter": "universal_prompt_skills",
+      "path": "${SKILL_ROOT}/references/universal_prompt_skills_database.json",
+      "enabled": true,
+      "weight": 1.15,
+      "tags": [
+        "image",
+        "camera",
+        "lighting",
+        "fx",
+        "color",
+        "recipe"
+      ]
+    },
+    {
+      "id": "universal-prompt-companion",
+      "title": "Universal Prompt Generator Companion",
+      "kind": "markdown",
+      "adapter": "markdown_sections",
+      "path": "${SKILL_ROOT}/references/universal_prompt_companion_en.md",
+      "enabled": true,
+      "weight": 0.8,
+      "tags": [
+        "image",
+        "structure",
+        "meta-prompt"
+      ]
+    },
+    {
+      "id": "legacy-prompt-styles",
+      "title": "Legacy Prompt Style Lists",
+      "kind": "json_bank",
+      "adapter": "generic_json",
+      "path": "${SKILL_ROOT}/references/legacy_prompt_styles_en.json",
+      "enabled": true,
+      "weight": 0.7,
+      "tags": [
+        "artists",
+        "style",
+        "legacy",
+        "image"
+      ]
+    }
+  ]
+}

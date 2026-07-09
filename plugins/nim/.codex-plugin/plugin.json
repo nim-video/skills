@@ -18,6 +18,8 @@
     "ideation",
     "ugc",
     "creator-ads",
+    "prompt-quality",
+    "reference-frames",
     "creative",
     "ai-video",
     "ai-image"
@@ -34,6 +36,7 @@
     "websiteURL": "https://nim.video",
     "defaultPrompt": [
       "Generate a cinematic product shot with Nim",
+      "Improve this video prompt and reference-frame plan with Nim",
       "Turn this image into a 5-second video with Nim",
       "Create a 9:16 social ad for my brand with Nim",
       "Create a UGC creator video prompt with Nim",

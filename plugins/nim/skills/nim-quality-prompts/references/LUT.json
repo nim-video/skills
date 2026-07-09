@@ -1,0 +1,280 @@
+{
+  "preset_bank": "UGC_Cinematic_LUT_Prompts_v1",
+  "format": "prompt_lut_styles_not_cube_files",
+  "target_models": [
+    "Seedance 2.0",
+    "",
+    "Runway",
+    "Kling",
+    "AI video models"
+  ],
+  "language_for_prompts": "en",
+  "usage": {
+    "how_to_use": "Append the selected copy_paste_suffix_en to the end of the main video prompt.",
+    "recommended_order": [
+      "scene prompt",
+      "camera and movement prompt",
+      "lighting prompt",
+      "selected LUT prompt",
+      "film grain and camera enhancers",
+      "negative prompt"
+    ],
+    "global_negative_prompt": "No overprocessed HDR, no oversaturated orange-teal, no waxy skin, no plastic beauty filter, no crushed unreadable blacks, no blown skin highlights, no random logos, no fake readable text, no watermark, no UI, no flickering color, no warped hands, no extra fingers, no face morphing, no unstable identity."
+  },
+  "global_camera_enhancers": {
+    "prompt_en": "Modern creator camera simulation, natural 180-degree shutter motion blur, native ISO-style clean shadows, controlled highlight rolloff, realistic autofocus micro-recovery, subtle handheld micro-jitter, optical stabilization, gentle lens breathing, mild compression texture, realistic skin detail, stable white balance, no digital zoom, no artificial sharpening halos.",
+    "recommended_strength": 0.7
+  },
+  "luts": [
+    {
+      "rank": 1,
+      "id": "lut_ugc_001",
+      "name": "Premium UGC Warm",
+      "best_for": [
+        "cafes",
+        "lifestyle ads",
+        "beauty UGC",
+        "food",
+        "cozy indoor product demos"
+      ],
+      "look_goal": "Warm premium UGC that still feels shot by a real creator, not a polished studio commercial.",
+      "color_grade_prompt_en": "Premium UGC Warm LUT: warm beige midtones, soft champagne highlights, creamy but realistic skin tones, gentle brown shadows, clean whites, mild contrast, cozy tungsten practicals, natural indoor exposure, polished lifestyle commercial warmth without orange oversaturation.",
+      "film_grain": {
+        "stock_feel": "200T fine grain",
+        "amount": "low-medium",
+        "size": "fine",
+        "opacity": 0.18,
+        "halation": "subtle warm halation around lamps and window highlights",
+        "bloom": "very soft highlight bloom only on practical lights",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Creator camera look, realistic handheld push-in, optical stabilization, 180-degree shutter blur, native ISO clean shadows, soft highlight rolloff, gentle autofocus breathing, realistic phone-camera compression texture, natural skin pores.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Premium UGC Warm LUT, warm beige midtones, soft champagne highlights, creamy realistic skin tones, gentle brown shadows, clean whites, mild contrast, cozy tungsten practicals, natural indoor exposure. Add 200T fine film grain at low-medium intensity, subtle warm halation around lamps, very soft bloom on practical highlights. Camera enhancers: realistic creator camera, optical stabilization, 180-degree shutter motion blur, native ISO clean shadows, soft highlight rolloff, gentle autofocus breathing, mild phone-camera compression texture. No HDR look, no orange oversaturation, no waxy skin."
+    },
+    {
+      "rank": 2,
+      "id": "lut_ugc_002",
+      "name": "TikTok Beauty Soft",
+      "best_for": [
+        "beauty UGC",
+        "skincare",
+        "makeup",
+        "talking head",
+        "product review"
+      ],
+      "look_goal": "Flattering TikTok-style beauty look while preserving real skin texture.",
+      "color_grade_prompt_en": "TikTok Beauty Soft LUT: soft lifted shadows, low contrast, pastel warmth, slightly pink-beige undertone, clean bright face exposure, gentle glow, soft whites, natural lips and cheeks, flattering but not artificial, modern beauty creator look.",
+      "film_grain": {
+        "stock_feel": "50D ultra-fine grain",
+        "amount": "very low",
+        "size": "micro",
+        "opacity": 0.08,
+        "halation": "minimal, only on glossy product edges",
+        "bloom": "soft cosmetic glow on highlights",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Front-facing creator camera realism, stabilized handheld, clean autofocus on eyes, slight exposure breathing, natural face detail, soft lens diffusion, realistic compression, no heavy retouching.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: TikTok Beauty Soft LUT, soft lifted shadows, low contrast, pastel warmth, pink-beige undertone, clean bright face exposure, soft whites, natural lips and cheeks, flattering modern beauty UGC. Add 50D ultra-fine film grain at very low opacity, minimal halation on glossy product edges, soft cosmetic highlight glow. Camera enhancers: stabilized creator camera, clean eye autofocus, slight exposure breathing, soft lens diffusion, realistic compression texture, preserved skin pores. No plastic skin, no face smoothing artifacts, no over-sharpened eyes."
+    },
+    {
+      "rank": 3,
+      "id": "lut_ugc_003",
+      "name": "iPhone Realism",
+      "best_for": [
+        "authentic UGC",
+        "street content",
+        "casual reviews",
+        "daylight creator video",
+        "before-after ads"
+      ],
+      "look_goal": "Believable modern iPhone-style realism with clean dynamic range and social-native texture.",
+      "color_grade_prompt_en": "iPhone Realism LUT: realistic mobile camera color science, neutral whites, accurate skin tones, balanced daylight, moderate HDR-style dynamic range but not overprocessed, crisp but natural detail, mild saturation, real creator-video exposure shifts.",
+      "film_grain": {
+        "stock_feel": "digital micro-grain plus 50D-style fine texture",
+        "amount": "very low",
+        "size": "micro",
+        "opacity": 0.06,
+        "halation": "none or barely visible",
+        "bloom": "none, only natural sensor highlight rolloff",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Modern iPhone Pro simulation, handheld optical stabilization, natural auto exposure micro-shifts, realistic autofocus recovery, mild sharpening, mild compression texture, clean daylight dynamic range, realistic motion blur.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: iPhone Realism LUT, realistic mobile camera color science, neutral whites, accurate skin tones, balanced daylight, moderate dynamic range without overprocessed HDR, crisp natural detail, mild saturation, real creator-video exposure shifts. Add very low digital micro-grain with subtle 50D-style texture, almost no halation, natural sensor highlight rolloff. Camera enhancers: modern iPhone Pro simulation, optical stabilization, natural auto-exposure micro-shifts, realistic autofocus recovery, mild sharpening, mild compression texture, clean daylight dynamic range, 180-degree shutter motion blur. No cinematic overgrade, no fake film damage."
+    },
+    {
+      "rank": 4,
+      "id": "lut_ugc_004",
+      "name": "Cinematic UGC Neutral",
+      "best_for": [
+        "universal UGC ads",
+        "founder videos",
+        "testimonials",
+        "premium talking head",
+        "lifestyle scenes"
+      ],
+      "look_goal": "Most versatile cinematic UGC look: neutral, clean, premium, not too stylized.",
+      "color_grade_prompt_en": "Cinematic UGC Neutral LUT: neutral cinematic contrast, controlled highlights, soft black levels, natural skin tones, slightly muted saturation, clean commercial realism, subtle separation between subject and background, balanced warm highlights and neutral shadows.",
+      "film_grain": {
+        "stock_feel": "200T fine grain",
+        "amount": "low",
+        "size": "fine",
+        "opacity": 0.15,
+        "halation": "subtle neutral halation on bright windows and practicals",
+        "bloom": "low bloom on highlights",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Large-format creator camera simulation, realistic shallow depth of field, controlled highlight rolloff, stable skin tones, natural handheld micro-sway, gentle lens breathing, clean focus pull.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Cinematic UGC Neutral LUT, neutral cinematic contrast, controlled highlights, soft black levels, natural skin tones, slightly muted saturation, clean commercial realism, subtle subject-background separation, balanced warm highlights and neutral shadows. Add 200T fine film grain at low intensity, subtle neutral halation on bright windows and practicals, low highlight bloom. Camera enhancers: large-format creator camera simulation, realistic shallow depth of field, controlled highlight rolloff, stable skin tones, natural handheld micro-sway, gentle lens breathing, clean focus pull. No heavy teal-orange, no glossy overpolish."
+    },
+    {
+      "rank": 5,
+      "id": "lut_ugc_005",
+      "name": "Kodak Warm Film",
+      "best_for": [
+        "cinematic lifestyle",
+        "nostalgia ads",
+        "travel",
+        "fashion UGC",
+        "coffee shop scenes"
+      ],
+      "look_goal": "Warm Kodak-inspired film print feeling with strong emotional warmth.",
+      "color_grade_prompt_en": "Kodak Warm Film LUT: golden highlights, warm midtones, rich but natural skin tones, soft lifted blacks, restrained saturation, nostalgic print-film warmth, creamy highlight rolloff, gentle red-orange halation around bright practicals.",
+      "film_grain": {
+        "stock_feel": "Kodak-style 200T / 2383 print grain",
+        "amount": "medium",
+        "size": "fine-medium",
+        "opacity": 0.22,
+        "halation": "warm red-orange halation around lamps, windows, sun edges",
+        "bloom": "soft filmic bloom",
+        "gate_weave": "very subtle, almost invisible"
+      },
+      "camera_enhancers_prompt_en": "Vintage cinema camera feel, soft highlight rolloff, mild lens flare, gentle focus breathing, natural handheld drift, organic motion blur, no digital sharpness.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Kodak Warm Film LUT, golden highlights, warm midtones, rich natural skin tones, soft lifted blacks, restrained saturation, nostalgic print-film warmth, creamy highlight rolloff. Add Kodak-style 200T / 2383 print grain at medium intensity, warm red-orange halation around lamps, windows and sun edges, soft filmic bloom, very subtle gate weave. Camera enhancers: vintage cinema camera feel, soft highlight rolloff, mild lens flare, gentle focus breathing, natural handheld drift, organic motion blur, reduced digital sharpness. No fake old-film scratches, no heavy orange cast."
+    },
+    {
+      "rank": 6,
+      "id": "lut_ugc_006",
+      "name": "Fuji Pastel Film",
+      "best_for": [
+        "beauty lifestyle",
+        "fashion UGC",
+        "travel",
+        "soft outdoor scenes",
+        "wellness brands"
+      ],
+      "look_goal": "Airy, pastel, clean film mood with gentle greens and delicate blues.",
+      "color_grade_prompt_en": "Fuji Pastel Film LUT: soft pastel greens, delicate blues, creamy skin tones, airy highlights, low contrast, muted saturation, elegant lifestyle look, soft cyan shadows, gentle pearl-white highlights.",
+      "film_grain": {
+        "stock_feel": "50D fine pastel grain",
+        "amount": "low",
+        "size": "fine",
+        "opacity": 0.12,
+        "halation": "very soft cool-warm halation on bright sky and windows",
+        "bloom": "airy highlight bloom",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Soft daylight camera rendering, gentle lens diffusion, clean autofocus, natural handheld movement, protected sky highlights, low digital sharpening, realistic skin texture.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Fuji Pastel Film LUT, soft pastel greens, delicate blues, creamy skin tones, airy highlights, low contrast, muted saturation, elegant lifestyle look, soft cyan shadows, pearl-white highlights. Add 50D fine pastel grain at low intensity, very soft halation on bright sky and windows, airy highlight bloom. Camera enhancers: soft daylight camera rendering, gentle lens diffusion, clean autofocus, natural handheld movement, protected sky highlights, low digital sharpening, realistic skin texture. No oversaturated greens, no washed-out faces."
+    },
+    {
+      "rank": 7,
+      "id": "lut_ugc_007",
+      "name": "Indie Film Cafe",
+      "best_for": [
+        "cafe scenes",
+        "indie UGC",
+        "coffee ads",
+        "intimate dialogue",
+        "warm interiors"
+      ],
+      "look_goal": "Moody indie café atmosphere with tungsten warmth and real texture.",
+      "color_grade_prompt_en": "Indie Film Cafe LUT: warm tungsten interior, amber practical highlights, brown-green shadows, muted reds, soft contrast, slightly underexposed corners, intimate handheld realism, cozy but melancholic café mood.",
+      "film_grain": {
+        "stock_feel": "500T interior grain",
+        "amount": "medium",
+        "size": "medium",
+        "opacity": 0.24,
+        "halation": "warm halation around café lamps and neon reflections",
+        "bloom": "soft practical-light bloom",
+        "gate_weave": "very subtle"
+      },
+      "camera_enhancers_prompt_en": "Compact cinema camera, handheld shoulder micro-sway, realistic low-light noise, gentle lens breathing, shallow depth of field, natural focus recovery, soft corner falloff.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Indie Film Cafe LUT, warm tungsten interior, amber practical highlights, brown-green shadows, muted reds, soft contrast, slightly underexposed corners, intimate handheld realism, cozy melancholic café mood. Add 500T interior film grain at medium intensity, warm halation around café lamps and neon reflections, soft practical-light bloom, very subtle gate weave. Camera enhancers: compact cinema camera, handheld shoulder micro-sway, realistic low-light noise, gentle lens breathing, shallow depth of field, natural focus recovery, soft corner falloff. No clean corporate look, no plastic café lighting."
+    },
+    {
+      "rank": 8,
+      "id": "lut_ugc_008",
+      "name": "A24 Soft Drama",
+      "best_for": [
+        "emotional UGC",
+        "storytelling ads",
+        "quiet drama",
+        "founder story",
+        "cinematic interiors"
+      ],
+      "look_goal": "Muted emotional realism, restrained drama, natural texture, no glossy ad look.",
+      "color_grade_prompt_en": "A24 Soft Drama LUT: muted earthy palette, soft contrast, slightly cool shadows, warm practical highlights, natural skin texture, quiet emotional realism, lifted blacks, desaturated greens, subtle beige-brown midtones.",
+      "film_grain": {
+        "stock_feel": "200T / 500T soft drama grain",
+        "amount": "low-medium",
+        "size": "fine-medium",
+        "opacity": 0.18,
+        "halation": "subtle warm halation only on practical lights",
+        "bloom": "minimal bloom",
+        "gate_weave": "none or barely visible"
+      },
+      "camera_enhancers_prompt_en": "Observational cinema camera, locked-off or slow handheld drift, natural exposure, soft highlight rolloff, gentle focus breathing, real pores and fabric detail, no beauty smoothing.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: A24 Soft Drama LUT, muted earthy palette, soft contrast, slightly cool shadows, warm practical highlights, natural skin texture, quiet emotional realism, lifted blacks, desaturated greens, beige-brown midtones. Add 200T / 500T soft drama grain at low-medium intensity, subtle warm halation only on practical lights, minimal bloom. Camera enhancers: observational cinema camera, locked-off or slow handheld drift, natural exposure, soft highlight rolloff, gentle focus breathing, real pores and fabric detail. No glossy ad look, no heavy cinematic cliché."
+    },
+    {
+      "rank": 9,
+      "id": "lut_ugc_009",
+      "name": "Netflix Commercial",
+      "best_for": [
+        "premium ads",
+        "tech UGC",
+        "brand films",
+        "clean interiors",
+        "product demos"
+      ],
+      "look_goal": "Clean high-end streaming-commercial look: premium, controlled, not too stylized.",
+      "color_grade_prompt_en": "Netflix Commercial LUT: modern streaming-commercial grade, clean contrast, deep but readable blacks, controlled highlights, rich accurate skin tones, polished product-ad realism, refined saturation, neutral whites, premium shadow detail.",
+      "film_grain": {
+        "stock_feel": "50D clean commercial grain",
+        "amount": "very low-low",
+        "size": "fine",
+        "opacity": 0.1,
+        "halation": "minimal controlled halation",
+        "bloom": "subtle highlight polish",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Large-format digital cinema camera, clean focus, stable exposure, high dynamic range rolloff, subtle lens breathing, realistic bokeh, controlled reflections, no phone-like over-sharpening.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Netflix Commercial LUT, modern streaming-commercial grade, clean contrast, deep but readable blacks, controlled highlights, rich accurate skin tones, polished product-ad realism, refined saturation, neutral whites, premium shadow detail. Add 50D clean commercial grain at very low-low intensity, minimal controlled halation, subtle highlight polish. Camera enhancers: large-format digital cinema camera, clean focus, stable exposure, high dynamic range rolloff, subtle lens breathing, realistic bokeh, controlled reflections. No phone-like over-sharpening, no crushed blacks, no excessive HDR."
+    },
+    {
+      "rank": 10,
+      "id": "lut_ugc_010",
+      "name": "Luxury Product UGC",
+      "best_for": [
+        "beauty products",
+        "tech products",
+        "jewelry",
+        "packaging",
+        "premium unboxing"
+      ],
+      "look_goal": "Luxury product look inside UGC: refined, elegant, high-converting, but still creator-native.",
+      "color_grade_prompt_en": "Luxury Product UGC LUT: soft champagne highlights, elegant neutral shadows, clean premium whites, smooth but realistic skin tones, refined contrast, subtle glow on product edges, polished beauty-tech advertising color, controlled reflections.",
+      "film_grain": {
+        "stock_feel": "50D micro-grain",
+        "amount": "very low",
+        "size": "micro-fine",
+        "opacity": 0.08,
+        "halation": "tiny luxury halation on glass, metal, glossy packaging",
+        "bloom": "controlled product-edge bloom",
+        "gate_weave": "none"
+      },
+      "camera_enhancers_prompt_en": "Premium creator camera, macro-friendly focus, crisp product geometry, controlled reflections, soft highlight rolloff, clean autofocus on product then face, subtle handheld realism, no warped labels or fake text.",
+      "copy_paste_suffix_en": "COLOR GRADE / LUT STYLE: Luxury Product UGC LUT, soft champagne highlights, elegant neutral shadows, clean premium whites, smooth realistic skin tones, refined contrast, subtle glow on product edges, polished beauty-tech advertising color, controlled reflections. Add 50D micro-grain at very low intensity, tiny luxury halation on glass, metal and glossy packaging, controlled product-edge bloom. Camera enhancers: premium creator camera, macro-friendly focus, crisp product geometry, controlled reflections, soft highlight rolloff, clean autofocus from product to face, subtle handheld realism. No warped labels, no fake readable text, no random logos, no plastic product shine."
+    }
+  ]
+}
