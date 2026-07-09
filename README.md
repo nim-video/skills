@@ -70,6 +70,8 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-human-generation` | `/nim:nim-human-generation` | Generate believable editorial young-adult human portraits and fashion/UGC character images. Intakes age, gender presentation, and look; defaults to Nano Banana Pro in 9:16 and supports user-specified models. |
 | `nim-template-runner` | `/nim:nim-template-runner` | Browse, inspect, and run Nim templates. Collects template inputs, uploads references, calls `run_template`, and polls for final media. |
 | `nim-credits` | `/nim:nim-credits` | Check Nim credit balance, explain insufficient-credit failures, and help users buy packs or upgrade through Nim MCP. |
+| `nim-product-creative` | `/nim:nim-product-creative` | Easy way to create a creative imagery with your product. |
+| `nim-upscale` | `/nim:nim-upscale` | Upscale your video or image with state of the art upscale models. |
 
 The skill drives model discovery (`models_explore`), generation (`generate_image` /
 `generate_video`), templates (`explore_templates`, `get_template`, `run_template`),
@@ -88,6 +90,7 @@ reference uploads (`media_upload`), credits, and status polling
   repeatable creative workflows.
 - **Manage credits** — check your Nim balance and resolve insufficient-credit states.
 - **Ideate** — ask for several variations of a concept in one go and compare directions.
+- **Upscale** — upscale your media to the best quality 
 
 ## License
 
