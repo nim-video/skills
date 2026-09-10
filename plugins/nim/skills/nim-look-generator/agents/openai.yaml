@@ -1,0 +1,13 @@
+interface:
+  display_name: "Nim Look Generator"
+  short_description: "Nim looks with Nano Banana Pro and Recraft casting"
+  default_prompt: "Use $nim-look-generator to create three distinct outfits in Nim. First generate a distinctive face with Recraft V4.1 Pro, then render the outfits with Nano Banana Pro Edit using that portrait. Handle styling, prompt construction, and Nim MCP calls in the current assistant."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "nim"
+      description: "Nim image generation, model discovery and reference uploads"
+      transport: "streamable_http"
+      url: "https://mcp.nim.video/mcp"
+policy:
+  allow_implicit_invocation: true
