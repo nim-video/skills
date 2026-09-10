@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-12-orange.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-13-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -64,6 +64,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | ------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `nim-generate`     | `/nim:nim-generate`     | Generate and edit images **and** video — text-to-image, image editing, text-to-video, and image-to-video. Discovers the right model, follows its contract, handles references, and returns the result. |
 | `nim-character-consistency` | `/nim:nim-character-consistency` | Create new images of an existing character, person, product, or object while preserving visual identity across scenes, poses, lighting, and styles. |
+| `nim-location-generator` | `/nim:nim-location-generator` | Create location concepts, interiors, exteriors, and UGC backgrounds; preserve a place across edits and alternate views using references and approved Nim image models. |
 | `nim-b-roll-seedance` | `/nim:nim-b-roll-seedance` | Create staged product/lifestyle b-roll videos from a brief and references. Builds concise creative direction, handles reference roles internally, and generates with Seedance 2 through Nim.            |
 | `nim-hookgen-seedance` | `/nim:nim-hookgen-seedance` | Write and generate talking-head "hook" UGC ad clips for short-form (TikTok / Reels / Shorts). Proposes spoken hook options, maps character/product/location references, and generates with Seedance 2 through Nim. |
 | `nim-long-video-chain` | `/nim:nim-long-video-chain` | Chain multiple 15s Seedance clips into one continuous longer video (roughly 15s–5 min). Plans segments, writes shared-world prompts, generates in batches of up to 3, and hands off ffmpeg stitching to the user. |
