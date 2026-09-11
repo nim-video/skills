@@ -51,7 +51,7 @@ Text-only delivery starts no jobs. An explicit request to preserve the user's su
 
 ## Select the model automatically
 
-Read [model-routing.md](references/model-routing.md) before generation or editing. Use current `models_explore` results, not provider names and limits copied from the original application.
+Read [model-routing.md](references/model-routing.md) before generation or editing. Use current `models_explore` results to verify model names, capabilities, and limits.
 
 Select image models separately from the host assistant. The face stage is pinned to **Recraft V4.1 Pro** unless the user explicitly overrides it. **Nano Banana Pro is the default outfit renderer**, including ordinary requests with no explicit quality upgrade. For outfit jobs, decision order is **hard requirements → explicitly selected model → compatible Nano Banana Pro variant → compatible fallback**. Respect the total budget throughout.
 
@@ -77,5 +77,3 @@ Read [nim-workflow.md](references/nim-workflow.md) before the first generation/e
 Use an existing native widget/media display; otherwise provide a clickable link to the actual `mediaUrl` or download result in the host's supported format. Do not embed external Nim URLs as inline images when the host blocks them. Name each variant and briefly explain differences. For partial success, deliver finished variants and identify failures separately.
 
 Keep settings and job IDs in context for follow-up work. Use the scenarios and workflow for exports, retries, favorites, and upscaling. Do not promise a database, gallery, or cross-session persistence without a real saved file or available tool. Hand video work to an available Nim video workflow only when explicitly requested.
-
-Sources and intentional differences from the web application: [provenance.md](references/provenance.md).

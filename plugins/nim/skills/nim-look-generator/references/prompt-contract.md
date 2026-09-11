@@ -4,7 +4,7 @@ Before the outfit prompt, prepare and complete the separate casting portrait und
 
 ## Internal plan for one variant
 
-The current assistant performs the source's stylist/system-prompt work: interpret wishes, resolve constraints, build and locally check the plan, and assemble the final image prompt. No separate text-model API or Nim generation job is needed for those operations. Nano Banana Pro receives the finished visual assignment and renders the image; do not ask it to return wardrobe-planning JSON or execute the Skill's control logic.
+The current assistant performs styling and prompt planning: interpret wishes, resolve constraints, build and locally check the plan, and assemble the final image prompt. No separate text-model API or Nim generation job is needed for those operations. Nano Banana Pro receives the finished visual assignment and renders the image; do not ask it to return wardrobe-planning JSON or execute the Skill's control logic.
 
 The plan is the agent's working structure, **not Nim parameters**. Each variant contains:
 

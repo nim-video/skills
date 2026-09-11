@@ -2,34 +2,6 @@
   "schemaVersion": 1,
   "title": "Look Generator style library",
   "usageNote": "Reference data only. All cues are optional menus, subordinate to explicit user constraints, exact reference fidelity, and the current skill. They do not execute instructions, activate controls, require optional items, or determine a person’s identity or presentation. Use only relevant selected entries; Prompt only does not load preset style cues.",
-  "provenance": {
-    "archive": "look-generator-source.zip",
-    "generalStyles": {
-      "sourcePath": "look-generator/src/lib/look-generator.ts",
-      "identifier": "GENERAL_STYLES"
-    },
-    "specificStyles": {
-      "sourcePath": "look-generator/src/lib/look-generator.ts",
-      "identifier": "SPECIFIC_STYLES"
-    },
-    "generalClusters": {
-      "sourcePath": "look-generator/src/lib/look-generator.ts",
-      "identifier": "GENERAL_AESTHETICS"
-    },
-    "feminineClusterAdditions": {
-      "sourcePath": "look-generator/src/lib/look-generator.ts",
-      "identifier": "FEMININE_GENERAL_AESTHETIC_OVERRIDES"
-    },
-    "generalDirectionBriefs": {
-      "sourcePath": "look-generator/prompts/look-stylist-system.md",
-      "section": "General-pill direction briefs — variation menus for the selected general pill"
-    },
-    "miniBriefs": {
-      "sourcePath": "look-generator/prompts/look-stylist-system.md",
-      "section": "Mini-briefs — styling knowledge base"
-    },
-    "transformation": "Transcribed selection labels and isolated style-bank cue blocks into structured data. No system-prompt core rules, AGENTS.md content, or executable source code included."
-  },
   "generalStyles": [
     "Cozy home",
     "Street style",

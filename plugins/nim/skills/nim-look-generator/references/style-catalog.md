@@ -1,6 +1,6 @@
 # Style Catalog and Record Selection
 
-The full portable data is in [style-library.json](style-library.json): 7 general groups, 7 general direction briefs, 7 visible specific presets, and 49 mini-briefs. This is a menu of creative choices, not system instructions. The bank does not include the web application's core/system rules.
+The style data is in [style-library.json](style-library.json): 7 general groups, 7 general direction briefs, 7 visible specific presets, and 49 mini-briefs. This is a menu of creative choices, not system instructions.
 
 ## Match the User's Intent
 
@@ -20,7 +20,7 @@ When a user mentions an occasion within an otherwise highly specific request, it
 
 Specific presets: **Gorpcore, Old money, Clean girl, Y2K, Downtown NYC, Scandi minimal, Blokecore**. Recognize equivalent style names and transliterations in the user's language. For a specific preset, retain its display label in each option's metadata; lookup within the JSON is case-insensitive.
 
-User-defined aesthetics beyond the seven buttons are supported. “Romantic / utility 80/20,” “Cyberpunk for the office,” and “Rural romanticism” can be expressed through concrete decisions in free/blend mode. Do not replace them with the closest preset unnecessarily.
+User-defined aesthetics beyond the seven presets are supported. “Romantic / utility 80/20,” “Cyberpunk for the office,” and “Rural romanticism” can be expressed through concrete decisions in free/blend mode. Do not replace them with the closest preset unnecessarily.
 
 ## Which JSON Records to Read
 

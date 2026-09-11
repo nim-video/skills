@@ -51,7 +51,7 @@ Use the actually available tool name and schema, which may have a server prefix.
 
 ## Verified guidance, not a static contract
 
-Read-only Nim discovery on 2026-09-09 returned:
+Capability guidance as of 2026-09-09:
 
 | Approved variant | Input | Significant constraints |
 |---|---|---|

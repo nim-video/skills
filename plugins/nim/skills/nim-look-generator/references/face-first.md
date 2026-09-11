@@ -2,12 +2,12 @@
 
 ## Required order and scope
 
-For every new visual look series, generate an original, distinctive face through **Recraft V4.1 Pro before generating any outfits**. This is a standing user requirement, including when no person was mentioned. Default to one fictional adult wearing the looks. Brief preparation, reference inspection, catalog discovery, and total-cost checks may happen first; the portrait must be the first generative job.
+For every new visual look series, generate an original, distinctive face through **Recraft V4.1 Pro before generating any outfits**. This stage is required even when no person was mentioned. Default to one fictional adult wearing the looks. Brief preparation, reference inspection, catalog discovery, and total-cost checks may happen first; the portrait must be the first generative job.
 
 One series uses one character by default. Ten different outfits mean one casting portrait plus ten outfit outputs, not ten portraits. If the user requests ten different people, plan ten separate character briefs and portraits, complete casting before the outfit stage, and map each look to its assigned identity. Count the portraits as additional assets and paid jobs, never as completed outfits.
 
 - **New series / new character:** cast a fresh face. Vary its design from accessible previous castings; do not reuse the previous image or a fixed template seed.
-- **Continuation / edit / retry:** reuse the established identity. "Three more," "same person," a rear view, a background change, status, export, and upscale do not start another casting job. Existing images from before this workflow update remain valid identity/base references; do not recast them to manufacture a missing history.
+- **Continuation / edit / retry:** reuse the established identity. "Three more," "same person," a rear view, a background change, status, export, and upscale do not start another casting job. Existing images remain valid identity/base references even without a recorded casting job; do not recast them to manufacture a missing history.
 - **Advice / prompts / no generation:** no portrait jobs or uploads. In prompts mode, provide the casting prompt and dependent outfit prompts where relevant, describing the future identity reference as a placeholder, never as an existing URL.
 - **Explicit identity override:** "use my face," "keep this person," or an explicitly selected existing character uses that identity instead of fictional casting. Do not replace or blend it with a generated person. Recraft's text-only portrait model cannot reproduce an exact supplied identity. Record `identityOrigin=user-reference` or `existing-character` and the override.
 - **Outfit-only / flat lay / ghost:** still create the initial portrait as a separate casting asset, but do not pass it into the person-free outfit jobs or introduce skin, faces, hands, or hair into them. Clearly state this separate asset in the initial cost/scope summary. A more specific "no portraits at all" or "skip face generation" overrides the casting step.
@@ -47,6 +47,6 @@ The portrait alone does not establish full-body proportions. Choose a stable, or
 
 ## Cost, continuity, and output
 
-The full estimate is `number of new castings × current portrait cost + all outfit jobs + authorized corrections/operations`. The checked portrait estimate was 40 credits; this is not a fixed future price. Do not start a 40-credit portrait for a complete order capped at 20 credits. Do not silently switch to standard Recraft or omit the face to meet that cap.
+The full estimate is `number of new castings × current portrait cost + all outfit jobs + authorized corrections/operations`. Use the current portrait estimate. For example, do not start a 40-credit portrait for a complete order capped at 20 credits. Do not silently switch to standard Recraft or omit the face to meet that cap.
 
 Deliver or make the casting portrait accessible separately from the numbered looks, subject to the host's media rules. For person-bearing outputs, inspect facial structure, hair and skin tone against the portrait, and the same identity across views and outfits. API completion alone does not prove identity fidelity. If an outfit fails, retain the accepted portrait and all successful looks; retry only the affected job within the authorized limit.

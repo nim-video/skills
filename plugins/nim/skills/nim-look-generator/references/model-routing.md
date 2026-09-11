@@ -1,6 +1,6 @@
 # Automatic Nim Model Selection
 
-This policy selects Nim **image renderers**. The current assistant performs styling, prompt construction, checks, and MCP orchestration; do not select a Nim image model to perform the assistant's system-prompt logic. **Nano Banana Pro is the primary outfit renderer**, with its Edit variant for reference input. This is the user's preference policy, not a comparative benchmark. Obtain UUIDs, `modelValue`, prices, and capabilities from the live Nim MCP catalog.
+This policy selects Nim **image renderers**. The current assistant performs styling, prompt construction, checks, and MCP orchestration; do not select a Nim image model to perform the assistant's system-prompt logic. **Nano Banana Pro is the primary outfit renderer**, with its Edit variant for reference input. This is the skill's default model policy, not a comparative benchmark. Obtain UUIDs, `modelValue`, prices, and capabilities from the live Nim MCP catalog.
 
 ## Algorithm
 
@@ -41,7 +41,7 @@ Do not shorten the mandatory photo list, turn an exact product/identity referenc
 
 ## Verified Catalog Snapshot, 2026-09-09
 
-These data came from read-only `models_explore search/recommend`; Nano Banana Pro and Pro Edit were also checked with final `get` contracts. They are neither API constants nor generation test results.
+This dated capability reference is not a fixed API contract or a visual-quality benchmark. Verify current capabilities with `models_explore` and the final `get` contract before generation.
 
 | Nim catalog model | Input / maximum photos | Aspect ratios / resolution shown by the catalog | Estimated credits at the returned default |
 |---|---|---|---|
@@ -56,8 +56,8 @@ These data came from read-only `models_explore search/recommend`; Nano Banana Pr
 | Seedream 4.5 Edit | image / 6 | 16:9, 9:16, 1:1, auto, 4:3, 3:4 | 10 |
 | Seedream 5 Lite Edit | image / 10 | Same Seedream aspect ratios | 7 |
 
-In the checked results, even a recommendation request for four photos at 4:5 returned three edit models with `unsupported=["aspect ratio 4:5"]`. Do not submit them as a ready solution for 4:5. Continue searching; if no compatible model exists, offer a supported aspect ratio or a separately agreed crop. Changing the prompt text alone does not establish 4:5 support.
+A recommended model may still return `unsupported=["aspect ratio 4:5"]`. Do not submit such a model as a ready solution for 4:5. Continue searching; if no compatible model exists, offer a supported aspect ratio or a separately agreed crop. Changing the prompt text alone does not establish 4:5 support.
 
-When `resolution` is not published, do not add the parameter automatically. The source application displayed "2K" for Flux, but that does not establish that `resolution="2K"` is available in Nim. Recraft does not guarantee SVG/transparency and does not accept `style_id`, `negative_prompt`, or other external API parameters unless the current Nim contract exposes them.
+When `resolution` is not published, do not add the parameter automatically. Do not assume that Flux supports `resolution="2K"` unless its current Nim contract exposes it. Recraft does not guarantee SVG/transparency and does not accept `style_id`, `negative_prompt`, or other external API parameters unless the current Nim contract exposes them.
 
 A supported aspect ratio is a model request, not proof of exact output pixel geometry. When exact geometry matters, inspect the delivered width and height: models may quantize dimensions. Report the actual dimensions and agree on any necessary crop instead of claiming exact conformance from `requestedAspectRatio` alone.

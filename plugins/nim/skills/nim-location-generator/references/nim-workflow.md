@@ -1,6 +1,6 @@
 # Execution through Nim MCP
 
-Scenario logic belongs in the skill; Nim creates the image. Do not carry over the archive's fal endpoints, Cloudflare Workflow, D1/R2, Gemini/OpenRouter, fixed dimension schemas, or automatic submission retries. The agent compiles the brief itself; no separate LLM service is required.
+Scenario logic belongs in the skill; Nim creates the image. Use the current Nim MCP contracts and job states. Do not substitute provider-specific endpoints, assume fixed dimensions, or retry submissions automatically. The agent compiles the brief itself; no separate LLM service is required.
 
 ## 1. Prepare the contract
 
@@ -17,7 +17,7 @@ Execute only the scope authorized by the user. Default to one render. When a bud
 3. Pass the returned `file_url` to generation, not a local path, data URL, attachment path, upload URL, or invented Nim URL. Quote paths correctly when using a shell; do not add an unrelated Authorization header or expose signed upload links.
 4. For a previously uploaded file or finished Nim result, use the available `file_url`/`mediaUrl` directly if the current contract accepts it. Do not substitute a project page or preview URL for the media itself.
 5. An external link does not automatically become Nim-hosted. Use a documented import method if available. Otherwise, retrieve the file using a permitted tool and upload it through Nim, or request an accessible attachment. Do not bypass host restrictions on downloading media.
-6. Check format and size against the current `media_upload` contract; do not apply the old UI's 10 MiB limit. If conversion or resizing is necessary, use an available permitted method, preserve the original, and disclose a meaningful loss of detail. If this is unavailable, request a compatible file.
+6. Check format and size against the current `media_upload` contract. If conversion or resizing is necessary, use an available permitted method, preserve the original, and disclose a meaningful loss of detail. If this is unavailable, request a compatible file.
 
 The order of `fileInputs` must match the roles in the prompt. Do not silently change it between variations.
 
@@ -25,7 +25,7 @@ The order of `fileInputs` must match the roles in the prompt. Do not silently ch
 
 Call `generate_image` only with fields permitted by both the current tool schema **and** the model's `generationContract`. Current shared fields include `model_id`, `model_name`, `prompt`, and sometimes `fileInputs`, `requestedAspectRatio`, `resolution`, `seed`, and `batchSize`. A field's presence in the tool does not make it valid for every model.
 
-- `prompt` contains the finished prompt text, not a planning object or the original instruction to "compile a prompt".
+- `prompt` contains the finished prompt text, not a planning object or a request to "compile a prompt".
 - Do not pass `resolution` to Flux 2 Pro/Pro Edit when get forbids it. Do not describe such an output as guaranteed 2K/4K.
 - Do not pass `fileInputs` to text-only Recraft V4.1 Pro or another text-only variant. A supplied image requires an approved Edit/image-input model; switching to text-only is unacceptable unless the user explicitly removes that reference requirement.
 - For Nano Banana Pro/Pro Edit and both GPT Image 2 Medium input modes, send `resolution="2K"`; a prompt mention or default is insufficient. GPT Medium is currently selected through the model variant, not an invented `quality` argument. Do not use Low/High or 1K/4K to satisfy budget or quality requests.
@@ -71,8 +71,8 @@ Follow the host's media rules. If the Nim widget already displays the result, us
 
 For continuation, retain the mapping `variation → brief/settings/references → model → workflowId/promptId → mediaUrl` in context. When previous references are unavailable, request them again; "reuse settings" does not restore a missing image.
 
-## Integration basis
+## Related Nim skills
 
-The package is a standalone skill folder suitable for `plugins/nim/skills/nim-location-generator/` in [nim-video/skills](https://github.com/nim-video/skills). It does not require the original web application or other Nim skills.
+This skill works independently of other Nim skills.
 
-Conventions were checked against [nim-generate](https://github.com/nim-video/skills/blob/main/plugins/nim/skills/nim-generate/SKILL.md), and reference-role separation against [nim-character-consistency](https://github.com/nim-video/skills/blob/main/plugins/nim/skills/nim-character-consistency/SKILL.md). Obtain exact fields and limits from the connected MCP at execution time.
+For related workflows, see [nim-generate](https://github.com/nim-video/skills/blob/main/plugins/nim/skills/nim-generate/SKILL.md) and [nim-character-consistency](https://github.com/nim-video/skills/blob/main/plugins/nim/skills/nim-character-consistency/SKILL.md). Obtain exact fields and limits from the connected MCP at execution time.

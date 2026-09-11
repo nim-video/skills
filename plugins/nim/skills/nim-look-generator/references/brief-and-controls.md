@@ -2,9 +2,9 @@
 
 ## Priorities
 
-The user's current explicit instruction takes priority over previous settings, presets, and the source application's internal rules. Resolve conflicting requirements before choosing a model. If two simultaneous hard requirements conflict ("only these three items" and "add a fourth"), ask about that specific conflict; do not hide it behind an artistic interpretation.
+The user's current explicit instruction takes priority over previous settings and presets. Resolve conflicting requirements before choosing a model. If two simultaneous hard requirements conflict ("only these three items" and "add a fourth"), ask about that specific conflict; do not hide it behind an artistic interpretation.
 
-A product reference locks the item's appearance until the user explicitly requests a change. "Recolor this jacket red" authorizes changing that jacket's color while preserving the rest of its construction. The source application's rule that product references are immutable does not override this edit. Matching references and text about the same item describe one physical item; "a second / a different / another one" creates a separate item.
+A product reference locks the item's appearance until the user explicitly requests a change. "Recolor this jacket red" authorizes changing that jacket's color while preserving the rest of its construction. Matching references and text about the same item describe one physical item; "a second / a different / another one" creates a separate item.
 
 The actual MCP contract determines what is possible, but does not authorize silently replacing the user's request. `matchesConstraints=false`, an unsupported size, or too few image slots require another candidate or agreement on a specific compromise.
 
@@ -38,7 +38,7 @@ Use an honest `identityOrigin`: `recraft-cast`, `other-cast`, `user-reference`, 
 
 ## Clothing and controls for additional items
 
-In the source, Bag/Outerwear/Props/Jewelry meant **inventing an additional item**, not permitting the entire category to exist. Preserve this meaning when the user explicitly operates switches:
+Bag/Outerwear/Props/Jewelry controls govern **inventing an additional item**, not permitting the entire category to exist. Apply these rules when the user explicitly operates switches:
 
 | Control | ON | OFF |
 |---|---|---|

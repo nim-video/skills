@@ -17,9 +17,9 @@ Preserve / change:
 Model: auto or an explicit choice
 ```
 
-Original types: living room (`living_room`), kitchen (`kitchen`), bedroom (`bedroom`), bathroom (`bathroom`), street (`street`), cafe (`cafe`), custom (`custom`). These are suggestions, not an exhaustive list. Also support a studio, workshop, office, shop, courtyard, park, natural setting, or fantastical environment if that is what the user requests.
+Common location types: living room (`living_room`), kitchen (`kitchen`), bedroom (`bedroom`), bathroom (`bathroom`), street (`street`), cafe (`cafe`), custom (`custom`). These are suggestions, not an exhaustive list. Also support a studio, workshop, office, shop, courtyard, park, natural setting, or fantastical environment if that is what the user requests.
 
-A short, meaningful brief is acceptable; do not carry over the original UI's "8–8000 characters" limits. Treat work, interests, and habits as facts only when stated by the user. A reference may show a bicycle or vinyl records; do not declare that the owner is an athlete, musician, wealthy person, or follower of a religion. Label any unconfirmed backstory as a creative option.
+A short, meaningful brief is acceptable; do not impose arbitrary character-count requirements. Treat work, interests, and habits as facts only when stated by the user. A reference may show a bicycle or vinyl records; do not declare that the owner is an athlete, musician, wealthy person, or follower of a religion. Label any unconfirmed backstory as a creative option.
 
 ## Translating everyday language into settings
 
@@ -72,7 +72,7 @@ Example for "a warm living room belonging to a sound designer in Lisbon, UGC bac
 
 > A vertical photographic background plate of a modest Lisbon living room used by a sound designer. An unoccupied, human-scale mid-ground leaves about one third of the frame width clear beside a simple linen sofa, suitable for a standing presenter. The frame edges remain open and unobstructed; the readable composition begins in the mid-ground. At the back, one coherent work area contains compact speakers, headphones and a neatly coiled cable on an oak desk. A secondary group pairs a small stack of records with a turntable and a worn wooden shelf. Warm limewashed walls, aged timber joinery and matte ceramic surfaces show restrained everyday wear. View from chest height with a natural 35 mm lens perspective, straight verticals and readable architectural depth. Soft late-afternoon light enters through the window on camera left, producing gentle contact shadows and believable reflections. The room feels quietly lived-in, with a limited warm palette, plain unlettered surfaces and an open staging area.
 
-When JSON is requested, compatibility with the original compiler can be preserved: `normalized_brief`, `visible_design_cues`, `creative_hypotheses`, `compiled_prompt`. JSON is optional in ordinary conversation; do not send this entire object in `prompt` instead of the `compiled_prompt` itself.
+When JSON is requested, it may contain: `normalized_brief`, `visible_design_cues`, `creative_hypotheses`, `compiled_prompt`. JSON is optional in ordinary conversation; do not send this entire object in `prompt` instead of the `compiled_prompt` itself.
 
 ## Location bible for a series
 

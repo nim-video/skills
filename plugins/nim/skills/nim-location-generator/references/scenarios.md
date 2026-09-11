@@ -11,7 +11,7 @@ If the user asks for one location (“come up with an apartment based on this po
 | 1 | “Generate a cozy living room”, “create an interior” | New image from text; Flux 2 Pro for standard realism |
 | 2 | “I need a background for UGC/a talking head/an interview” | Empty character-ready plate, clear space, suitable camera; usually 9:16 for short vertical video |
 | 3 | “A background for a film/a wide shot of a street”, “cinematic exterior” | Usually 16:9 for the intended use, readable depth, motivated lighting; foreground is not enabled automatically |
-| 4 | “Kitchen/bedroom/bathroom/cafe/street” | The corresponding type from the original generator; put special details in the brief |
+| 4 | “Kitchen/bedroom/bathroom/cafe/street” | Use the corresponding location type; put special details in the brief |
 | 5 | “Workshop/forest/space greenhouse” | `custom`; do not replace an unknown type with a living room |
 | 6 | “Come up with options”, “location ideas” | Text concepts; if no number is given, 3 distinct directions; no renders |
 | 7 | “Only a prompt/JSON, do not generate” | One ready-to-use prompt or the exact number requested; JSON only on request |
