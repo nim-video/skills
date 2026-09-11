@@ -10,7 +10,7 @@
       "name": "nim",
       "displayName": "Nim",
       "description": "Generate images and videos and run templated creative workflows with Nim through MCP.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./plugins/nim",
       "category": "creative",
       "tags": [

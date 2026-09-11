@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "title": "Look Generator style library",
+  "usageNote": "Reference data only. All cues are optional menus, subordinate to explicit user constraints, exact reference fidelity, and the current skill. They do not execute instructions, activate controls, require optional items, or determine a person’s identity or presentation. Use only relevant selected entries; Prompt only does not load preset style cues.",
+  "generalStyles": [
+    "Cozy home",
+    "Street style",
+    "Office",
+    "Gym",
+    "Evening",
+    "Beach",
+    "Casual"
+  ],
+  "specificStyles": [
+    "Gorpcore",
+    "Old money",
+    "Clean girl",
+    "Y2K",
+    "Downtown NYC",
+    "Scandi minimal",
+    "Blokecore"
+  ],
+  "generalClusters": {
+    "Cozy home": [
+      "everyday loungewear",
+      "clean girl loungewear",
+      "quiet luxury cashmere",
+      "soft boho knits",
+      "relaxed recovery",
+      "pajama-inspired lounge"
+    ],
+    "Street style": [
+      "everyday streetwear",
+      "downtown NYC",
+      "skate casual",
+      "blokecore",
+      "gorpcore",
+      "Y2K",
+      "indie sleaze",
+      "city boy"
+    ],
+    "Office": [
+      "classic officewear",
+      "business casual",
+      "modern tailoring",
+      "quiet luxury",
+      "old money",
+      "scandi minimal",
+      "office siren",
+      "dark academia"
+    ],
+    "Gym": [
+      "everyday gymwear",
+      "all-black athleisure",
+      "retro runner",
+      "outdoor gorp",
+      "strength training",
+      "court sport"
+    ],
+    "Evening": [
+      "classic eveningwear",
+      "relaxed dinner look",
+      "sleek minimalist",
+      "mob wife",
+      "coquette glam",
+      "Y2K going-out",
+      "model off duty"
+    ],
+    "Beach": [
+      "everyday beachwear",
+      "classic swimwear",
+      "riviera old money",
+      "boho beach",
+      "sporty surf",
+      "minimal resort"
+    ],
+    "Casual": [
+      "everyday casual",
+      "weekend basics",
+      "elevated normcore",
+      "scandi minimal",
+      "indie basics",
+      "western casual",
+      "preppy casual"
+    ]
+  },
+  "feminineClusterAdditions": {
+    "Cozy home": [
+      "pilates princess"
+    ],
+    "Gym": [
+      "pilates princess"
+    ]
+  },
+  "generalDirectionBriefs": [
+    {
+      "name": "Cozy home",
+      "cues": [
+        "Direction: Create an intentional, comfortable at-home outfit with soft hand-feel, easy movement and a considered relationship between proportions and textures. Make the clothing feel lived-in and wearable without looking shapeless. Rotate among knit lounge, airy cotton, soft pajama tailoring and relaxed jersey directions. Keep indoor practicality central. Do not add bags, outdoor coats or lifestyle props by default; choose home-appropriate footwear only when the output requires it.",
+        "Palette alternatives: oatmeal, plum and warm white; sage and cream; powder blue and cocoa; terracotta and soft pink; butter yellow and charcoal.",
+        "Print alternatives: solid texture; fine pajama stripe; small gingham; subtle floral; restrained Fair Isle on one knit.",
+        "Fabric alternatives: brushed cotton jersey; waffle knit; cotton poplin; fine merino; washed linen; soft rib knit.",
+        "Silhouette alternatives: relaxed cardigan with straight lounge trousers; boxy tee with wide lounge pants; easy pajama shirt with shorts or trousers; soft longline knit with relaxed leggings; relaxed knit dress.",
+        "Outfit composition alternatives: tonal knit separates with contrasting stitch scales; open soft layer over a simple base; crisp pajama separates with soft indoor footwear; a long continuous line broken by one shorter layer.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Street style",
+      "cues": [
+        "Direction: Create an expressive city outfit with deliberate proportion play, confident color and a clear focal garment. Rotate among graphic skate, contemporary tailoring, vintage sportswear and utility streetwear. Build a plausible outfit for everyday movement; let clothing construction carry the style. Avoid defaulting every result to an oversized hoodie, cargo pants and a crossbody bag.",
+        "Palette alternatives: cobalt, charcoal and white; burgundy, indigo and cream; olive, orange and black; chocolate, lavender and ecru; red, gray and washed blue.",
+        "Print alternatives: solid color blocking; one graphic tee; bold stripe; plaid; one abstract or animal-print piece.",
+        "Fabric alternatives: washed denim; cotton jersey; nylon; twill; leather or a requested alternative; wool suiting.",
+        "Silhouette alternatives: boxy jacket with wide trousers; close-fitting top with baggy jeans; long outer layer over a compact base; oversized shirt with straight Bermuda shorts; relaxed blazer with a straight skirt.",
+        "Outfit composition alternatives: one graphic focal piece with quiet supporting garments; structured tailoring against washed denim; short outer layer over a longer shirt; contrasting upper and lower volumes.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Office",
+      "cues": [
+        "Direction: Create a polished workplace outfit whose formality matches the user's setting. Rotate among modern suiting, soft tailoring, creative-office separates and knit-led professional dressing. Prioritize clean fit, functional movement and intentional coordination. A blazer is optional, not automatic. Do not force heels, a handbag, a skirt or a restrictive silhouette to communicate professionalism.",
+        "Palette alternatives: ink navy and pale blue; chocolate and ivory; charcoal and muted rose; olive and cream; burgundy and stone.",
+        "Print alternatives: solid; fine pinstripe; subtle windowpane; small houndstooth; restrained geometric blouse pattern.",
+        "Fabric alternatives: tropical wool; cotton poplin; matte crepe; fine-gauge knit; linen blend; fluid twill.",
+        "Silhouette alternatives: relaxed suit with a simple base; shaped jacket with straight trousers; soft blouse with an A-line midi skirt; fine knit with wide trousers; structured shirt dress.",
+        "Outfit composition alternatives: coordinated tailoring with a contrasting base; tonal column with a shorter jacket; fluid top against structured bottoms; precise waist definition within an easy silhouette.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Gym",
+      "cues": [
+        "Direction: Create a functional training outfit suited to the user's stated activity. Preserve the requested kit and color precisely. A pink yoga suit means coordinated pink yoga clothing, not a ballet outfit or an accessory scene. Rotate among studio movement, strength training, running and relaxed training only when the activity is unspecified. Prioritize mobility, secure fit and realistic performance fabrics. Do not add a bag, yoga mat, equipment, pointe shoes, leg warmers or extra layers by default.",
+        "Palette alternatives: pink tonal set; cobalt and navy; forest and mint; plum and lilac; black and citrus; slate and ice blue.",
+        "Print alternatives: solid; athletic color blocking; small abstract pattern; subtle heather; restrained geometric print.",
+        "Fabric alternatives: matte stretch interlock; moisture-wicking jersey; compression knit; stretch woven fabric; breathable mesh panels; lightweight French terry for warm-up pieces.",
+        "Silhouette alternatives: training top with leggings; breathable tee with training shorts; fitted base with relaxed track pants; longline top with straight yoga pants; activity-appropriate fitted one-piece.",
+        "Outfit composition alternatives: coordinated performance set; looser upper volume over fitted bottoms; fitted upper volume over relaxed bottoms; one functional contrast panel repeated across the kit.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Evening",
+      "cues": [
+        "Direction: Create a refined evening outfit with a clear silhouette and a controlled focal point. Match the requested occasion, from dinner to formal events. Rotate among fluid minimalism, sculptural tailoring, rich texture and restrained sparkle. Apply the selected presentation and any explicit sensual direction or active Sexy outfit control. If the user asks for only a dress, preserve that inventory; do not cover it with a coat or add a bag by default.",
+        "Palette alternatives: black and silver; emerald and deep navy; wine and rose; chocolate and champagne; cobalt tonal; ivory and gold.",
+        "Print alternatives: solid; tonal jacquard; one large abstract motif; restrained floral; subtle geometric pattern.",
+        "Fabric alternatives: silk or satin; velvet; matte crepe; taffeta; brocade; selective sequined fabric.",
+        "Silhouette alternatives: bias-cut midi or maxi dress; sculptural column dress; tailored tuxedo separates; fluid blouse with palazzo trousers; shaped top with a full skirt.",
+        "Outfit composition alternatives: one uninterrupted draped line; structured top against a fluid lower half; matte and lustrous surfaces in one palette; one sculptural garment with restrained supporting pieces.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Beach",
+      "cues": [
+        "Direction: Create a practical coastal outfit appropriate to the user's activity and requested coverage. Distinguish swimming, walking by the sea and resort dining. Rotate among swim-led dressing, airy linen, relaxed surfwear and coastal separates when the activity is open. Do not infer that Beach requires a bikini or exposed skin. Add cover-ups only when useful and permitted; do not add a beach bag, towel, drink or oversized hat by default.",
+        "Palette alternatives: turquoise and cream; coral and sand; cobalt and white; sunflower and chocolate; seafoam and lilac.",
+        "Print alternatives: solid; nautical stripe; tropical botanical; small geometric; abstract wave; gingham.",
+        "Fabric alternatives: swim knit for swimwear; washed linen; cotton gauze; light poplin; terry cloth; crochet over a coverage-preserving base.",
+        "Silhouette alternatives: requested-coverage swimwear; relaxed shirt with shorts; airy shirt with wide linen trousers; lightweight tunic or kaftan; easy sundress; rash guard with board shorts.",
+        "Outfit composition alternatives: one printed piece with solid supporting garments; airy overshirt framing the base outfit when permitted; coordinated lightweight separates; a simple long line with breathable volume.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Casual",
+      "cues": [
+        "Direction: Create a versatile everyday outfit with natural ease, wearable color and thoughtful proportions. Rotate among denim basics, knit-led casual, relaxed workwear and soft everyday separates. Keep styling approachable and purposeful. Avoid repeating the same tee-and-jeans formula or adding decorative accessories to compensate for an unconsidered outfit.",
+        "Palette alternatives: indigo, cream and red; sage and stone; navy and butter yellow; rust and ecru; lavender and charcoal.",
+        "Print alternatives: solid; Breton stripe; small check; subtle floral; restrained graphic tee.",
+        "Fabric alternatives: denim; cotton jersey; chambray; twill; corduroy; soft knit; washed linen.",
+        "Silhouette alternatives: regular tee with straight jeans; boxy knit with wide chinos; relaxed shirt with Bermuda shorts; simple top with an A-line skirt; easy day dress.",
+        "Outfit composition alternatives: textured top against smooth bottoms; coordinated separates with a subtle color contrast; one light layer with a clear length difference; relaxed proportions balanced by a more defined garment.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    }
+  ],
+  "miniBriefs": [
+    {
+      "name": "everyday loungewear",
+      "cues": [
+        "Substantial cotton T-shirts, soft sweatshirts, straight jersey lounge trousers and cushioned slip-on shoes.",
+        "Easy upper volume over a relaxed straight leg, balanced for ordinary time at home rather than a trend-led statement.",
+        "Heather grey, warm white and muted navy; jersey, loopback cotton, rib knit and softened suede.",
+        "Washed hems, gentle fabric pilling and natural sitting creases that feel comfortable and lived in."
+      ]
+    },
+    {
+      "name": "clean girl loungewear",
+      "cues": [
+        "Straight-cut ribbed cotton tanks and tees, substantial sweatshirts or knit polos, fold-over lounge trousers, refined recovery shoes.",
+        "A boxy or relaxed top balanced by long fluid or straight lounge trousers.",
+        "Oatmeal, warm white and cocoa; rib knit, fleece and supple leather.",
+        "Fine rib texture, softened fabric, natural creasing and a clean but visibly lived-in finish; preserve reference hair unless the user explicitly requests otherwise."
+      ]
+    },
+    {
+      "name": "clean girl",
+      "cues": [
+        "Direction: Create a streamlined, softly polished everyday outfit with uncluttered lines, precise fit and a small number of well-chosen pieces. Rotate among refined basics, soft tailoring, minimal athleisure and simple fluid dressing. Treat the label as a clothing direction; do not use changes to body, skin, makeup or hairstyle as substitutes for concrete garment styling; follow character, hair and presentation flags. Avoid mandatory gold jewelry, slicked-back hair, crop tops or beige-only palettes.",
+        "Palette alternatives: cream and espresso; black and white; dove gray and powder blue; sage and ecru; butter yellow and navy; muted rose and chocolate.",
+        "Print alternatives: solid; fine stripe; very small tonal check; one restrained minimal pattern.",
+        "Fabric alternatives: smooth cotton jersey; fine rib knit; cotton poplin; matte crepe; smooth twill; fluid satin used selectively.",
+        "Silhouette alternatives: neat tee with straight trousers; fitted knit with wide pants; simple tank or covered base with relaxed trousers; clean-line midi dress; fine cardigan with an uncomplicated skirt.",
+        "Outfit composition alternatives: a continuous tonal line with one gentle contrast; fitted and relaxed volumes in balance; two or three precise pieces with little visual noise; one textural contrast within a restrained palette.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "quiet luxury cashmere",
+      "cues": [
+        "Substantial cashmere crewnecks, fine-gauge knit polos, pleated trousers and suede loafers with discreet construction.",
+        "Relaxed shoulder line over a long clean leg with restrained tonal contrast.",
+        "Camel, stone and espresso; cashmere, wool flannel, suede and silk.",
+        "Subtle creasing, hand-finished texture and precise tonal coordination."
+      ]
+    },
+    {
+      "name": "soft boho knits",
+      "cues": [
+        "Openwork pullovers, slub jersey, relaxed cords and fluid trousers with handmade-looking knit variation.",
+        "Airy oversized knit over a narrow or fluid base, never costume-like tiers.",
+        "Ecru, clay and faded olive; crochet, brushed cotton, suede and oxidized metal.",
+        "Textured socks, irregular openwork and visibly softened fibers."
+      ]
+    },
+    {
+      "name": "pilates princess",
+      "cues": [
+        "Sculpted unitards, fitted performance tops, flared leggings, ribbed leg warmers and sleek trainers or ballet flats.",
+        "Body-skimming core with a clean shoulder line and deliberate ankle volume.",
+        "Ballet pink, charcoal and cream; stretch matte jersey, rib knit and satin accents.",
+        "Claw clip, glazed manicure, fine binding and subtle satin edge details."
+      ]
+    },
+    {
+      "name": "relaxed recovery",
+      "cues": [
+        "Brushed jersey sweatshirts, substantial knit polos, soft straight lounge trousers and low-profile recovery shoes.",
+        "Easy upper volume over a long relaxed leg, with practical construction and no body-sculpting dancewear cues.",
+        "Heather grey, oatmeal and deep navy; loopback cotton, brushed jersey, dry knit and softened suede.",
+        "Rumpled cuffs, softened seams and visibly lived-in fabric drape."
+      ]
+    },
+    {
+      "name": "pajama-inspired lounge",
+      "cues": [
+        "Piped cotton pajama shirts, relaxed drawstring trousers, fine jersey tops and soft house shoes with real daywear weight.",
+        "Fluid matching volume with a clean collar line and full-length relaxed leg, polished enough for daytime at home.",
+        "Powder blue, cream and chocolate; washed poplin, soft jersey, cotton sateen and suede.",
+        "Slightly crushed shirting, softened piping and natural folds at the waist and knees."
+      ]
+    },
+    {
+      "name": "strength training",
+      "cues": [
+        "Structured performance T-shirts, engineered training tops, relaxed training shorts or articulated track trousers and stable cross-trainers.",
+        "Athletic shoulder line balanced by a straight or gently tapered leg, with functional mobility rather than compression shaping.",
+        "Carbon, slate and muted cobalt; matte jersey, ripstop, mesh and textured rubber.",
+        "Crew socks, reinforced seams and believable abrasion at high-wear points."
+      ]
+    },
+    {
+      "name": "everyday streetwear",
+      "cues": [
+        "Heavyweight graphic-free T-shirts, practical sweatshirts, relaxed jeans or cargo trousers and everyday sneakers.",
+        "Boxy upper volume over a loose straight leg, familiar and wearable without a strong subculture signal.",
+        "Washed black, stone and faded blue; cotton jersey, fleece, denim and suede.",
+        "Laundered ribbing, softened denim seams and naturally scuffed footwear."
+      ]
+    },
+    {
+      "name": "downtown NYC",
+      "cues": [
+        "Direction: Create a wearable downtown New York outfit with vintage character, art-school ease and a slightly undone urban sensibility. Rotate among gallery minimalism, vintage indie, relaxed downtown tailoring and restrained grunge. Build character through garment contrast and proportions rather than skyline props or generic streetwear logos. Avoid defaulting every look to all-black leather or distressed clothing.",
+        "Palette alternatives: washed black, ivory and oxblood; charcoal and faded blue; espresso and cream; olive and burgundy; ink navy and muted silver.",
+        "Print alternatives: solid; narrow stripe; small plaid; one vintage-style graphic; restrained animal print.",
+        "Fabric alternatives: worn denim; cotton jersey; leather or a requested alternative; suede or a requested alternative; fine knit; wool suiting; fluid satin.",
+        "Silhouette alternatives: compact jacket with straight jeans; relaxed blazer with wide trousers; fine knit with a column skirt; long coat with a narrow base when weather permits; boxy tee with tailored long shorts.",
+        "Outfit composition alternatives: one vintage-feeling piece with clean supporting garments; fluid skirt against a worn or structured top; tailoring interrupted by casual texture; long and short layers with a clear, uncluttered line.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "blokecore",
+      "cues": [
+        "Direction: Create a casual outfit rooted in football terrace style, with a football-inspired top, trackwear or a terrace jacket as the main cue. Rotate among retro match-day casual, trackwear, terrace layering and tailored sport crossover. Pair sport references with wearable everyday pieces. Avoid converting the outfit into a full match uniform or adding a ball, fan scarf or stadium setting by default. Do not invent club crests, sponsor lettering or readable branding. Follow the reference-inventory rules for supplied products.",
+        "Palette alternatives: burgundy and cream; royal blue and white; forest green and yellow; red, navy and gray; black and mint; brown and sky blue.",
+        "Print alternatives: solid; football-style vertical stripe; chest band; checker pattern; retro geometric jersey pattern.",
+        "Fabric alternatives: football jersey knit; pique; tricot track fabric; washed denim; cotton twill; light nylon.",
+        "Silhouette alternatives: relaxed football shirt with straight jeans; track top with wide trousers; terrace jacket with regular-fit chinos; football-inspired top with tailored long shorts; sports jersey with a straight skirt when compatible with the requested presentation.",
+        "Outfit composition alternatives: sport top against understated everyday bottoms; track fabric against denim or tailoring; layered polo collar under a simple terrace jacket; one repeated trim color connecting the outfit.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "gorpcore",
+      "cues": [
+        "Direction: Create an outfit grounded in functional outdoor clothing adapted to the user's setting. Rotate among trail utility, alpine layering, lightweight hiking and urban technical dressing. Use believable construction, purposeful pockets, weather-appropriate layers and suitable footwear. Preserve requested fabric restrictions. Avoid costume-like expedition gear, unnecessary straps and automatic backpacks or climbing equipment.",
+        "Palette alternatives: moss, slate and orange; sand, cobalt and black; plum and stone; forest and ice blue; rust and charcoal.",
+        "Print alternatives: solid; technical color blocking; small grid pattern; restrained topographic print; muted camouflage when compatible.",
+        "Fabric alternatives: ripstop nylon; softshell; grid fleece; merino jersey; technical stretch woven; weatherproof shell fabric.",
+        "Silhouette alternatives: short shell with articulated trousers; fleece with straight trail pants; technical overshirt with hiking shorts; light insulated vest over a long-sleeve base; roomy shell over tapered utility bottoms.",
+        "Outfit composition alternatives: layer lengths arranged around functional mobility; textured fleece against smooth technical fabric; one bright technical piece with earthy supporting pieces; contrasting pocket placement and garment volume without clutter.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "Y2K",
+      "cues": [
+        "Direction: Create a wearable outfit inspired by early-2000s fashion, with playful proportions and a deliberate focal detail. Rotate among denim pop, sporty millennium, retro partywear and tech-inflected casual. Use a few era cues rather than stacking every trope. Low-rise waists, short hems, exposed midriff and tight fit are optional and must respect user instructions. Do not add random slogans, butterflies or rhinestones to every result.",
+        "Palette alternatives: baby pink and washed blue; silver and black; lime and charcoal; lilac and indigo; cherry red and white; turquoise and chocolate.",
+        "Print alternatives: solid; one butterfly motif; retro abstract swirl; racing stripe; small checkerboard; one graphic print.",
+        "Fabric alternatives: washed denim; velour; ribbed jersey; nylon; metallic-coated fabric; lined mesh.",
+        "Silhouette alternatives: close-fitting tee with bootcut jeans; compact jacket with wide cargo trousers; velour track separates; fitted top with a pleated skirt; layered tee with parachute pants.",
+        "Outfit composition alternatives: small upper volume against flared or wide bottoms; denim-on-denim with contrasting washes; one metallic focal piece against matte basics; sporty trim connecting two otherwise simple pieces.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "indie sleaze",
+      "cues": [
+        "Distressed band-style graphics with invented textless imagery, skinny scarves, leather minis or torn black denim.",
+        "Narrow broken-up torso line with careless hem lengths against distressed lower volume.",
+        "Soot black, dirty white and electric blue; cracked print, laddered knit, leather and denim.",
+        "Smudged grooming, battered ankle boots, laddered edges and deliberately uneven hem lengths."
+      ]
+    },
+    {
+      "name": "city boy",
+      "cues": [
+        "Boxy striped Oxford shirts, wide chinos, knit vests and retro court shoes.",
+        "Square, generous upper body balanced by cropped wide trousers and tidy ankles.",
+        "Navy, khaki and off-white; oxford cotton, twill, dry wool and suede.",
+        "Cap worn low, thick socks and slightly rumpled shirting."
+      ]
+    },
+    {
+      "name": "skate casual",
+      "cues": [
+        "Loose heavyweight T-shirts, thermal tops, carpenter jeans or wide work trousers and flat-soled skate shoes.",
+        "Long relaxed torso over low-slung wide legs, with practical movement and unforced proportions.",
+        "Faded olive, charcoal and off-white; dry jersey, canvas, denim and worn suede.",
+        "Frayed hems, softened graphics-free fabric and abrasion at shoe edges and trouser cuffs."
+      ]
+    },
+    {
+      "name": "classic officewear",
+      "cues": [
+        "Crisp poplin shirts, fine merino tops, straight tailored trousers or knee-length skirts and polished loafers or pumps.",
+        "Neat shoulder line over a clean straight lower silhouette with conventional professional proportions.",
+        "Navy, pale blue and charcoal; poplin, worsted wool, merino and smooth leather.",
+        "Natural elbow creases, softened shirt folds and lightly worn leather that keep the result believable."
+      ]
+    },
+    {
+      "name": "business casual",
+      "cues": [
+        "Oxford shirts, knit polos, fine crewnecks, chinos or relaxed tailored trousers and leather loafers.",
+        "Softly structured upper half over an easy straight leg, professional without formal suiting rigidity.",
+        "Mid-blue, stone and espresso; oxford cotton, dry knit, twill and grained leather.",
+        "Slightly rumpled shirting, softened knit edges and ordinary wear across shoe vamps."
+      ]
+    },
+    {
+      "name": "modern tailoring",
+      "cues": [
+        "Collarless tailored tops, compact knit shells, wide pleated trousers or clean midi skirts and geometric leather shoes.",
+        "Precise compact upper structure balanced by a long controlled lower volume and one architectural seam line.",
+        "Ink, putty and deep green; tropical wool, compact knit, crisp cotton and matte leather.",
+        "Fine tailoring creases, visible topstitching and softened folds at natural movement points."
+      ]
+    },
+    {
+      "name": "quiet luxury",
+      "cues": [
+        "Double-faced wool, fine-gauge knit, silk shirt and long tailored trousers with exact seam and closure details.",
+        "Soft architectural shoulder over a continuous long line with restrained volume contrast.",
+        "Ink, ivory and tobacco; wool, silk, cashmere and polished leather.",
+        "Clean grooming, exact edge finishing and natural tailoring creases."
+      ]
+    },
+    {
+      "name": "old money",
+      "cues": [
+        "Direction: Create understated heritage-inspired dressing defined by excellent fit, restrained detailing and tactile materials. Rotate among collegiate tailoring, coastal linen, equestrian-inspired separates and refined knitwear. Communicate the aesthetic through clothing rather than luxury logos, wealth props or a particular ethnicity or body type. Avoid turning every look into a beige outfit with a sweater draped over the shoulders.",
+        "Palette alternatives: navy and ivory; camel and chocolate; bottle green and cream; burgundy and gray; pale blue and stone.",
+        "Print alternatives: solid; pencil stripe; small gingham; houndstooth; subtle glen check; restrained argyle.",
+        "Fabric alternatives: linen; cotton Oxford cloth; cashmere or fine wool; tweed; silk; cotton pique; structured twill.",
+        "Silhouette alternatives: fine polo knit with pleated trousers; soft blazer with straight chinos; crisp shirt with an A-line midi skirt; tailored linen separates; simple knit dress.",
+        "Outfit composition alternatives: tonal tailoring with one darker anchor; heritage texture against a crisp base; fine knit balanced by structured bottoms; clean collegiate layering with visible collar and hem relationships.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "scandi minimal",
+      "cues": [
+        "Direction: Create restrained Scandinavian-inspired dressing with architectural ease, practical layering and tactile materials. Rotate among sculptural monochrome, soft modern tailoring, functional minimalism and quiet textured separates. Use proportion and material contrast to create interest. Avoid beige-only results, excessive accessories and uniformly oversized garments. Do not infer a Scandinavian person's appearance from the style name.",
+        "Palette alternatives: stone, black and white; charcoal and ice blue; oatmeal and forest; chocolate and butter yellow; navy and muted red; soft gray and dusty pink.",
+        "Print alternatives: solid; wide clean stripe; small grid check; restrained graphic geometry.",
+        "Fabric alternatives: crisp poplin; wool suiting; dense cotton twill; linen; compact jersey; textured wool knit.",
+        "Silhouette alternatives: boxy shirt with wide trousers; sculptural knit with a straight skirt; long clean coat over a simple base when appropriate; relaxed suit with a precise hem; column dress with an optional short layer.",
+        "Outfit composition alternatives: architectural volume balanced by a straighter piece; one controlled color accent within a quiet base; long uninterrupted lines with a compact top layer; crisp and soft surfaces in a limited palette.",
+        "Apply only compatible alternatives after resolving User direction, Mandatory clothing references, active Controls and presentation. Keep aesthetic names in metadata only and describe the selected result through concrete garment details."
+      ]
+    },
+    {
+      "name": "office siren",
+      "cues": [
+        "Nipped waistcoat, sheer fine-knit top, pencil or low-rise tailored skirt, sharp slingbacks and narrow belt.",
+        "Controlled fitted torso against a long narrow line with a precise waist emphasis.",
+        "Espresso, smoke and burgundy; worsted wool, mesh knit, patent and silk.",
+        "Slim glasses, deep manicure, sculptural seam lines and precise cuff construction."
+      ]
+    },
+    {
+      "name": "dark academia",
+      "cues": [
+        "Worn tweed waistcoat, pleated trousers or long skirt, rumpled shirt and substantial lace-ups.",
+        "Fitted middle volume against a roomy shirt line and grounded footwear.",
+        "Peat brown, charcoal and parchment; tweed, corduroy, poplin and creased leather.",
+        "Rib socks, a softened tie, aged buttons and visibly worn fabric at the elbows."
+      ]
+    },
+    {
+      "name": "all-black athleisure",
+      "cues": [
+        "Matte performance tops, wide technical track trousers by default and technical trainers. Split-hem leggings are feminine-presentation or explicit-request alternatives only.",
+        "Sleek fitted upper core against one exaggerated wide leg, defined through material contrast.",
+        "Carbon, washed black and graphite; matte stretch, ripstop, mesh and rubber.",
+        "Rib socks, slick grooming and realistically creased high-motion zones."
+      ]
+    },
+    {
+      "name": "retro runner",
+      "cues": [
+        "Compact nylon running top, mesh singlet, dolphin shorts or straight track pants and suede-mesh runners.",
+        "Compact upper shape against high-waisted athletic volume and visible socks.",
+        "Cobalt, cream and rust; crinkled nylon, mesh, loopback cotton and suede.",
+        "Low cap, contrast webbing details and lightly dirtied soles."
+      ]
+    },
+    {
+      "name": "outdoor gorp",
+      "cues": [
+        "Weather-resistant performance pullover, grid-fleece top, technical shorts over tights or articulated trousers and rugged trail shoes.",
+        "Functional upper volume with engineered shaping against a clean mobile lower half.",
+        "Pine, black and safety orange; ripstop, grid fleece, webbing and rubber.",
+        "Cord hardware, wool socks, minimal grooming and trail wear at cuffs and soles."
+      ]
+    },
+    {
+      "name": "everyday gymwear",
+      "cues": [
+        "Breathable training T-shirts or tanks, practical training shorts or straight track trousers and versatile cross-trainers.",
+        "Comfortable athletic upper shape over a mobile straight or gently tapered lower half, built for a normal workout.",
+        "Charcoal, navy and cool white; matte jersey, mesh, stretch woven fabric and textured rubber.",
+        "Darkened high-motion creases, softened binding and believable sole wear from regular use."
+      ]
+    },
+    {
+      "name": "court sport",
+      "cues": [
+        "Ribbed polos or performance tees, clean court shorts or pleated athletic skirts and low-profile court shoes.",
+        "Trim upper shape with crisp shoulder construction over compact, movement-ready lower volume.",
+        "Tennis white, forest green and navy; pique, matte jersey, stretch twill and rubber.",
+        "Contrast binding, lightly compressed sock ribbing and fine court dust at the soles."
+      ]
+    },
+    {
+      "name": "classic eveningwear",
+      "cues": [
+        "Refined dark shirts or silk tops, clean tailored trousers, fluid midi dresses or column skirts and polished evening shoes.",
+        "Defined upper line flowing into a long controlled silhouette, elegant without a strong trend costume.",
+        "Black, midnight blue and ivory; silk, crepe, fine wool and polished leather.",
+        "Natural satin ripples, fine tailoring creases and softly worn shoe edges."
+      ]
+    },
+    {
+      "name": "relaxed dinner look",
+      "cues": [
+        "Fine knit tops, open-neck evening shirts, fluid trousers or bias midi skirts and sleek low-profile shoes.",
+        "Relaxed upper drape balanced by a clean elongated lower line, dressed up without formal stiffness.",
+        "Espresso, deep burgundy and cream; fine knit, washed silk, fluid wool and supple leather.",
+        "Softened knit edges, natural folds through the seat and slight creasing across footwear."
+      ]
+    },
+    {
+      "name": "sleek minimalist",
+      "cues": [
+        "Liquid column dress or precise jumpsuit with architectural heels or polished flats.",
+        "One uninterrupted narrow line with a single controlled shoulder or hem volume.",
+        "Black, bone and pewter; crepe, satin, fine wool and polished metal.",
+        "Slick grooming, precise edge construction and slight movement creases."
+      ]
+    },
+    {
+      "name": "mob wife",
+      "cues": [
+        "Dense faux-fur knit, fitted jersey or slip dress and pointed leather footwear with high-impact gold-toned hardware.",
+        "Voluminous glamorous upper texture against a close, elongated lower silhouette.",
+        "Espresso, black and leopard-toned camel; plush pile, silk, leather and gold metal.",
+        "Oversized glasses, red manicure, full grooming and compressed plush pile at natural bend points."
+      ]
+    },
+    {
+      "name": "coquette glam",
+      "cues": [
+        "Corset-seamed satin, sheer hosiery, soft mini or fluid midi garments and bow-detailed shoes used sparingly.",
+        "Fitted, defined waist against a soft mini or fluid midi shape with airy material contrast.",
+        "Powder pink, black and pearl; satin, lace, mohair and patent leather.",
+        "Fine ribbon trim, polished manicure, subtle lace edges and slightly mussed softness."
+      ]
+    },
+    {
+      "name": "Y2K going-out",
+      "cues": [
+        "Halter or asymmetrical mesh top, low-rise tailored trousers or embellished mini and pointed boots.",
+        "Bare, compact upper body against elongated low-rise volume and glossy surface contrast.",
+        "Aubergine, black and chrome; mesh, satin, stretch suiting and metallic hardware.",
+        "Glossy grooming, chrome hardware, dense embellishment and intentionally worn heel edges."
+      ]
+    },
+    {
+      "name": "model off duty",
+      "cues": [
+        "Oversized washed-leather shirt, fine tank, relaxed straight denim and sleek everyday shoes.",
+        "Large square upper volume against a spare fitted base and long easy leg.",
+        "Black, ecru and vintage blue; leather, rib cotton, denim and suede.",
+        "Narrow glasses, loose grooming, softened leather grain and naturally creased denim."
+      ]
+    },
+    {
+      "name": "everyday beachwear",
+      "cues": [
+        "Quick-dry swim shorts or a simple swimsuit base, a lightweight short-sleeve beach shirt, and practical water-friendly sandals.",
+        "Easy swim-ready proportions that can go directly from sand to water, with relaxed coverage and no formal tailoring.",
+        "Sun-washed blue, warm white and sand; quick-dry nylon, washed cotton, linen and textured rubber.",
+        "Faded swim fabric, naturally rumpled shirt hems and sand-worn footwear that read as beachwear without relying on a background."
+      ]
+    },
+    {
+      "name": "classic swimwear",
+      "cues": [
+        "Clean one-piece swimwear or straightforward swim trunks, a light cotton beach top and simple rubber sandals.",
+        "Close swim base balanced by one loose sun-covering layer, recognizable as timeless beach dressing rather than resort tailoring.",
+        "Marine navy, white and sun-faded red; stretch swim jersey, cotton voile and textured rubber.",
+        "Softened elastic edges, salt-faded fabric and sand abrasion across the soles."
+      ]
+    },
+    {
+      "name": "riviera old money",
+      "cues": [
+        "Linen shirt, fine knit polo, tailored shorts or fluid trousers, silk scarf and woven leather footwear.",
+        "Breezy relaxed top against clean high-waisted tailoring with an uninterrupted long line.",
+        "Cream, navy and sun-faded red; linen, silk, dry knit and woven leather.",
+        "Natural grooming, subtle scarf texture and authentic linen wrinkling."
+      ]
+    },
+    {
+      "name": "boho beach",
+      "cues": [
+        "Gauze shirts, crochet tops, bias skirts or relaxed drawstring trousers and handcrafted sandals.",
+        "Transparent loose upper volume against a compact swim or tonal base.",
+        "Sand, terracotta and sea-glass green; gauze, crochet, raffia and worn leather.",
+        "Scarf or headwrap, irregular crochet edges and salt-softened fabric texture."
+      ]
+    },
+    {
+      "name": "sporty surf",
+      "cues": [
+        "Rash-guard-inspired top, board-short construction, sun-faded terry tops and robust sandals.",
+        "Fitted performance upper shape against loose sun-faded lower volume.",
+        "Ocean blue, black and citrus accent; stretch jersey, crinkled nylon, terry and rubber.",
+        "Cap, contrast rope details and sand-worn edges without fake logos."
+      ]
+    },
+    {
+      "name": "minimal resort",
+      "cues": [
+        "Clean bandeau or knit tank, long fluid trousers, column dresses and sculptural flat sandals.",
+        "Spare fitted top against one sweeping, controlled lower volume.",
+        "Chalk, cocoa and muted coral; dry knit, linen-viscose, matte leather and resin.",
+        "Clean grooming, geometric seam work, resin hardware and natural resort wrinkles."
+      ]
+    },
+    {
+      "name": "everyday casual",
+      "cues": [
+        "Well-weighted T-shirts, simple crewnecks, straight jeans or chinos and familiar low-profile sneakers.",
+        "Relaxed regular-fit upper half over a clean straight leg, balanced for ordinary daily wear.",
+        "Navy, white and faded blue; cotton jersey, fleece, denim and canvas.",
+        "Softened neck ribbing, washed denim seams and light everyday scuffs across the shoes."
+      ]
+    },
+    {
+      "name": "weekend basics",
+      "cues": [
+        "Breton or solid cotton tops, relaxed sweatshirts, easy chinos or loose jeans and comfortable suede sneakers.",
+        "Slightly oversized top over a full easy leg with an uncomplicated off-duty proportion.",
+        "Ecru, muted red and mid-blue; cotton jersey, loopback fleece, twill and suede.",
+        "Naturally rumpled hems, faded wash variation and compressed shoe creases."
+      ]
+    },
+    {
+      "name": "elevated normcore",
+      "cues": [
+        "Perfectly weighted sweatshirt, poplin shirt, straight jeans or chinos and low-profile everyday sneakers.",
+        "Relaxed upper volume over a clean straight leg, with one slightly oversized proportion.",
+        "Heather grey, faded blue and white; fleece, poplin, denim and suede.",
+        "Rib socks, softened rib trim and believable laundering wear."
+      ]
+    },
+    {
+      "name": "indie basics",
+      "cues": [
+        "Fitted long-sleeve tee, textured knit top, worn straight denim or cord skirt and scuffed ankle shoes.",
+        "Narrow upper body with easy mid-rise volume and a slightly elongated sleeve.",
+        "Forest, washed black and cream; rib cotton, brushed knit, denim and leather.",
+        "Visible socks, softened knit texture, faded seams and a naturally irregular hem."
+      ]
+    },
+    {
+      "name": "western casual",
+      "cues": [
+        "Snap-front shirt, suede waistcoat, bootcut jeans or long denim skirt and pointed boots.",
+        "Compact structured top against a long flared lower line, avoiding costume exaggeration.",
+        "Tobacco, indigo and dusty cream; denim, suede, cotton twill and aged metal.",
+        "Tooled belt, engraved snap hardware, faded seams and broken-in boot creases."
+      ]
+    },
+    {
+      "name": "preppy casual",
+      "cues": [
+        "Rugby shirts, Oxford shirts, cable-knit crewnecks, straight chinos or relaxed denim and classic court shoes.",
+        "Neat substantial upper layers over a straight ankle-length leg, tidy but comfortably off duty.",
+        "Bottle green, navy and cream; cotton pique, oxford cloth, lambswool and leather.",
+        "Softened collars, slightly fuzzy knit edges and natural creasing through chinos and shoe vamps."
+      ]
+    }
+  ]
+}
