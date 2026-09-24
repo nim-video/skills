@@ -1,0 +1,7 @@
+interface:
+  display_name: "Nim Generation QA"
+  short_description: "Check generated media and propose precise fixes"
+  default_prompt: "Use $nim-generation-qa to compare the completed Nim output with the brief, prompt and references, then propose evidence-based fixes."
+
+policy:
+  allow_implicit_invocation: true
