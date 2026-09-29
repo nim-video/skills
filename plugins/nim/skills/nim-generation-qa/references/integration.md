@@ -32,6 +32,8 @@ Use workflow/output identity plus revision/fingerprint to avoid duplicate review
 
 A failed review must not discard the output or hide successful batch siblings. Failed/cancelled generation is a workflow error, not a scored media defect.
 
+For failed Seedance 2.0 / 2.5 submissions or jobs, hand the actual diagnostics and saved request to [seedance-prompt-recovery](../../seedance-prompt-recovery/SKILL.md). Do not score a failure without media. Also use that skill when drafting Seedance QA repair prompts; successful-media defects do not establish a service rejection. Resume QA once new output exists, retaining the same output/revision deduplication rule. Cancelled/removed jobs and wait cutoffs do not trigger an automatic retry.
+
 Preserve submitted requests before generation: status responses may not retain the brief/references. If a template exposes no prompt, compare brief and inputs and mark the prompt comparison unavailable.
 
 Use scripts/inspect_video.py plus native image viewing first; otherwise available local tools or an authorized analysis service. Do not invent get_video_analysis or assume describe_video accepts audit questions. Discover live contracts and retain evaluator limitations.

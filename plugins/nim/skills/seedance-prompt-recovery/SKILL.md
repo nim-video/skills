@@ -13,7 +13,7 @@ description: >-
 
 Draft and revise Seedance prompts, and diagnose actual generation failures when they occur. Preserve the requested scene, motion, duration, framing, dialogue, and visual continuity unless a change is necessary and disclosed. Work with the connected generation tools when execution is requested; do not assume a particular service, model ID, or API wrapper.
 
-Write explanations in English and revised prompts in English by default. A requested faithful translation comparison is an exception; keep its explanation and English baseline in English, and preserve the requested dialogue language. Keep responses practical: a short diagnosis, the changes, and a copy-ready prompt. Do not expose internal planning, raw tool dumps, or a development narrative. Never promise that wording will pass a filter.
+Write prompts in English by default and explanations in the user's language. Preserve an explicitly requested prompt language and the requested dialogue language. For a faithful translation comparison, retain the English baseline. Keep responses practical: a short diagnosis, the changes, and a copy-ready prompt. Do not expose internal planning, raw tool dumps, or a development narrative. Never promise that wording will pass a filter.
 
 ## Activation and routing
 
@@ -25,11 +25,13 @@ Apply this skill automatically in all three situations; do not wait for the user
 
 For new drafts and ordinary edits, skip failure diagnosis and use the relevant prompting sections directly. Inspect the live contract before an actual submission or when recommending contract-sensitive settings. Prompt-only work does not require a connected generation service, and automatic skill use does not authorize a generation or paid retry.
 
+Before retrieving a job, submitting, or retrying, read [MCP integration](references/integration.md) for request handoff, input types, actual error fields, partial batches, and terminal states. For prompt-only work, skip that reference. When another workflow calls this skill, preserve its output format and existing authorization; apply these reference-language and audio rules to the final prompt after any template or prompt-enrichment step.
+
 If the user asks to modify this skill itself, read its current instructions and edit the requested rules; do not treat that maintenance request as a video-generation request.
 
 ## Inspect a failed generation
 
-1. Use the failed job and prompt already present in the conversation. If needed, retrieve that specific job through the available status tool. Collect its model/version, status, error text/code, submitted prompt, reference roles, and audio settings. Ask only for missing evidence that changes the diagnosis.
+1. Use the failed job and prompt already present in the conversation. If needed, retrieve that specific job through the available status tool. Collect its model/version, status, returned error details, submitted prompt, reference roles, and audio settings. An error code may not exist; do not invent one. Ask only for missing evidence that changes the diagnosis.
 2. Separate the service's stated reason from a hypothesis. An audio-copyright error is evidence about audio, not proof that a facial-reference phrase caused it. If the failure category is unknown, say so.
 3. Before a retry, inspect the selected model's live generation contract. Where available, use `models_explore` with `action: "get"`; use `get_generation_status` for the known job. These operation names are examples: discover their equivalents in the connected toolset. Follow the returned schema for input roles, parameter types, durations, and terminal states.
 
@@ -37,6 +39,7 @@ If the user asks to modify this skill itself, read its current instructions and 
 |---|---|
 | Queued/running job; wait timed out | Continue observing the same job. Do not rewrite or resubmit merely because waiting ended. |
 | Submit timed out; outcome unknown | Recover the original job through documented means. Do not blindly submit a duplicate. |
+| Cancelled or removed job | Report that terminal state. Do not treat it as rejection evidence or restart without an authorized new request. |
 | Invalid field, enum, duration, or reference | Correct the payload or input asset against the live contract. |
 | Authentication, credits, rate limit, outage | Address that operational problem; prompt synonyms do not fix it. |
 | Explicit reference, identity, visual/IP, or audio rejection | Use the matching recovery pattern below. |
@@ -68,7 +71,7 @@ Describe effects that follow visible actions: footsteps synchronized with steps,
 
 A silent fallback may use `generate_audio: "off"` **only if that exact field and value are supported**. Other contracts expose `generateAudio: false`; some modes expose no audio switch at all. Follow the actual name, nesting, and type. Do not send the string `"off"` to a boolean field or invent a music-only switch.
 
-Disabling generated audio removes generated dialogue and effects as well as music. Use an English visual prompt with a silent-output instruction, and disclose that tradeoff before replacing a requested sound version. For editing or source-video inputs, check whether existing audio is retained; inspect the output before claiming it is silent. If music was explicitly requested, honor that choice rather than silently deleting it.
+Disabling generated audio removes generated dialogue and effects as well as music. Use a visual prompt with a silent-output instruction, in English by default while preserving an explicitly requested language, and disclose that tradeoff before replacing a requested sound version. For editing or source-video inputs, check whether existing audio is retained; inspect the output before claiming it is silent. If music was explicitly requested, honor that choice rather than silently deleting it.
 
 ## Select one targeted revision
 
@@ -81,8 +84,8 @@ Change one suspected factor per attempt when practical. Keep unrelated settings 
 ## Retry and deliver
 
 - A request to write, draft, suggest, or revise a prompt returns the prompt without submitting a generation. A request to fix and regenerate can authorize a retry; preserve existing authorization and spending limits.
-- For recovery retries, submit one revised candidate at a time. Use at most two revised submissions per failed job within the user's authorized count/budget; stop earlier when the same rejection recurs without new evidence. This is a workflow limit, not a service guarantee. Do not cycle through many paraphrases.
-- For recovery retries, preserve the original job ID and track each revised attempt separately. For any submitted generation, wait for a verified terminal result; only return media URLs actually provided by the service. Do not claim success before then.
+- For recovery retries, submit one revised candidate at a time. Use at most two revised submissions for the original failure within the user's authorized count/budget, counting its entire retry chain and resumed turns; stop earlier when the same rejection recurs without new evidence. This is a workflow limit, not a service guarantee. Do not cycle through many paraphrases.
+- For recovery retries, preserve the original job ID and track each revised attempt separately. For any submitted generation, observe the existing job within the host's waiting limits. If waiting must stop, retain its ID and report it as pending; only a verified terminal result can establish completion. Return only media URLs actually provided by the service.
 - If a new reference image or original redesign is necessary, explain that input change. Do not claim that a prompt edit has modified the existing reference asset.
 - Inspect successful output for unwanted music, missing speech, reference drift, and the intended action using available media tools. Clearly state any checks that could not be performed. Continue through the existing generation workflow without duplicating its preview.
 
@@ -92,7 +95,7 @@ Use this compact response shape, omitting irrelevant items:
 
 **Changes:** one or two concrete edits; disclose any change to the subject or sound.
 
-**Prompt / revised prompt:** copy-ready English text, or the requested faithful translation variant.
+**Prompt / revised prompt:** copy-ready text in English by default, the user's explicitly requested language, or the requested faithful translation variant.
 
 **Settings:** only supported changes, with the silent-output tradeoff when applicable.
 

@@ -29,6 +29,8 @@ apps or hand-built HTML.
 
 ## Workflow
 
+When the template metadata or returned job identifies Seedance 2.0 / 2.5, read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before drafting an exposed prompt, when applying requested edits, and on failure. Apply corrections only through editable fields in `templateContract`; do not invent prompt/audio controls or switch to raw generation. If the backend is unknown, do not assume it is Seedance. Keep the chosen template, reference roles, and existing execution authorization.
+
 1. **Find a template.**
    - If the user asks to browse or is unsure, call `explore_templates` with
      `action: "recommend"` and the user's creative task as `query`.
@@ -55,8 +57,9 @@ apps or hand-built HTML.
    - `inputs.fields` for checkbox/select values.
    - `inputs.settings` for aspect ratio and output counts.
 6. **Poll, then deliver.** Poll `get_generation_status` with the returned
-   `workflowId` / `promptId` until `finished`, `failed`, or `cancelled`, then
-   deliver only the real final media URL(s).
+   `workflowId` / `promptId` until `finished`, `failed`, `cancelled`, or `removed`.
+   On success, review the actual output with [nim-generation-qa](../nim-generation-qa/SKILL.md),
+   then deliver only the real final media URL(s).
 
 ## When uploading media
 
@@ -84,7 +87,10 @@ apps or hand-built HTML.
 
 - If `run_template` returns `insufficient_credits`, present the returned
   purchase/upgrade options and stop. Do not retry until credits are resolved.
-- If generation fails, surface the returned `error` / `errorCode` plainly. Do
-  not silently switch templates or change inputs without user confirmation.
+- If generation fails, surface the actual status `errorCause` or returned
+  submission diagnostics; a code may be absent. For a known Seedance job,
+  apply recovery to diagnose and propose corrections automatically. Retry only
+  within existing authorization, using the same template contract; do not
+  silently switch templates or discard accepted batch outputs.
 - Never create local HTML artifacts, scripts, or mock runners instead of calling
   `run_template`.

@@ -68,7 +68,7 @@ Audio: paper flexing, one crisp page turn, and quiet room ambience. Natural scen
 
 ## Silent fallback
 
-Keep the user's visual scene in English, remove contradictory sound directions, and end with:
+Keep the user's visual scene, using English by default or an explicitly requested language. Remove contradictory sound directions and append this instruction (translated if needed):
 
 ```text
 Silent video. No generated audio, music, dialogue, ambience, or sound effects.

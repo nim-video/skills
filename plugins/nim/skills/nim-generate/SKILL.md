@@ -38,6 +38,8 @@ discovery is shared, and the only real branch is image vs. video.
 
 ## Workflow
 
+For Seedance 2.0 / 2.5, read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before the first prompt draft, when applying requested prompt edits, and on a failed submission or job. Apply its reference-language, sound, and MCP handoff rules while preserving this workflow's reference mapping and exact dialogue. Prompt preparation or diagnosis does not authorize another submission.
+
 1. **Pick the model.** The Nim catalog is live — discover, don't hardcode.
    - Unsure which model fits → `models_explore` with `action: "recommend"`, the user's
      intent as `query`, `type: "image"` or `"video"`, and `input: "image"` when a
@@ -50,6 +52,10 @@ discovery is shared, and the only real branch is image vs. video.
    reference must be a Nim file URL first:
    - Call `media_upload`, run the returned `curl_example` against the local path or
      Claude attachment, then pass the response `file_url` in `fileInputs`.
+   - For supported video/audio references or video edits, upload each asset and use
+     its contract-defined slot (`referenceVideos`, `referenceAudios`, or
+     `sourceVideo`). Keep image-only `fileInputs` separate; follow mode-specific
+     requirements and exclusions.
    - Never pass a local filesystem path straight to a generation tool.
    - If the file is not actually readable by the agent, follow
      [When uploading media](#when-uploading-media).
@@ -60,7 +66,8 @@ discovery is shared, and the only real branch is image vs. video.
    return no result and no link. You are running in a **terminal client (Claude Code /
    Codex) that does NOT render the Nim generation widget** — so you must poll
    `get_generation_status` with the returned `workflowId` / `promptId` until `finished` /
-   `failed` / `cancelled`, then deliver the final media URL from that response.
+   `failed` / `cancelled` / `removed`. On `finished`, review the actual output with
+   [nim-generation-qa](../nim-generation-qa/SKILL.md), then deliver its real media URL.
    - **Never** tell the user the result "will appear in a widget" — it will not appear
      here. Never describe a queued job as done.
    - The Nim widget only renders in MCP-Apps hosts (claude.ai, ChatGPT, Claude Desktop),
@@ -81,7 +88,10 @@ Pass a param only when the selected model's `generationContract` lists it.
 |---|---|---|
 | `prompt` | both | Required. Carry the full creative intent. |
 | `model_id` | both | Required. Always from `models_explore`. |
-| `fileInputs` | both | Nim file URLs from `media_upload`. Required for edit / image-input / image-to-video models. |
+| `fileInputs` | both | Uploaded image URLs; required only when the selected contract requires image references. A `sourceVideo` edit may accept extra images optionally. |
+| `referenceVideos`, `referenceAudios` | video | Separate uploaded video/audio reference arrays in supported modes. Check companion-reference requirements. |
+| `sourceVideo` | video | Source clip for a supported video edit. Follow conditional exclusions; do not also set duration/aspect ratio when the source determines them. |
+| `generateAudio` | video | Boolean only when the selected contract allows it. Turning it off also removes generated speech/effects; it is not a music-only mute. |
 | `requestedAspectRatio` | both | e.g. `16:9`, `9:16`, `1:1`. |
 | `resolution` | both | e.g. `1080p`, `2K` — only values the contract offers. |
 | `mediaLength` | video | Input duration in **ms** (`5000`, `8000`). |
@@ -119,5 +129,10 @@ set to compare, not as a single answer.
 
 ## When a generation fails
 
-Surface the returned `error` / `errorCode` plainly. Don't silently retry with changed
-params — ask the user first, unless they already told you to iterate.
+Surface the actual returned diagnostic: `errorCause` from job status, or `errors`,
+`error`, or `message` when present in a submission response. A code may be absent.
+For Seedance, apply [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md)
+automatically to diagnose the failure and prepare a targeted correction. Preserve
+accepted jobs in a partially failed batch. Submit a revised attempt only within
+existing retry authorization; otherwise present the correction for approval.
+Cancelled/removed jobs and wait timeouts are not content rejections.

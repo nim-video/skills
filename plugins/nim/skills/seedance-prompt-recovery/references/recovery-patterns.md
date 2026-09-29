@@ -24,7 +24,7 @@ Replace replication commands with “Use the attached image as a visual referenc
 
 **Reported:** a faithful Chinese version of a neutral car description succeeded after the English version failed.
 
-**Action:** first rule out schema, reference, and operational errors. If the scene is otherwise harmless and the reason remains unclear, a faithful Chinese translation can be offered as one diagnostic variant. Explain it in English and retain the English version for comparison. Do not switch if the user requires an English-only generation prompt. Preserve vehicle details, shot, motion, no-music constraint, and any explicitly requested dialogue language. Do not translate exact spoken lines unless asked. Never describe Chinese as a guaranteed bypass or make the translation euphemistic.
+**Action:** first rule out schema, reference, and operational errors. If the scene is otherwise harmless and the reason remains unclear, a faithful Chinese translation can be offered as one diagnostic variant. Explain it in the user's language and retain the English version for comparison. Do not switch if the user requires an English-only generation prompt. Preserve vehicle details, shot, motion, no-music constraint, and any explicitly requested dialogue language. Do not translate exact spoken lines unless asked. Never describe Chinese as a guaranteed bypass or make the translation euphemistic.
 
 ## An original character resembles a recognizable franchise design
 
@@ -52,7 +52,7 @@ For a genuine food gag involving ketchup, describe tomato ketchup or sauce accur
 
 **Action:** preserve the visual prompt and specify the intended ambience and synchronized effects, followed by “No music, background score, soundtrack, singing, or melodic elements.” Keep requested speech. If a previous audio reference contains music, prompt text alone does not remove that music; use an appropriate replacement or an authorized edit.
 
-If a silent result is acceptable, use the contract's audio-off setting with an English visual prompt. It disables generated effects and speech too; it is not a selective music mute. Never promise that disabling generation removes retained source-video audio.
+If a silent result is acceptable, use the contract's audio-off setting with a visual prompt in English by default, preserving an explicitly requested language. It disables generated effects and speech too; it is not a selective music mute. Never promise that disabling generation removes retained source-video audio.
 
 ## A named work triggers a rejection
 

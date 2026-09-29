@@ -18,6 +18,8 @@ python scripts/prompt_quality_orchestrator.py build --prompt "<user prompt>"
 
 The orchestrator reads `references/prompt_database_registry.json`, builds `references/prompt_quality_index.db`, retrieves from all enabled databases/skills, analyzes the prompt, selects improvement directions, and returns the final prompt. If the user says not to improve (`--no-improve`, "do not improve", "keep unchanged", "leave as is"), return the prompt unchanged.
 
+For Seedance 2.0 / 2.5, read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before drafting, when applying requested edits, and on generation failure. Apply its reference-language and sound rules to the final prompt after template or orchestrator enrichment; a retrieved text record alone does not execute those rules. Preserve reference roles, exact dialogue, explicit music/language choices, and generation authorization. An explicit request to return text unchanged still takes precedence.
+
 ## Mode Routing
 
 | User request | Mode | References to load |
@@ -39,9 +41,9 @@ When the user asks to actually generate images or video through Nim, follow Nim 
 1. Discover the live model with `models_explore` using `action: "recommend"`, `"search"`, or `"list"` for the user's intent.
 2. Call `models_explore` with `action: "get"` on the chosen `model_id` and treat its `generationContract` as the source of truth.
 3. Pass only fields listed by the contract. Do not guess parameter names, resolutions, duration values, `fileInputs`, or audio fields.
-4. For edits, references, image-to-video, or uploaded assets, call `media_upload` first and pass only the returned Nim `file_url` values in `fileInputs`.
+4. For edits or references, complete `media_upload` first and pass successful `file_url` values in contract-defined input slots: `fileInputs` for images, and separate supported slots for video/audio references or a source-video edit. Do not put audio/video into an image-only array.
 5. Never pass local file paths directly to `generate_image` or `generate_video`.
-6. Poll `get_generation_status` until the job is `finished`, `failed`, or `cancelled`; do not claim completion before a real media URL is returned.
+6. Poll `get_generation_status` until the job is `finished`, `failed`, `cancelled`, or `removed`; do not claim completion before a real media URL is returned. Apply recovery to Seedance failures and [nim-generation-qa](../nim-generation-qa/SKILL.md) to successful media before delivery.
 
 Default quality preference:
 
@@ -114,10 +116,16 @@ Intake:
 - Optional: secondary references for outfit, pose, location, lighting, product, audio, or styling.
 - If a required reference is missing, ask only for that missing reference before generation.
 
-Prompt pattern:
+For Seedance people and characters, use a visual-reference relationship:
 
 ```text
-The identical <subject> from @image1, reimagined in <new scene/action>. Preserve <defining identity traits> exactly: <face/product geometry/logo placement/silhouette/material/color blocking/accessories>. Change only <allowed changes>. Do not alter identity, proportions, permanent markings, or product structure.
+Use @image1 as a visual reference for the character's appearance. Keep the character visually consistent across shots while performing <new scene/action>. Use each separate wardrobe, location, or pose reference only for its assigned role.
+```
+
+For products and objects, retain exact design requirements:
+
+```text
+The product/object from @image1 in <new scene/action>. Preserve <product geometry/logo placement/silhouette/material/color blocking> exactly. Change only <allowed changes>. Do not alter permanent markings or product structure.
 ```
 
 For multiple references, assign roles clearly and preserve upload order:

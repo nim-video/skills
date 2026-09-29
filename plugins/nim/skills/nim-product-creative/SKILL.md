@@ -154,6 +154,18 @@ Always inspect the chosen model with `models_explore action=get`, follow the
 `generationContract`, upload references with `media_upload`, generate with
 `generate_image` or `generate_video`, and poll until terminal status.
 
+For Seedance 2.0 / 2.5 video fallback, follow [nim-generate](../nim-generate/SKILL.md)
+and read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before
+drafting, when applying requested prompt edits, and on generation failure.
+Apply recovery after final prompt assembly, preserving product geometry, labels,
+reference roles, exact dialogue, and existing generation authorization. Review
+successful media with [nim-generation-qa](../nim-generation-qa/SKILL.md).
+
+For template-based work, apply recovery only when the template metadata or job
+identifies Seedance. Use only editable fields in the template contract; do not
+invent controls or switch to raw generation. Diagnosis alone does not authorize
+another run.
+
 ## Prompt And Input Handling
 
 When a selected template has a free-text prompt/details field, compress the
