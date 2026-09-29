@@ -1,0 +1,104 @@
+name: Release plugin
+
+# Builds the Claude chat plugin file (nim.plugin) from plugins/nim and publishes it
+# with a manifest.json to a GitHub Release. Claude Desktop installs a .plugin file
+# from a chat card, which is how chat users get the skills without a marketplace.
+# Stable releases are served at
+# https://github.com/nim-video/skills/releases/latest/download/nim.plugin
+# Pre-releases never become "latest", so manual test runs don't affect that link.
+
+on:
+  push:
+    branches: [main]
+    # A version bump touches all five manifests; this one is the plugin's own.
+    paths: [plugins/nim/.claude-plugin/plugin.json]
+  workflow_dispatch:
+    inputs:
+      prerelease_suffix:
+        description: Pre-release suffix, e.g. test.1. Leave empty for a stable release.
+        required: false
+        default: test.1
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-plugin
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Resolve version and tag
+        id: meta
+        env:
+          SUFFIX: ${{ github.event_name == 'workflow_dispatch' && inputs.prerelease_suffix || '' }}
+        run: |
+          version=$(jq -r .version plugins/nim/.claude-plugin/plugin.json)
+          tag="v${version}${SUFFIX:+-$SUFFIX}"
+          {
+            echo "version=$version"
+            echo "tag=$tag"
+            echo "prerelease=$([ -n "$SUFFIX" ] && echo true || echo false)"
+          } >> "$GITHUB_OUTPUT"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            # plugin.json changed without a version bump: nothing new to publish.
+            if [ "$GITHUB_EVENT_NAME" = push ]; then
+              echo "::notice::Release $tag already exists, skipping."
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "::error::Release $tag already exists; bump the version or change the suffix."
+            exit 1
+          fi
+
+      - name: Build nim.plugin and manifest.json
+        if: steps.meta.outputs.skip != 'true'
+        env:
+          VERSION: ${{ steps.meta.outputs.version }}
+          TAG: ${{ steps.meta.outputs.tag }}
+        run: |
+          set -euo pipefail
+          stage="$RUNNER_TEMP/nim"
+          mkdir -p "$stage" dist
+          cp -R plugins/nim/.claude-plugin plugins/nim/.mcp.json plugins/nim/skills "$stage/"
+          # Stamp the plugin version into every SKILL.md frontmatter (metadata.version), keeping CRLF files CRLF.
+          python3 - "$stage/skills" "$VERSION" <<'PY'
+          import pathlib, sys
+          root, version = pathlib.Path(sys.argv[1]), sys.argv[2]
+          for path in sorted(root.glob('*/SKILL.md')):
+              raw = path.read_bytes()
+              eol = b'\r\n' if b'\r\n' in raw[:200] else b'\n'
+              lines = raw.split(eol)
+              assert lines[0] == b'---', f'{path}: no frontmatter'
+              close = next(i for i in range(1, len(lines)) if lines[i] == b'---')
+              assert not any(l.startswith(b'metadata:') for l in lines[1:close]), f'{path}: metadata already set'
+              lines[close:close] = [b'metadata:', b'  version: "' + version.encode() + b'"']
+              path.write_bytes(eol.join(lines))
+              print(f'stamped {path.parent.name}')
+          PY
+          (cd "$stage" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim.plugin" .claude-plugin .mcp.json skills -x '*.DS_Store')
+          sha=$(sha256sum dist/nim.plugin | cut -d' ' -f1)
+          jq -n --arg v "$VERSION" --arg tag "$TAG" --arg sha "$sha" --arg repo "$GITHUB_REPOSITORY" --arg commit "$GITHUB_SHA" \
+            '{name: "nim", version: $v, tag: $tag, commit: $commit, sha256: $sha,
+              url: "https://github.com/\($repo)/releases/download/\($tag)/nim.plugin"}' > dist/manifest.json
+          cat dist/manifest.json
+
+      - name: Publish GitHub Release
+        if: steps.meta.outputs.skip != 'true'
+        env:
+          TAG: ${{ steps.meta.outputs.tag }}
+          PRERELEASE: ${{ steps.meta.outputs.prerelease }}
+        run: |
+          flags=()
+          [ "$PRERELEASE" = true ] && flags+=(--prerelease)
+          gh release create "$TAG" dist/nim.plugin dist/manifest.json \
+            --target "$GITHUB_SHA" \
+            --title "Nim plugin $TAG" \
+            --notes "Claude chat plugin built from ${GITHUB_SHA::7}. Install: download nim.plugin and ask Claude to share it with you, then click Save." \
+            "${flags[@]}"
