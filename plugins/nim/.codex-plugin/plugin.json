@@ -1,6 +1,6 @@
 {
   "name": "nim",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Generate images and videos and run templated creative workflows with Nim — model discovery, direct generation, and reference-driven editing through the Nim MCP.",
   "author": {
     "name": "Nim",
@@ -24,6 +24,8 @@
     "fashion",
     "lookbook",
     "location-design",
+    "seedance",
+    "prompt-recovery",
     "creative",
     "ai-video",
     "ai-image"
@@ -48,7 +50,9 @@
       "Create a 15-second Seedance b-roll ad from my product brief and references",
       "Give me 4 concept variations for this idea with Nim",
       "Create a three-outfit lookbook with a consistent model using Nim",
-      "Generate a 9:16 UGC background of a sunlit living room with Nim"
+      "Generate a 9:16 UGC background of a sunlit living room with Nim",
+      "Write a Seedance 2.5 prompt using character references and natural sound without music",
+      "Diagnose my failed Seedance generation and suggest a revised prompt"
     ],
     "brandColor": "#FE28A7",
     "composerIcon": "./assets/icon.png",
