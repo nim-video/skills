@@ -9,8 +9,6 @@ description: Use when writing, improving, planning, or generating Nim/Seedance U
 
 Create copy-ready English UGC video prompts for Nim image-to-video and text-to-video workflows. The output should feel filmed by a real person on a phone: imperfect framing, ordinary timing, natural delivery, realistic skin/fabric/room behavior, and clear reference roles.
 
-For Seedance 2.0 / 2.5, read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before the first draft, when applying requested edits, and on generation failure. Apply it after assembling the final prompt, preserving reference roles, exact dialogue, requested voice, and existing generation authorization. Unless music was explicitly requested, describe action-matched natural sounds and add “No music, background score, soundtrack, singing, or melodic elements.” Keep requested speech and effects audible.
-
 For detailed examples, load:
 
 - `references/ugc_prompt_patterns.md` for distilled patterns.
@@ -21,9 +19,9 @@ When actually generating through Nim:
 
 1. Discover the live video model with `models_explore`; prefer the current Seedance image-to-video model when references drive the result.
 2. Inspect the exact `generationContract` with `models_explore` `action: "get"`.
-3. Upload each reference with `media_upload`; use only successfully uploaded `file_url` values in its contract-defined input slot. `fileInputs` is for images; use `referenceAudios` for voice references only when the selected mode permits it and satisfies its image/video-reference requirements. Do not put audio into an image-only array or silently omit a required voice reference.
+3. Upload every image/audio reference with `media_upload`; use only returned Nim `file_url` values in `fileInputs`.
 4. Pass only parameters supported by the selected contract: `prompt`, `requestedAspectRatio`, `mediaLength`, `resolution`, `fps`, `keepSound`, `seed`, `batchSize`, or any exact contract fields.
-5. Poll `get_generation_status` until `finished`, `failed`, `cancelled`, or `removed`. Apply recovery to Seedance failures; on success, review actual media with [nim-generation-qa](../nim-generation-qa/SKILL.md) before delivery. A terminal failure need not return media.
+5. Poll `get_generation_status` until a terminal status returns a real media URL.
 
 Default targets:
 
@@ -51,7 +49,7 @@ Write reference roles at the top of the prompt before scene directions:
 ```text
 REFERENCES:
 @image1 - main location, preserve layout exactly.
-@image2 - visual reference for the main character's appearance; keep the character visually consistent across shots.
+@image2 - main character identity, face, hair, body proportions exactly.
 @image3 - outfit/product/object reference, preserve design exactly.
 @audio1 - voice, tone, cadence, pronunciation, pacing and vocal texture exactly.
 ```

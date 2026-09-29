@@ -8,7 +8,7 @@ Apply the prompt rules before the first Seedance draft and again after requested
 
 Before submission, retain the latest brief, exact prompt, discovered model ID/name, submitted settings, ordered reference-role map, successful upload URLs, and remaining authorized attempts/budget. Status responses may omit reference assets or audio settings. Keep the original request and each revision separately; this is local workflow state, not an extra API payload.
 
-The calling workflow owns presentation and completion review. Preserve its reference identifiers, upload order, exact dialogue, segment boundaries, and earlier accepted outputs. Apply this skill's facial-reference and sound rules to the final prompt without changing unrelated requirements. For a chain or batch, work on the affected item and retain successful siblings.
+When another workflow calls this skill, preserve its presentation and reuse its completion review when available. For standalone use, follow this skill's response format and completion checks. Preserve reference identifiers, upload order, exact dialogue, segment boundaries, and earlier accepted outputs. Apply this skill's facial-reference and sound rules to the final prompt without changing unrelated requirements. For a chain or batch, work on the affected item and retain successful siblings.
 
 ## Bind to the connected contract
 
@@ -49,7 +49,7 @@ Distinguish MCP transport/tool errors from job state. A tool-level `isError` or 
 | `queued` / `running` status | Observe the same ID. Pace polling with the tool's guidance and estimate; exceeding `estimatedDurationMs` is not rejection evidence. |
 | `failed` status | Read `errorCause` when that field exists; it can be null. Retain any other actual diagnostic fields. Do not assume an `errorCode`, retryable flag, or structured moderation category is available. |
 | `cancelled` / `removed` status | Treat as terminal without a rejection diagnosis. A new generation requires an authorized new request. |
-| `finished` with actual output media | Hand the result and its request snapshot to the calling workflow's existing media review. |
+| `finished` with actual output media | Proceed to the completion checks below, reusing the calling workflow's media review when available. |
 | `finished` without usable output media | Recover output through documented means or report an incomplete result. Do not fabricate a URL, restart the job, or claim delivery. |
 
 A wait cutoff belongs to the host workflow, not the model's moderation result. If the host must yield while the job is pending, preserve its ID for resumption and say it is pending. Do not promise background observation without a real supported mechanism.
@@ -58,4 +58,4 @@ A wait cutoff belongs to the host workflow, not the model's moderation result. I
 
 For a diagnosed failure, prepare the revised prompt, precise setting/input changes, and smallest retry scope before seeking any missing authorization. Existing authorization remains valid; diagnosis alone does not authorize a chargeable retry. Follow the main skill's limit of at most two revised submissions for the original failure within the remaining authorized budget. Count the whole retry chain across resumed turns; new retry IDs and partial batches do not reset that limit. If the previous submission's outcome is unknown, resolve it before another submission.
 
-On success, invoke the calling workflow's existing media QA once per new output revision, including successful batch siblings. Verify the intended action, reference continuity, requested dialogue and absence of unwanted music with available inspection tools. A status or audio-stream flag alone cannot prove those properties. Record any unverified checks. Avoid duplicate previews, repeated reviews on unchanged status polls, and recursive review of analysis-tool outputs.
+On success, reuse the calling workflow's existing media QA when available; otherwise perform these checks directly. Inspect each new output revision once, including successful batch siblings. Verify the intended action, reference continuity, requested dialogue and absence of unwanted music with available inspection tools. A status or audio-stream flag alone cannot prove those properties. Record any unverified checks. Avoid duplicate previews, repeated reviews on unchanged status polls, and recursive review of analysis-tool outputs.

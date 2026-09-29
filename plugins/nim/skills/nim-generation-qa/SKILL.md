@@ -20,7 +20,7 @@ In chat hosts (Claude app, Claude Desktop) no host resumes you after a render fi
 1. Before generating, tell the user in one line that the reply will wait for the render and the review (use estimatedDurationMs).
 2. Poll get_generation_status, paced by estimatedDurationMs: first check at ~50% of the estimate, then every ~30s, until finished / failed / cancelled / removed. Do not narrate each poll.
 3. On finished: run the review below before ending the reply. The widget already shows the media; do not re-embed it.
-4. If still running after ~2x the estimate, stop polling and tell the user to say "review" when it is done. Preserve the same job ID for resumption; a wait cutoff is not a failure and never authorizes a new submission.
+4. If still running after ~2x the estimate, stop polling and tell the user to say "review" when it is done.
 
 ## 1. Recover requirements
 
@@ -98,8 +98,6 @@ For material findings, prepare before asking:
 - A complete copy-ready revised prompt preserving accepted story, references, dialogue, style, duration and constraints.
 - Smallest useful rerun scope and any reference changes; live model/settings/cost estimate when available.
 - Uncertainty: proposed changes improve chances, not guarantee success.
-
-Before writing a Seedance 2.0 / 2.5 repair prompt, read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) and apply its reference-language and sound rules after assembling the revision. Preserve exact dialogue and explicit music/language choices. A defect in completed media is an ordinary prompt revision, not evidence of a service rejection. If an authorized Seedance retry fails, use that skill to diagnose the actual error; return here once new output is available, without duplicating a review of the same revision.
 
 Check for contradictory references before piling on negatives. Propose a corrected reference when warranted; do not silently create or upload one. Do not silently change model, duration, resolution, language, wardrobe, shot count or narrative. Describe necessary tradeoffs as options.
 

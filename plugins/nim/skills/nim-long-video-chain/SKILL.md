@@ -15,8 +15,6 @@ description: >-
 
 Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance2 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.
 
-Read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before drafting the shared world or any Seedance segment, when applying requested edits, and on a failed submission or job. Apply its reference-language, sound, and MCP handoff rules to final prompts while preserving reference roles, exact dialogue, segment boundaries, and existing generation authorization. Diagnose and revise the affected segment; retain accepted segments and other running jobs. A failure does not authorize resubmitting the whole batch. Review each new successful segment with [nim-generation-qa](../nim-generation-qa/SKILL.md) before delivery.
-
 ## When this triggers
 
 - An explicit duration longer than 15 seconds and up to roughly 5 minutes:
@@ -216,7 +214,7 @@ Never queue more than 3 segments at once, even when `segment_count` is larger.
 
 1. Follow the same Nim workflow as `nim-generate` / `nim-b-roll-seedance`:
    `models_explore` (`action: "recommend"`, `type: "video"`, `input: "image"` if references exist) → `action: "get"` on the chosen model to read the live `generationContract` → `media_upload` any reference images once and reuse the resulting file URLs across every segment that needs them → `generate_video` per segment with `mediaLength: 15000` and whatever aspect ratio/resolution fits the target platform.
-2. Submit the current batch's `generate_video` calls (up to 3), then poll `get_generation_status` for each until `finished` / `failed` / `cancelled` / `removed`. A single 15s Seedance generation usually takes 4-6 minutes; a batch of 3 can take a while — poll sparingly (confirm each job started, then check every 60-90s) rather than narrating every `running` result.
+2. Submit the current batch's `generate_video` calls (up to 3), then poll `get_generation_status` for each until `finished` / `failed` / `cancelled`. A single 15s Seedance generation usually takes 4-6 minutes; a batch of 3 can take a while — poll sparingly (confirm each job started, then check every 60-90s) rather than narrating every `running` result.
 3. Deliver the real media URL for each finished clip in the batch. Never invent a link, and never describe a queued or running job as done.
 
 ## Step 5 — Check in after every batch

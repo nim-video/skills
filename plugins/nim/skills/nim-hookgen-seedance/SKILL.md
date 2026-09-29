@@ -17,8 +17,6 @@ description: >-
 Turn a product brief into one spoken-hook UGC video. This skill writes the spoken hooks and
  rewrites the assembled brief into the final Seedance prompt.
 
-Read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before the first Seedance draft, when applying requested edits, and on a failed submission or job. Apply its reference-language, sound, and MCP handoff rules after final prompt assembly, preserving reference identifiers, roles, upload order, exact spoken lines, and existing generation authorization. Keep speech enabled; exclude music unless explicitly requested. Prompt preparation or diagnosis does not authorize another submission.
-
 ## UX rules
 
 1. **Be concise.** Don't dump raw IDs, JSON, briefs, or tool plumbing into chat.
@@ -42,7 +40,7 @@ asks.
 | Aspect ratio | `9:16` | `DEFAULT_ASPECT_RATIO` |
 | Resolution | `720p` | `DEFAULT_RESOLUTION` |
 | Model | Seedance 2 (reference-to-video when images exist, else text-to-video) | `FAL_*_MODEL` |
-| Audio | generated speech and natural effects; no music unless requested | Use the live contract's supported audio control; omit unsupported toggles. |
+| Audio | generated | `generate_audio: true` |
 | Modes | `Paid Ads` or `UGC` | `MODES` |
 | Verticals | `Beauty`, `Food & Drinks`, `Fashion`, `B2B / Apps` | `VERTICALS` |
 
@@ -358,11 +356,10 @@ Rewrite the brief below into one production-ready Seedance prompt.
 
 Rules:
 - Return only the final prompt text. No markdown, no JSON, no explanation.
-- Preserve reference identifiers, assigned roles, and upload order, such as @Image1, @Image2, and @Audio1. Use visual-reference language for faces and characters instead of exact-copy demands.
+- Preserve every reference exactly as written, such as @Image1, @Image2, and @Audio1.
 - Preserve the selected hook exactly. If the brief says to say a line verbatim, keep that line verbatim.
 - Preserve the full voice line exactly as provided; do not shorten it, omit words, summarize it, or rephrase it.
 - Make the prompt concrete and shootable: camera, framing, action, sound, timing, lighting, and style.
-- Describe action-matched natural sounds. No music, background score, soundtrack, singing, or melodic elements unless explicitly requested; preserve the full spoken line.
 - Keep it focused on the requested hook duration and timing.
 - Do not invent unsupported product claims, people, locations, references, subtitles, or extra scenes.
 - Avoid meta language like "create a video".
@@ -386,8 +383,6 @@ skills):
    `input: "image"` (when references exist), targeting Seedance 2. Then
    `action: "get"` on the chosen `model_id` to read its exact
    `generationContract` — that is the source of truth for allowed params.
-   If a voice reference is required, discover a mode that accepts audio references
-   and verify any companion image/video requirement before submission.
 3. **Upload references.** For each image (in the fixed character → location →
    product order), then the optional voice audio, call `media_upload`, run the
    returned `curl_example` against the local path/attachment, and collect each
@@ -410,18 +405,13 @@ skills):
 4. **Generate.** Call `generate_video` passing only contract-allowed params:
    - `prompt`: the final Seedance prompt from Stage 5.
    - `model_id` (+ `model_name`).
-   - `fileInputs`: the uploaded image URLs in the exact `@Image` order.
-   - `referenceAudios`: the uploaded voice URL only when this field is supported
-     and its companion image/video requirements are met. Never put voice audio in
-     image-only `fileInputs` or silently drop a required voice reference.
+   - `fileInputs`: the uploaded image URLs in the exact `@Image` order; voice
+     audio URL if used.
    - `requestedAspectRatio: 9:16`, `resolution: 720p`, `mediaLength: 6000`.
-   - Keep audio generation on when supported; use `generateAudio: true` only if
-     allowed by the selected model. Do not invent `generate_audio` for this MCP.
+   - keep audio generation on when supported.
 5. **Poll, then deliver.** `generate_video` is async and returns no link. Poll
    `get_generation_status` with the returned `workflowId` / `promptId` until
-   `finished` / `failed` / `cancelled` / `removed`. On success, review the actual
-   media with [nim-generation-qa](../nim-generation-qa/SKILL.md), then deliver the
-   real media URL.
+   `finished` / `failed` / `cancelled`, then deliver the real media URL.
    - Seedance generation can take several minutes. Poll sparsely: confirm the
      job started, then check ~every 60–90s. Don't narrate every `running` poll.
    - Never describe a queued/running job as done. Never claim the result "will
@@ -431,7 +421,6 @@ skills):
 
 After delivering, iterate from the result on request: adjust the spoken hook,
 swap a reference, or tweak the scene. Re-run only the affected stages — re-write
-the brief and final prompt, then regenerate within the user's authorization.
-For a failed generation, use the actual `errorCause` from status or returned
-submission diagnostics and apply recovery automatically. Prepare the correction;
-submit it only within an existing retry authorization or after approval.
+the brief and final prompt, then regenerate. Don't silently retry a failed
+generation with changed params; surface the returned `error` / `errorCode` and
+confirm with the user first unless they already asked you to iterate.

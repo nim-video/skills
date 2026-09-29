@@ -7,8 +7,6 @@ description: Use when creating product or lifestyle b-roll videos from a user br
 
 Create controlled product/lifestyle b-roll videos from a brief and reference images. The workflow is intentionally staged: the user should be able to inspect and approve each meaningful step before generation.
 
-Read [seedance-prompt-recovery](../seedance-prompt-recovery/SKILL.md) before the first Seedance draft, when applying requested edits, and on a failed submission or job. Apply its reference-language, sound, and MCP handoff rules to the final prompt while preserving reference roles, upload order, exact requested dialogue, and existing generation authorization. Prompt preparation or diagnosis does not authorize another submission.
-
 ## Core Flow
 
 1. Intake the brief: brand/product, audience, tone, claim, desired format, and any constraints.
@@ -126,7 +124,7 @@ CHARACTER REFERENCES: ...
 LOCATION REFERENCES: ...
 CAMERA: ...
 LIGHTING: ...
-SOUND: action-matched natural effects: <sources, timing, distance, intensity>. No music, background score, soundtrack, singing, or melodic elements. No spoken words unless requested; no subtitles or overlay text unless requested.
+SOUND: foley only; no spoken words, no subtitles, no overlay text.
 B-ROLL RULE: ...
 EDITING RULE: ...
 LOCATION RULE: at least three distinct locations...
@@ -145,8 +143,6 @@ CHARACTER REFERENCES: @img3 and @img4 refer to the same character unless stated 
 LOCATION REFERENCES: @img5 anchors the first location. Generate additional coherent locations from the brief.
 ```
 
-The sound block is a default. Preserve explicitly requested music or dialogue and adapt its exclusions accordingly.
-
 ## Nim Generation
 
 Use the Nim MCP video workflow.
@@ -157,7 +153,7 @@ Use the Nim MCP video workflow.
 - Upload local/attachment references with `media_upload`; use the returned file URLs in confirmed `@img` order.
 - Never pass local filesystem paths directly to `generate_video`; use `media_upload` and pass the returned `file_url`.
 - Pass only parameters allowed by the model contract.
-- Poll with `get_generation_status` until `finished`, `failed`, `cancelled`, or `removed`. Apply recovery to failures; on success, review actual media with [nim-generation-qa](../nim-generation-qa/SKILL.md) before delivery. Do not describe a queued/running job as done.
+- Poll with `get_generation_status` until `finished`, `failed`, or `cancelled`. Do not describe a queued/running job as done.
 - 15s Seedance generation usually takes 5-6 minutes, is rarely faster than 4 minutes, and can take longer. Use a sparse polling cadence:
   - Check once soon after launch to confirm the job was accepted/started.
   - Do not check repeatedly during the first 4 minutes unless the user asks.
