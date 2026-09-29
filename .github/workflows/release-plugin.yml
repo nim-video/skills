@@ -14,10 +14,13 @@ on:
     paths: [plugins/nim/.claude-plugin/plugin.json]
   workflow_dispatch:
     inputs:
-      prerelease_suffix:
-        description: Pre-release suffix, e.g. test.1. Leave empty for a stable release.
-        required: false
-        default: test.1
+      # A choice, not a free-text suffix: `gh workflow run -f x=` drops empty
+      # values, so an "empty means stable" input always fell back to its default.
+      channel:
+        description: prerelease publishes v<version>-test.<run>; stable publishes v<version>.
+        type: choice
+        options: [prerelease, stable]
+        default: prerelease
 
 permissions:
   contents: write
@@ -37,7 +40,7 @@ jobs:
       - name: Resolve version and tag
         id: meta
         env:
-          SUFFIX: ${{ github.event_name == 'workflow_dispatch' && inputs.prerelease_suffix || '' }}
+          SUFFIX: ${{ github.event_name == 'workflow_dispatch' && inputs.channel == 'prerelease' && format('test.{0}', github.run_number) || '' }}
         run: |
           version=$(jq -r .version plugins/nim/.claude-plugin/plugin.json)
           tag="v${version}${SUFFIX:+-$SUFFIX}"
@@ -53,7 +56,7 @@ jobs:
               echo "skip=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
-            echo "::error::Release $tag already exists; bump the version or change the suffix."
+            echo "::error::Release $tag already exists; bump the plugin version first."
             exit 1
           fi
 
