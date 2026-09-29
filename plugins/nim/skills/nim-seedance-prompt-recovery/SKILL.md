@@ -1,5 +1,5 @@
 ---
-name: seedance-prompt-recovery
+name: nim-seedance-prompt-recovery
 description: >-
   Use before drafting a Seedance 2.0 or Seedance 2.5 prompt, whenever its
   generation fails or is rejected, and whenever the user asks to change,
@@ -9,7 +9,7 @@ description: >-
   required.
 ---
 
-# Seedance Prompt Recovery
+# Nim Seedance Prompt Recovery
 
 Draft and revise Seedance prompts, and diagnose actual generation failures when they occur. Preserve the requested scene, motion, duration, framing, dialogue, and visual continuity unless a change is necessary and disclosed. Work with the connected generation tools when execution is requested; do not assume a particular service, model ID, or API wrapper.
 

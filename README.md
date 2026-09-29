@@ -77,7 +77,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-product-creative` | `/nim:nim-product-creative` | Easy way to create a creative imagery with your product. |
 | `nim-upscale` | `/nim:nim-upscale` | Upscale your video or image with state of the art upscale models. |
 | `nim-generation-qa` | `/nim:nim-generation-qa` | Review finished Nim images and videos against the brief, report defects, and propose a revised prompt. |
-| `seedance-prompt-recovery` | `/nim:seedance-prompt-recovery` | Write and revise Seedance 2.0/2.5 prompts, diagnose failed generations, and suggest targeted wording, reference, or audio corrections. |
+| `nim-seedance-prompt-recovery` | `/nim:nim-seedance-prompt-recovery` | Write and revise Seedance 2.0/2.5 prompts, diagnose failed generations, and suggest targeted wording, reference, or audio corrections. |
 
 The skill drives model discovery (`models_explore`), generation (`generate_image` /
 `generate_video`), templates (`explore_templates`, `get_template`, `run_template`),
@@ -98,7 +98,7 @@ reference uploads (`media_upload`), credits, and status polling
 - **Ideate** — ask for several variations of a concept in one go and compare directions.
 - **Upscale** — upscale your media to the best quality 
 - **Reiterate** — review each finished result and get a better prompt for the next run.
-- **Draft and recover Seedance prompts** — use `seedance-prompt-recovery` before
+- **Draft and recover Seedance prompts** — use `nim-seedance-prompt-recovery` before
   writing a prompt, when editing it, and after a failed generation. Preserve
   character reference roles and requested speech; default to natural sounds with
   no music unless music was requested. Prompt-only work needs no MCP connection
