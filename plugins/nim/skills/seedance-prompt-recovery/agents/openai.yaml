@@ -1,0 +1,6 @@
+interface:
+  display_name: "Seedance Prompt Recovery"
+  short_description: "Write, revise, and troubleshoot Seedance prompts"
+  default_prompt: "Use $seedance-prompt-recovery to draft or revise my Seedance 2.0 or 2.5 prompt, or diagnose a failed generation."
+policy:
+  allow_implicit_invocation: true
