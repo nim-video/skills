@@ -104,6 +104,17 @@ reference uploads (`media_upload`), credits, and status polling
   no music unless music was requested. Prompt-only work needs no MCP connection
   and does not start a generation; retries stay within the user's authorization.
 
+## Contributing
+
+Skills live in `plugins/nim/skills/<skill>/SKILL.md`, and the conventions are in
+[AGENTS.md](./AGENTS.md). Before you open a pull request, run the check (Node 24+):
+
+```sh
+node scripts/check-skills.ts --base origin/main
+```
+
+CI runs the same check plus `claude plugin validate --strict`.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).

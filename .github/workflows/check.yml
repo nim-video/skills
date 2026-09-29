@@ -1,0 +1,44 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # The version check compares against the base branch.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Skills and packaging
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          if [ -n "$BASE_REF" ]; then
+            node scripts/check-skills.ts --base "origin/$BASE_REF"
+          else
+            node scripts/check-skills.ts
+          fi
+
+      - name: Plugin and marketplace manifests
+        if: success() || failure()
+        env:
+          DISABLE_AUTOUPDATER: '1'
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1'
+        # Pinned: --strict turns warnings into failures, so a new release could fail unrelated PRs. Bump it on purpose.
+        run: |
+          npm install --global @anthropic-ai/claude-code@2.1.284
+          claude plugin validate --strict .
+          claude plugin validate --strict plugins/nim
+          claude plugin validate --strict .agents/skills
