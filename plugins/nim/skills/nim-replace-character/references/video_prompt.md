@@ -13,6 +13,7 @@ Times in the prompt (`{WHEN}`, `{ORDER}`) are on the **group clip's own timeline
 ## Template
 
 ```
+{TOP}
 Recreate the video @Video1 shot for shot — same camera, framing, cuts, timing, motion, expressions and gestures — with {CHANGE}:
 {REPLACE}
 {ORDER}{KEEP}
@@ -24,6 +25,9 @@ Each new person takes over the original person's exact position, scale, pose, mo
 {STYLE}{USER_WISHES}
 ```
 
+- `{TOP}` — always the first line, verbatim, one of two (`characters` / `new characters` when two or more are replaced):
+  `Only the character in @Video1 is replaced, by the new character from the images; the location, lighting and all movements stay exactly as in @Video1.`
+  `Only the characters in @Video1 are replaced, by the new characters from the images; the location, lighting and all movements stay exactly as in @Video1.`
 - `{CHANGE}` — `one change` / `two changes` / `three changes` (number of replaced people).
 - `{REPLACE}` — **every** replaced person visible in the clip's shots, one line each, in order
   of first appearance, including people seen from behind, in profile or at the frame edge
@@ -95,6 +99,7 @@ Each new person takes over the original person's exact position, scale, pose, mo
 ## Example — two people, a camera pan between them, clothes stay
 
 ```
+Only the characters in @Video1 are replaced, by the new characters from the images; the location, lighting and all movements stay exactly as in @Video1.
 Recreate the video @Video1 shot for shot — same camera, framing, cuts, timing, motion, expressions and gestures — with two changes:
 Person A — the bearded man in a red hoodie and headphones, with the silver guitar — becomes the man from @Image1, keeping the clothes and the headphones from @Video1; the cap is removed and his hair follows @Image1.
 Person B — the man in a blue jacket and glasses, with the green guitar — becomes the man from @Image2, keeping the clothes from @Video1; the glasses are removed and his hair follows @Image2.
@@ -111,6 +116,7 @@ Both replacements are required: no shot may keep an original replaced person. Do
 ## Example — one person who speaks, one person behind him, clothes from the images
 
 ```
+Only the characters in @Video1 are replaced, by the new characters from the images; the location, lighting and all movements stay exactly as in @Video1.
 Recreate the video @Video1 shot for shot — same camera, framing, cuts, timing, motion, expressions and gestures — with two changes:
 Person A — the man in the olive jacket, facing the camera — becomes the man from @Image1, wearing a dark gray top.
 Person B — the dark-haired man in the dark jacket, seen from behind in the LEFT foreground — becomes the man from @Image2, wearing a black jacket; only his hair and clothes show.
