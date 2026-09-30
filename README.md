@@ -1,7 +1,7 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.6.1-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-0.6.2-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
 [![Skills](https://img.shields.io/badge/skills-18-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 

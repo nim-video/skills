@@ -13,17 +13,20 @@ description: >-
 
 # Nim plugin update
 
-Installed plugin version: `0.6.1`
+Installed plugin version: `0.6.2`
 
 ## Connect Nim first
 
 The Nim tools come from the Nim connector that the Nim plugin adds. If `check_plugin_update` and the other Nim tools aren't available in this conversation, the connector isn't connected yet or is off in this chat. Don't tell the user Nim is unavailable and don't switch to another provider. Instead:
 
 1. Call `search_mcp_registry` with `keywords: ["nim"]`.
-2. Take the result whose `url` is `https://mcp.nim.video/mcp` and call `suggest_connectors` with its `directoryUuid` and `keywords: ["videos"]`. The user gets a Connect button.
-3. Tell the user in one sentence to click Connect and sign in to Nim, then continue their request once the Nim tools are available.
+2. If a result has `url` `https://mcp.nim.video/mcp`, call `suggest_connectors` with its `directoryUuid` and `keywords: ["videos"]`. The user gets a Connect button. Tell them in one sentence to click Connect and sign in to Nim.
+3. If no result has that URL, the Nim connector hasn't been connected yet: until then it lives only inside the Nim plugin, where search can't find it. Give the user these steps:
+   - Claude Desktop or claude.ai: open **Customize → Plugins → Nim → Connectors**, click **Connect** next to Nim, and sign in to Nim.
+   - Claude Code: run `/mcp`, select the Nim server, and choose **Authenticate**.
+   - Codex or Cursor: sign in to Nim when the app asks on the first Nim tool call, or from its MCP settings.
 
-If the search returns no such result, ask the user to open Settings → Connectors, find Nim, and click Connect.
+Continue the user's request once the Nim tools are available. After the first connection, the connector is found by search, so later reconnects get the Connect button.
 
 ## When to run
 
