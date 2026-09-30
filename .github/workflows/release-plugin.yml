@@ -1,6 +1,6 @@
 name: Release plugin
 
-# Builds the Claude chat plugin file (nim-claude.plugin, also published as nim.plugin for older links) from plugins/nim and publishes it
+# Builds the Claude chat plugin file (nim-claude.plugin) from plugins/nim and publishes it
 # with a manifest.json to a GitHub Release. Claude Desktop installs a .plugin file
 # from a chat card, which is how chat users get the skills without a marketplace.
 # Stable releases are served at
@@ -86,8 +86,6 @@ jobs:
               print(f'stamped {path.parent.name}')
           PY
           (cd "$stage" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-claude.plugin" .claude-plugin .mcp.json skills -x '*.DS_Store')
-          # Same file under the original name: v0.4–v0.6 links and the first installs point at nim.plugin.
-          cp dist/nim-claude.plugin dist/nim.plugin
           sha=$(sha256sum dist/nim-claude.plugin | cut -d' ' -f1)
           jq -n --arg v "$VERSION" --arg tag "$TAG" --arg sha "$sha" --arg repo "$GITHUB_REPOSITORY" --arg commit "$GITHUB_SHA" \
             '{name: "nim", version: $v, tag: $tag, commit: $commit, sha256: $sha,
@@ -102,7 +100,7 @@ jobs:
         run: |
           flags=()
           [ "$PRERELEASE" = true ] && flags+=(--prerelease)
-          gh release create "$TAG" dist/nim-claude.plugin dist/nim.plugin dist/manifest.json \
+          gh release create "$TAG" dist/nim-claude.plugin dist/manifest.json \
             --target "$GITHUB_SHA" \
             --title "Nim plugin $TAG" \
             --notes "Built from ${GITHUB_SHA::7}. Claude chat: nim-claude.plugin (ask Claude to share it with you, then click Save)." \
