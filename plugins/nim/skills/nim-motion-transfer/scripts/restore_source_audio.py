@@ -11,7 +11,6 @@ import argparse
 import math
 import pathlib
 import subprocess
-import tempfile
 
 
 def run(ffmpeg, args):
@@ -48,15 +47,19 @@ def restore(generated, source, output, duration, ffmpeg='ffmpeg', *, resolution,
     if output.exists() or output.resolve() in (generated.resolve(), source.resolve()):
         raise ValueError('Choose a new output file; originals are never overwritten')
     output.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='restore-audio-', dir=output.parent) as tmp:
-        audio = pathlib.Path(tmp) / 'source-aac-lc.m4a'
+    # Stage next to the output, not in a temporary directory made by the tempfile module. On
+    # Windows such directories get an owner-only ACL, and a file renamed out of one keeps that
+    # ACL, so the user (or anyone but the creating account, e.g. outside a sandbox) cannot read
+    # the result. A file ffmpeg writes straight into the destination folder inherits its ACL.
+    audio = output.with_name(f'.{output.stem}.audio.m4a')
+    staged = output.with_name(f'.{output.stem}.staging.mp4')
+    try:
         # Missing audio fails here, before video rendering. Encode once, then mux.
         run(ffmpeg, ['-i', str(source), '-map', '0:a:0', '-t', str(duration),
                      '-c:a', 'aac', '-profile:a', 'aac_low', '-b:a', '192k',
                      '-ar', '48000', '-ac', '2',
                      str(audio)])
         expected = audio_hash(ffmpeg, audio, duration)
-        staged = pathlib.Path(tmp) / 'final.mp4'
         run(ffmpeg, ['-i', str(generated), '-i', str(audio),
                      '-map', '0:v:0', '-map', '1:a:0', '-t', str(duration),
                      *(['-vf', vf] if vf else []),
@@ -67,7 +70,10 @@ def restore(generated, source, output, duration, ffmpeg='ffmpeg', *, resolution,
         actual = audio_hash(ffmpeg, staged, duration)
         if actual != expected:
             raise RuntimeError('Encoded AAC-LC packet hash does not match; output not delivered')
-        staged.rename(output)
+        staged.replace(output)  # same folder: the file keeps its inherited permissions
+    finally:
+        audio.unlink(missing_ok=True)
+        staged.unlink(missing_ok=True)
     return expected
 
 
