@@ -20,6 +20,8 @@ import {
   SKILLS_BADGE,
   SKILLS_DIR,
   SKILL_PREFIX,
+  UPDATE_SKILL,
+  UPDATE_SKILL_VERSION,
   VERSION_BADGE,
   VERSION_FILES,
   changedSince,
@@ -63,6 +65,7 @@ if (values.list) {
   const version = checkVersions();
   checkSkills();
   checkReadme(version);
+  checkUpdateSkillVersion(version);
   checkShippedFiles();
   checkContributorSkills();
   if (values.base) {
@@ -184,6 +187,21 @@ function checkReadme(version: string | undefined): void {
   }
   if (table.nextLine !== undefined && table.nextLine.trim() !== '') {
     error('leave a blank line after the Skills table, or GitHub renders the next line as a table row', README, table.lastLine + 1);
+  }
+}
+
+/** The update skill tells the agent which version is installed; a stale one hides every update. */
+function checkUpdateSkillVersion(version: string | undefined): void {
+  if (!exists(UPDATE_SKILL)) {
+    error('the update skill is missing', UPDATE_SKILL);
+    return;
+  }
+  const text = readText(UPDATE_SKILL);
+  const stated = UPDATE_SKILL_VERSION.exec(text)?.[2];
+  if (!stated) {
+    error('add the line "Installed plugin version: `X.Y.Z`"', UPDATE_SKILL);
+  } else if (version && stated !== version) {
+    error(`says installed plugin version ${stated}, the manifests say ${version}. Run: node scripts/bump-version.ts ${version}`, UPDATE_SKILL, lineOf(text, UPDATE_SKILL_VERSION));
   }
 }
 

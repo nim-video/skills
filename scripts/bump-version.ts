@@ -13,6 +13,8 @@ import {
   PRIMARY_MANIFEST,
   README,
   SKILLS_BADGE,
+  UPDATE_SKILL,
+  UPDATE_SKILL_VERSION,
   VERSION_BADGE,
   VERSION_FILES,
   bumpSemver,
@@ -63,16 +65,23 @@ if (SKILLS_BADGE.test(readme)) {
   console.warn(`! ${README}: skills badge not found`);
 }
 
+const updateSkill = readText(UPDATE_SKILL);
+if (!UPDATE_SKILL_VERSION.test(updateSkill)) {
+  fail(`${UPDATE_SKILL}: the "Installed plugin version" line is missing`);
+}
+
 for (const { file, text } of updates) {
   writeText(file, text);
 }
 writeText(README, readme);
+writeText(UPDATE_SKILL, updateSkill.replace(UPDATE_SKILL_VERSION, `$1${next}$3`));
 
 console.log(`${previous ?? 'unknown'} → ${next}`);
 for (const { file } of updates) {
   console.log(`  ${file}`);
 }
 console.log(`  ${README} (version badge ${next}, skills badge ${skills.length})`);
+console.log(`  ${UPDATE_SKILL} (installed plugin version ${next})`);
 
 function nextVersion(requested: string): string {
   if (isSemver(requested)) {

@@ -24,6 +24,13 @@ export const CLAUDE_SKILLS_DIR = '.claude/skills';
 export const VERSION_BADGE = /(img\.shields\.io\/badge\/version-)(\d+\.\d+\.\d+)(-)/;
 export const SKILLS_BADGE = /(img\.shields\.io\/badge\/skills-)(\d+)(-)/;
 
+/**
+ * The update skill states the installed plugin version in its body, which every host shows the
+ * agent, rather than relying on frontmatter it may not show. bump-version.ts keeps it in sync.
+ */
+export const UPDATE_SKILL = `${SKILLS_DIR}/nim-plugin-update/SKILL.md`;
+export const UPDATE_SKILL_VERSION = /(Installed plugin version: `)(\d+\.\d+\.\d+)(`)/;
+
 type VersionFile = {
   file: string;
   field: string;
