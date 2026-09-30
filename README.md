@@ -1,7 +1,7 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.6.2-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-0.6.3-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
 [![Skills](https://img.shields.io/badge/skills-18-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
@@ -31,7 +31,17 @@ prompted to authenticate with Nim.
 codex plugin marketplace add nim-video/skills
 ```
 
-Then enable the `nim` plugin from the `/plugins` picker. The bundled MCP server is
+Then enable the `nim` plugin from the `/plugins` picker.
+
+Without the GitHub marketplace, install the release archive as a local marketplace:
+
+```sh
+mkdir -p ~/.codex/marketplaces/nim
+curl -fsSL -o /tmp/nim-codex.zip https://github.com/nim-video/skills/releases/latest/download/nim-codex.zip
+unzip -o /tmp/nim-codex.zip -d ~/.codex/marketplaces/nim
+codex plugin marketplace add ~/.codex/marketplaces/nim
+codex plugin add nim@nim
+``` The bundled MCP server is
 registered on install; you'll complete Nim authentication on first use.
 
 > Prefer to wire the MCP server yourself (no plugin)? Add it directly:

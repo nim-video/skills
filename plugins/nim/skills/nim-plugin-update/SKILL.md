@@ -13,7 +13,7 @@ description: >-
 
 # Nim plugin update
 
-Installed plugin version: `0.6.2`
+Installed plugin version: `0.6.3`
 
 ## Connect Nim first
 
@@ -57,4 +57,8 @@ If you can't download files, give the user `download_url`, ask them to download 
 Don't download the `.plugin` file here: the plugin updates from its marketplace.
 
 - Claude Code: `claude plugin marketplace update nim`, then `claude plugin update nim@nim`, then restart Claude Code.
-- Codex and Cursor: update the Nim plugin from the plugin marketplace.
+- Codex: run `codex plugin marketplace list`.
+  - If the `nim` marketplace comes from GitHub, run `codex plugin marketplace upgrade nim`, then `codex plugin add nim@nim`.
+  - If it points to a local folder, download `https://github.com/nim-video/skills/releases/download/v<latest_version>/nim-codex.zip`, empty that folder, unzip the archive into it, then run `codex plugin add nim@nim`.
+  - Restart Codex afterwards.
+- Cursor: update the Nim plugin from the plugin marketplace.
