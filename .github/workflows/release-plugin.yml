@@ -1,12 +1,12 @@
 name: Release plugin
 
-# Builds the Claude chat plugin file (nim.plugin) from plugins/nim and publishes it
+# Builds the Claude chat plugin file (nim-claude.plugin, also published as nim.plugin for older links) from plugins/nim and publishes it
 # with a manifest.json to a GitHub Release. Claude Desktop installs a .plugin file
 # from a chat card, which is how chat users get the skills without a marketplace.
 # nim-codex.zip carries the same plugin for Codex, which installs plugins only from a marketplace:
 # the zip is a one-plugin local marketplace (unzip, `codex plugin marketplace add <dir>`,
 # `codex plugin add nim@nim`). Stable releases are served at
-# https://github.com/nim-video/skills/releases/latest/download/nim.plugin (and nim-codex.zip)
+# https://github.com/nim-video/skills/releases/latest/download/nim-claude.plugin (and nim-codex.zip)
 # Pre-releases never become "latest", so manual test runs don't affect that link.
 
 on:
@@ -62,7 +62,7 @@ jobs:
             exit 1
           fi
 
-      - name: Build nim.plugin, nim-codex.zip and manifest.json
+      - name: Build nim-claude.plugin, nim-codex.zip and manifest.json
         if: steps.meta.outputs.skip != 'true'
         env:
           VERSION: ${{ steps.meta.outputs.version }}
@@ -87,17 +87,19 @@ jobs:
               path.write_bytes(eol.join(lines))
               print(f'stamped {path.parent.name}')
           PY
-          (cd "$stage" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim.plugin" .claude-plugin .mcp.json skills -x '*.DS_Store')
+          (cd "$stage" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-claude.plugin" .claude-plugin .mcp.json skills -x '*.DS_Store')
+          # Same file under the original name: v0.4–v0.6 links and the first installs point at nim.plugin.
+          cp dist/nim-claude.plugin dist/nim.plugin
           codex="$RUNNER_TEMP/nim-codex"
           mkdir -p "$codex/.claude-plugin" "$codex/plugins/nim"
           cp .claude-plugin/marketplace.json "$codex/.claude-plugin/"
           cp -R plugins/nim/.codex-plugin plugins/nim/.mcp.json "$stage/skills" "$codex/plugins/nim/"
           (cd "$codex" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-codex.zip" .claude-plugin plugins -x '*.DS_Store')
-          sha=$(sha256sum dist/nim.plugin | cut -d' ' -f1)
+          sha=$(sha256sum dist/nim-claude.plugin | cut -d' ' -f1)
           codex_sha=$(sha256sum dist/nim-codex.zip | cut -d' ' -f1)
           jq -n --arg v "$VERSION" --arg tag "$TAG" --arg sha "$sha" --arg codex_sha "$codex_sha" --arg repo "$GITHUB_REPOSITORY" --arg commit "$GITHUB_SHA" \
             '{name: "nim", version: $v, tag: $tag, commit: $commit, sha256: $sha,
-              url: "https://github.com/\($repo)/releases/download/\($tag)/nim.plugin",
+              url: "https://github.com/\($repo)/releases/download/\($tag)/nim-claude.plugin",
               codex: {sha256: $codex_sha, url: "https://github.com/\($repo)/releases/download/\($tag)/nim-codex.zip"}}' > dist/manifest.json
           cat dist/manifest.json
 
@@ -109,8 +111,8 @@ jobs:
         run: |
           flags=()
           [ "$PRERELEASE" = true ] && flags+=(--prerelease)
-          gh release create "$TAG" dist/nim.plugin dist/nim-codex.zip dist/manifest.json \
+          gh release create "$TAG" dist/nim-claude.plugin dist/nim.plugin dist/nim-codex.zip dist/manifest.json \
             --target "$GITHUB_SHA" \
             --title "Nim plugin $TAG" \
-            --notes "Claude chat plugin built from ${GITHUB_SHA::7}. Install: download nim.plugin and ask Claude to share it with you, then click Save." \
+            --notes "Built from ${GITHUB_SHA::7}. Claude chat: nim-claude.plugin (ask Claude to share it with you, then click Save). Codex: nim-codex.zip (see README)." \
             "${flags[@]}"
