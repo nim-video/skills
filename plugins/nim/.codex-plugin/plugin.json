@@ -1,6 +1,6 @@
 {
   "name": "nim",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Generate images and videos and run templated creative workflows with Nim — model discovery, direct generation, and reference-driven editing through the Nim MCP.",
   "author": {
     "name": "Nim",

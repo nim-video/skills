@@ -1,8 +1,8 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-17-orange.svg)](#skills)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Skills](https://img.shields.io/badge/skills-18-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -79,6 +79,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-generation-qa` | `/nim:nim-generation-qa` | Review finished Nim images and videos against the brief, report defects, and propose a revised prompt. |
 | `nim-seedance-prompt-recovery` | `/nim:nim-seedance-prompt-recovery` | Write and revise Seedance 2.0/2.5 prompts, diagnose failed generations, and suggest targeted wording, reference, or audio corrections. |
 | `nim-plugin-update` | `/nim:nim-plugin-update` | Checks for a newer Nim plugin at the start of a chat and installs the update in one click. |
+| `nim-multi-angle-reshoot` | `/nim:nim-multi-angle-reshoot` | Reshoot an existing video from new camera angles as a multi-camera edit, keeping the original action. |
 
 The skill drives model discovery (`models_explore`), generation (`generate_image` /
 `generate_video`), templates (`explore_templates`, `get_template`, `run_template`),
@@ -98,6 +99,7 @@ reference uploads (`media_upload`), credits, and status polling
 - **Manage credits** — check your Nim balance and resolve insufficient-credit states.
 - **Ideate** — ask for several variations of a concept in one go and compare directions.
 - **Upscale** — upscale your media to the best quality 
+- **Reshoot from new angles** — turn a source video into a multi-angle edit of the same action.
 - **Reiterate** — review each finished result and get a better prompt for the next run.
 - **Draft and recover Seedance prompts** — use `nim-seedance-prompt-recovery` before
   writing a prompt, when editing it, and after a failed generation. Preserve
