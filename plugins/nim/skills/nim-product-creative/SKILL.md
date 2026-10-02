@@ -24,6 +24,10 @@ request is about making a product, SKU, garment, package, object, or brand asset
 look sellable, shoppable, campaign-ready, or usable in ecommerce/social/ads,
 start with Nim templates.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-product-creative"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## UX Rules
 
 1. **Search templates first.** For commercial/product creative, call

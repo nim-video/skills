@@ -13,6 +13,10 @@ description: >-
 Handle Nim credit balance and purchase flows. Do not start or retry expensive
 generation while the user is out of credits.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-credits"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## When To Use
 
 - The user asks how many Nim credits they have.

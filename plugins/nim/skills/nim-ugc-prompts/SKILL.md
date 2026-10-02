@@ -5,6 +5,10 @@ description: Use when writing, improving, planning, or generating Nim/Seedance U
 
 # Nim UGC Prompts
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-ugc-prompts"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Overview
 
 Create copy-ready English UGC video prompts for Nim image-to-video and text-to-video workflows. The output should feel filmed by a real person on a phone: imperfect framing, ordinary timing, natural delivery, realistic skin/fabric/room behavior, and clear reference roles.

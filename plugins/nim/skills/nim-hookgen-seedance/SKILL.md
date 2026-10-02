@@ -17,6 +17,10 @@ description: >-
 Turn a product brief into one spoken-hook UGC video. This skill writes the spoken hooks and
  rewrites the assembled brief into the final Seedance prompt.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-hookgen-seedance"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## UX rules
 
 1. **Be concise.** Don't dump raw IDs, JSON, briefs, or tool plumbing into chat.

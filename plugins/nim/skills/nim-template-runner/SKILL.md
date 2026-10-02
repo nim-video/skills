@@ -14,6 +14,10 @@ Browse and run Nim templates through the Nim MCP. Templates are a separate path
 from ordinary image/video generation: use the template tools, not local runner
 apps or hand-built HTML.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-template-runner"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## UX Rules
 
 1. **Use templates only on explicit intent.** The user must ask for a template,

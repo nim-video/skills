@@ -7,6 +7,10 @@ description: Use when creating product or lifestyle b-roll videos from a user br
 
 Create controlled product/lifestyle b-roll videos from a brief and reference images. The workflow is intentionally staged: the user should be able to inspect and approve each meaningful step before generation.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-b-roll-seedance"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Core Flow
 
 1. Intake the brief: brand/product, audience, tone, claim, desired format, and any constraints.

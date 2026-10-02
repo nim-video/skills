@@ -5,6 +5,10 @@ description: Use when improving, writing, rewriting, planning, or executing AI v
 
 # Nim Quality Prompts
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-quality-prompts"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Overview
 
 Create copy-ready English AI video prompts and reference-frame prompts for Seedance/Nim workflows. Use the bundled LUT bank, camera-quality style database, camera-angle rulebook, and prompt orchestrator to improve both the still references that anchor a video and the final video prompt.

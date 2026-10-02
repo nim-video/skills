@@ -25,8 +25,6 @@ For a template-backed job, retain the template's own invocation and contract. Ap
 | Observe | Use `get_generation_status` with a returned `workflowId` or `promptId`. Never substitute an upload ID, project ID, media URL, or guessed job ID. |
 | Deliver | Collect actual media from `outputs` when present and top-level `mediaUrl` / `downloadUrl`; avoid showing the same output twice. A `generationUrl` is a job page, not proof of a finished media file. |
 
-If a tool exposes a `skills` attribution field and requires it for loaded skills, list the skills whose instructions were actually read or invoked, including this one. Use the installed plugin version only when known; otherwise use the bare skill name. Do not report skills merely seen in a catalog. Attribution is tool metadata, not text to put in the creative prompt.
-
 ### References and audio
 
 - For the connector shape above, `fileInputs` contains uploaded image references; advanced modes may expose separate `referenceVideos` and `referenceAudios`. Preserve order within each type and match the prompt's reference roles. Do not put voice audio into an image-only array.

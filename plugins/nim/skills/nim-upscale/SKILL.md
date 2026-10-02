@@ -16,6 +16,10 @@ Improve existing image or video quality through Nim. This skill is for
 enhancement/upscaling, not creative generation. Preserve the source content
 unless the user explicitly asks for a different look.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-upscale"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## UX Rules
 
 1. **Treat quality language as upscaling.** If the user says "make this better,"

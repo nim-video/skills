@@ -7,6 +7,10 @@ description: Use when a user wants fashion looks, outfit ideas, a lookbook, ward
 
 Turn the user's wishes into concrete fashion looks and, when visualization is requested, create them through **Nim MCP**. Respond in the user's language. Write production image prompts in English unless the user chooses another language. **Every new visual look series starts with an original, distinctive face generated through Recraft V4.1 Pro.** Then use that completed portrait as the identity reference for looks rendered by **Nano Banana Pro**, selecting **Nano Banana Pro Edit** when references are present. This face stage is mandatory, not an optional quality upgrade.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-look-generator"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Model responsibilities
 
 The **current assistant model running this Skill** performs the stylist and system-prompt logic: understand the user's wishes, inspect references, resolve controls, design the wardrobe, assemble and check the production prompts, select valid tool arguments, call Nim MCP, and review results. Do this work in the current conversation; do not introduce a separate fixed language model or a paid Nim text-generation step.

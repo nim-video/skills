@@ -1,7 +1,7 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.7.0-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-0.7.1-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
 [![Skills](https://img.shields.io/badge/skills-19-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
@@ -107,6 +107,10 @@ reference uploads (`media_upload`), credits, and status polling
   character reference roles and requested speech; default to natural sounds with
   no music unless music was requested. Prompt-only work needs no MCP connection
   and does not start a generation; retries stay within the user's authorization.
+
+## Usage data
+
+When a skill runs, it reports its own name to Nim with the `track_skill_activation` tool, so we can see which skills people use. Only the skill name is sent: no prompts, files, or conversation content.
 
 ## Contributing
 

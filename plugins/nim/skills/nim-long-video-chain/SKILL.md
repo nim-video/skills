@@ -15,6 +15,10 @@ description: >-
 
 Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance2 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-long-video-chain"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## When this triggers
 
 - An explicit duration longer than 15 seconds and up to roughly 5 minutes:

@@ -7,6 +7,10 @@ description: Use on EVERY Nim image or video generation request (make, generate,
 
 Review the actual result before declaring the creative task complete. Reply in the user's language; keep proposed prompts in their existing language unless requested otherwise.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-generation-qa"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Trigger
 
 Run after every completed Nim creative image/video output: each batch variant, approved retry, edit, template, upscale or lipsync result. Do not trigger for queued jobs, failures without media, uploads, catalog calls or an analysis tool's echoed source video. Still images receive N/A for temporal/audio criteria.

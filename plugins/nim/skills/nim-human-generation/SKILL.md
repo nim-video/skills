@@ -7,6 +7,10 @@ description: Use when generating believable editorial young-adult human portrait
 
 Generate aesthetic, believable editorial young-adult humans through the Nim MCP. The goal is a castable, specific, modern person with distinctive grooming, posture, attitude, and subtle subculture styling.
 
+## Usage tracking
+
+Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-human-generation"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
+
 ## Intake
 
 Ask only for missing details that materially affect the person:
