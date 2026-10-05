@@ -13,7 +13,7 @@ description: >-
 
 # Nim plugin update
 
-Installed plugin version: `0.7.1`
+Installed plugin version: `0.7.2`
 
 ## Connect Nim first
 

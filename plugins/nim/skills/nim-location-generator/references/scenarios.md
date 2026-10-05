@@ -39,6 +39,14 @@ If the user asks for one location (“come up with an apartment based on this po
 | 29 | “Find a Nim template for a location” | Inspect via `explore_templates` → selected `get_template` → contract; finding is not running. Before requested execution, verify all image stages obey the closed model policy; opaque/unknown models cannot establish compliance |
 | 30 | “Where is a good place to shoot in Belgrade / book a studio” | Do not activate the generator: this is a search for real places or a booking |
 | 31 | “Make a map/drawing with exact dimensions” | Do not present an artistic render as a measured plan; if only an environment concept is needed, state its purpose |
+| 32 | “Generate an architectural interior with FLUX 3 at 2K” | Explicit FLUX 3 option; discover the text variant, verify `get`, and send supported 2K plus the intended ratio; no reference uploads |
+| 33 | “Use FLUX 3 for this same kitchen from two photos, 4:5 at 2K” | FLUX 3 Edit with both references and verified 4:5/2K parameters; preserve room geometry and inspect actual dimensions |
+| 34 | “Use FLUX 3 for a location; if Edit is unavailable, choose another model” | With images, select a compatible existing approved Edit/image-input fallback and explain it; keep every reference and locked Nano/GPT 2K settings |
+| 35 | “Only FLUX 3, using all 11 room photos” | Current FLUX 3 Edit accepts at most 10; explain the conflict and offer Nano Banana Pro Edit 2K if compatible; obtain a decision before replacing the required model |
+| 36 | “Make a realistic living room”, with no model preference | Retain Flux 2 Pro when compatible; an available FLUX 3 option does not change the preferred route |
+| 37 | “Generate this reference-based location in native 4K” | Consider FLUX 3 Edit if its live contract accepts all inputs and 4K; Nano/GPT stay at 2K, and an upscale is a separate request |
+| 38 | “FLUX 3 at 0.75K” | Check the intersection of model contract and generation tool enum; currently incompatible, so explain without submitting or silently substituting 1K |
+| 39 | “Compare FLUX 3 with Flux 2 Pro for locations; prompts only” | Text comparison/prompts; preserve count and references as analysis only; no uploads or paid jobs |
 
 ## A. Quick start without references
 
@@ -77,7 +85,7 @@ For different rooms in one apartment, the bible stores the design language and p
 
 Different concepts need different prompts. Random variations of one prompt can be generated through `batchSize` if the contract allows it. The current Nim image call allows a number from 1 to 4 per call; the actual schema and model contract take precedence over this guidance. For larger quantities, split the request into permitted groups, preserving numbering and budget.
 
-“Compare Flux2 and Recraft” without a request for images means a text comparison of Flux 2 Pro and Recraft V4.1 Pro suitability and current constraints. “Generate one with each” means two images with the same brief/format, where compatible. Comparisons may also include Nano Banana Pro 2K and GPT Image 2 Medium 2K when requested. Supplied images require the corresponding approved image modes; text-only Recraft cannot replace an unavailable Edit variant.
+“Compare Flux2 and Recraft” without a request for images means a text comparison of Flux 2 Pro and Recraft V4.1 Pro suitability and current constraints. “Generate one with each” means two images with the same brief/format, where compatible. Comparisons may also include FLUX 3, Nano Banana Pro 2K, and GPT Image 2 Medium 2K when requested. FLUX 3 is a location option, not an automatic replacement for the existing preferred models. Supplied images require the corresponding approved image modes; text-only Recraft or FLUX 3 cannot replace an unavailable Edit variant.
 
 Do not silently multiply results: 3 directions × 2 models × 4 seeds = 24 paid jobs, not “3 variants”.
 
