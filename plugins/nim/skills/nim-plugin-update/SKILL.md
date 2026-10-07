@@ -13,7 +13,7 @@ description: >-
 
 # Nim plugin update
 
-Installed plugin version: `0.7.2`
+Installed plugin version: `0.7.4`
 
 ## Connect Nim first
 
@@ -24,7 +24,7 @@ The Nim tools come from the Nim connector that the Nim plugin adds. If `check_pl
 3. If no result has that URL, the Nim connector hasn't been connected yet: until then it lives only inside the Nim plugin, where search can't find it. Give the user these steps:
    - Claude Desktop or claude.ai: open **Customize → Plugins → Nim → Connectors**, click **Connect** next to Nim, and sign in to Nim.
    - Claude Code: run `/mcp`, select the Nim server, and choose **Authenticate**.
-   - Codex or Cursor: sign in to Nim when the app asks on the first Nim tool call, or from its MCP settings.
+   - ChatGPT, Codex, or Cursor: sign in to Nim when the app asks on the first Nim tool call, or from its plugin or MCP settings.
 
 Continue the user's request once the Nim tools are available. After the first connection, the connector is found by search, so later reconnects get the Connect button.
 
@@ -52,9 +52,19 @@ In Claude Desktop or claude.ai, the plugin is a `.plugin` file the user saves fr
 
 If you can't download files, give the user `download_url`, ask them to download the file and attach it here, and share that file back unchanged.
 
-## Update in Claude Code, Codex, or Cursor
+## Install or update in ChatGPT or the Codex app
 
-Don't download the `.plugin` file here: the plugin updates from its marketplace.
+The ChatGPT desktop app and the Codex app install the Nim plugin from an archive the user uploads; you can't add it for them. ChatGPT marks the plugin **Desktop only** because it bundles the Nim MCP server, so it doesn't run in ChatGPT on the web.
+
+1. Give the user `https://github.com/nim-video/skills/releases/latest/download/nim-chatgpt.zip` to download. If you can download files, download it and hand it to them unchanged instead.
+2. Tell them to open **Plugins**, choose **New Plugin**, select `nim-chatgpt.zip`, and click **Add plugin**. When updating, if the old Nim plugin stays next to the new one, remove the old one.
+3. Tell them to start a new chat and sign in to Nim when asked.
+
+Don't add the archive when the Nim plugin is already installed from a marketplace (its skills are named `nim:…`): the skills would load twice. Update that install from its marketplace instead.
+
+## Update a marketplace install (Claude Code, Codex, Cursor)
+
+When the plugin came from a marketplace, don't download files here: it updates from its marketplace.
 
 - Claude Code: `claude plugin marketplace update nim`, then `claude plugin update nim@nim`, then restart Claude Code.
 - Codex: `codex plugin marketplace upgrade nim`, then `codex plugin add nim@nim`, then restart Codex.
