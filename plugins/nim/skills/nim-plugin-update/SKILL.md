@@ -13,7 +13,7 @@ description: >-
 
 # Nim plugin update
 
-Installed plugin version: `0.7.2`
+Installed plugin version: `0.7.3`
 
 ## Connect Nim first
 
@@ -24,7 +24,7 @@ The Nim tools come from the Nim connector that the Nim plugin adds. If `check_pl
 3. If no result has that URL, the Nim connector hasn't been connected yet: until then it lives only inside the Nim plugin, where search can't find it. Give the user these steps:
    - Claude Desktop or claude.ai: open **Customize → Plugins → Nim → Connectors**, click **Connect** next to Nim, and sign in to Nim.
    - Claude Code: run `/mcp`, select the Nim server, and choose **Authenticate**.
-   - Codex or Cursor: sign in to Nim when the app asks on the first Nim tool call, or from its MCP settings. If the Nim skills were installed from the skills archive (see below) and Codex has no Nim server yet, run `codex mcp add nim --url https://mcp.nim.video/mcp` first.
+   - ChatGPT, Codex, or Cursor: sign in to Nim when the app asks on the first Nim tool call, or from its plugin or MCP settings.
 
 Continue the user's request once the Nim tools are available. After the first connection, the connector is found by search, so later reconnects get the Connect button.
 
@@ -52,17 +52,15 @@ In Claude Desktop or claude.ai, the plugin is a `.plugin` file the user saves fr
 
 If you can't download files, give the user `download_url`, ask them to download the file and attach it here, and share that file back unchanged.
 
-## Install or update from the skills archive (Codex app, ChatGPT desktop)
+## Install or update in ChatGPT or the Codex app
 
-The Codex app and the ChatGPT desktop app can't add a plugin marketplace without the `codex` CLI, so their skills come from `nim-codex.zip`, unpacked into `~/.agents/skills`. Use this when this skill's own file is `~/.agents/skills/nim-plugin-update/SKILL.md`, or when the user asks to install Nim there.
+The ChatGPT desktop app and the Codex app install the Nim plugin from an archive the user uploads; you can't add it for them. ChatGPT marks the plugin **Desktop only** because it bundles the Nim MCP server, so it doesn't run in ChatGPT on the web.
 
-1. Download `https://github.com/nim-video/skills/releases/latest/download/nim-codex.zip` and `https://github.com/nim-video/skills/releases/latest/download/manifest.json`.
-2. Compare the archive's SHA-256 (`sha256sum` or `shasum -a 256`) with `artifacts.codex.sha256` in the manifest. If they differ, delete the archive, tell the user the download failed, and stop.
-3. List the skill folders in the archive (`unzip -Z1 nim-codex.zip`). Create `~/.agents/skills` if it's missing, delete only those folders from it, then unzip the archive into `~/.agents/skills/`. Don't delete by a `nim-*` pattern: other skills there, such as `nim-internal-*`, aren't part of this archive.
-4. If `codex mcp list` doesn't show a server with `https://mcp.nim.video/mcp`, run `codex mcp add nim --url https://mcp.nim.video/mcp`. If the `codex` command isn't available, add a `[mcp_servers.nim]` table with `url = "https://mcp.nim.video/mcp"` to `~/.codex/config.toml` instead.
-5. Tell the user to start a new chat so the updated skills load, and to sign in to Nim when asked.
+1. Give the user `https://github.com/nim-video/skills/releases/latest/download/nim-chatgpt.zip` to download. If you can download files, download it and hand it to them unchanged instead.
+2. Tell them to open **Plugins**, choose **New Plugin**, select `nim-chatgpt.zip`, and click **Add plugin**. When updating, if the old Nim plugin stays next to the new one, remove the old one.
+3. Tell them to start a new chat and sign in to Nim when asked.
 
-Don't install from the archive when the Nim plugin is already installed from a marketplace (its skills are named `nim:…`): the skills would load twice. Update that install from its marketplace instead.
+Don't add the archive when the Nim plugin is already installed from a marketplace (its skills are named `nim:…`): the skills would load twice. Update that install from its marketplace instead.
 
 ## Update a marketplace install (Claude Code, Codex, Cursor)
 

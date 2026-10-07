@@ -1,14 +1,17 @@
 name: Release plugin
 
-# Builds the Claude chat plugin file (nim-claude.plugin) and the Codex skills archive
-# (nim-codex.zip) from plugins/nim and publishes them with a manifest.json to a GitHub
+# Builds the Claude chat plugin file (nim-claude.plugin) and the ChatGPT plugin archive
+# (nim-chatgpt.zip) from plugins/nim and publishes them with a manifest.json to a GitHub
 # Release. Claude Desktop installs a .plugin file from a chat card, which is how chat
-# users get the skills without a marketplace. The Codex app and the ChatGPT desktop app
-# have no way to add a marketplace without the codex CLI, so their agent unpacks
-# nim-codex.zip (skill folders at the archive root) into ~/.agents/skills instead.
+# users get the skills without a marketplace. ChatGPT (web and desktop) and the Codex
+# app have no way to add a custom marketplace without the codex CLI, but they accept a
+# plugin archive under Plugins -> New Plugin. That upload needs a portable Agent Plugins
+# package: plugin.json and mcp.json at the archive root
+# (https://developers.openai.com/plugins/build/plugins); .codex-plugin/plugin.json rides
+# along as the OpenAI overlay that supplies the name, icon and example prompts.
 # Stable releases are served at
 # https://github.com/nim-video/skills/releases/latest/download/nim-claude.plugin
-# https://github.com/nim-video/skills/releases/latest/download/nim-codex.zip
+# https://github.com/nim-video/skills/releases/latest/download/nim-chatgpt.zip
 # Pre-releases never become "latest", so manual test runs don't affect those links.
 
 on:
@@ -64,7 +67,7 @@ jobs:
             exit 1
           fi
 
-      - name: Build nim-claude.plugin, nim-codex.zip and manifest.json
+      - name: Build nim-claude.plugin, nim-chatgpt.zip and manifest.json
         if: steps.meta.outputs.skip != 'true'
         env:
           VERSION: ${{ steps.meta.outputs.version }}
@@ -90,20 +93,29 @@ jobs:
               print(f'stamped {path.parent.name}')
           PY
           (cd "$stage" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-claude.plugin" .claude-plugin .mcp.json skills -x '*.DS_Store')
-          # Skill folders at the archive root, so unzipping into ~/.agents/skills installs them.
-          (cd "$stage/skills" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-codex.zip" . -x '*.DS_Store')
+          # ChatGPT package: the portable root plugin.json/mcp.json are generated from the Codex
+          # manifest and .mcp.json, so the version and MCP URL have one source in the repo.
+          chatgpt="$RUNNER_TEMP/nim-chatgpt"
+          mkdir -p "$chatgpt"
+          cp -R plugins/nim/.codex-plugin plugins/nim/.mcp.json plugins/nim/assets "$stage/skills" "$chatgpt/"
+          jq '{"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", name, version, description}' \
+            plugins/nim/.codex-plugin/plugin.json > "$chatgpt/plugin.json"
+          jq '{"$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+               mcpServers: (.mcpServers | with_entries({key: (.key | ascii_downcase), value: {type: "streamable-http", url: .value.url}}))}' \
+            plugins/nim/.mcp.json > "$chatgpt/mcp.json"
+          (cd "$chatgpt" && zip -qr -X "$GITHUB_WORKSPACE/dist/nim-chatgpt.zip" . -x '*.DS_Store')
           sha=$(sha256sum dist/nim-claude.plugin | cut -d' ' -f1)
-          codex_sha=$(sha256sum dist/nim-codex.zip | cut -d' ' -f1)
+          chatgpt_sha=$(sha256sum dist/nim-chatgpt.zip | cut -d' ' -f1)
           # The top-level url/sha256 describe nim-claude.plugin: the Nim backend reads them for
           # check_plugin_update, so keep them when adding fields.
-          jq -n --arg v "$VERSION" --arg tag "$TAG" --arg sha "$sha" --arg codex_sha "$codex_sha" \
+          jq -n --arg v "$VERSION" --arg tag "$TAG" --arg sha "$sha" --arg chatgpt_sha "$chatgpt_sha" \
             --arg repo "$GITHUB_REPOSITORY" --arg commit "$GITHUB_SHA" \
             '"https://github.com/\($repo)/releases/download/\($tag)" as $base
              | {name: "nim", version: $v, tag: $tag, commit: $commit, sha256: $sha,
                 url: "\($base)/nim-claude.plugin",
                 artifacts: {
                   claude: {file: "nim-claude.plugin", sha256: $sha, url: "\($base)/nim-claude.plugin"},
-                  codex: {file: "nim-codex.zip", sha256: $codex_sha, url: "\($base)/nim-codex.zip"}
+                  chatgpt: {file: "nim-chatgpt.zip", sha256: $chatgpt_sha, url: "\($base)/nim-chatgpt.zip"}
                 }}' > dist/manifest.json
           cat dist/manifest.json
 
@@ -115,8 +127,8 @@ jobs:
         run: |
           flags=()
           [ "$PRERELEASE" = true ] && flags+=(--prerelease)
-          gh release create "$TAG" dist/nim-claude.plugin dist/nim-codex.zip dist/manifest.json \
+          gh release create "$TAG" dist/nim-claude.plugin dist/nim-chatgpt.zip dist/manifest.json \
             --target "$GITHUB_SHA" \
             --title "Nim plugin $TAG" \
-            --notes "Built from ${GITHUB_SHA::7}. Claude chat: nim-claude.plugin (ask Claude to share it with you, then click Save). Codex and ChatGPT desktop: unzip nim-codex.zip into ~/.agents/skills and add the Nim MCP server (codex mcp add nim --url https://mcp.nim.video/mcp)." \
+            --notes "Built from ${GITHUB_SHA::7}. Claude chat: nim-claude.plugin (ask Claude to share it with you, then click Save). ChatGPT and the Codex app: nim-chatgpt.zip (Plugins, New Plugin, upload the file)." \
             "${flags[@]}"

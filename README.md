@@ -1,7 +1,7 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.7.2-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-0.7.3-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
 [![Skills](https://img.shields.io/badge/skills-19-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
@@ -25,6 +25,14 @@ claude plugin install nim@nim
 The plugin bundles the Nim MCP server automatically — on first generation you'll be
 prompted to authenticate with Nim.
 
+### ChatGPT desktop and the Codex app
+
+Download [`nim-chatgpt.zip`](https://github.com/nim-video/skills/releases/latest/download/nim-chatgpt.zip),
+then open **Plugins → New Plugin**, select the file, and click **Add plugin**. It adds the
+Nim skills and the Nim MCP server; you'll sign in to Nim on first use. ChatGPT marks it
+**Desktop only** because it bundles an MCP server, so it doesn't run in ChatGPT on the web. Use one install
+method: with the marketplace plugin installed too, the skills load twice.
+
 ### Codex
 
 ```sh
@@ -33,12 +41,6 @@ codex plugin marketplace add nim-video/skills
 
 Then enable the `nim` plugin from the `/plugins` picker. The bundled MCP server is
 registered on install; you'll complete Nim authentication on first use.
-
-**Codex app or ChatGPT desktop without the `codex` CLI:** download
-[`nim-codex.zip`](https://github.com/nim-video/skills/releases/latest/download/nim-codex.zip),
-unzip it into `~/.agents/skills/`, and add the MCP server with
-`codex mcp add nim --url https://mcp.nim.video/mcp` (or the `config.toml` table below).
-Use one install method: with the marketplace plugin installed too, the skills load twice.
 
 > Prefer to wire the MCP server yourself (no plugin)? Add it directly:
 >
