@@ -1,6 +1,6 @@
 ---
 name: nim-generation-qa
-description: Use on EVERY Nim image or video generation request (make, generate, animate, edit, restyle, template, upscale, lipsync) — read this together with nim-generate BEFORE calling any Nim generation tool, even if the user never mentions review or QA. After starting a generation, stay in the same reply until it finishes, download and actually look at the media, evaluate eight quality criteria, report evidenced mismatches and artifacts, and propose precise prompt revisions and a user-approved rerun. Also use for explicit review of existing Nim results.
+description: Use on EVERY Nim image or video generation request (make, generate, animate, edit, restyle, template, upscale, lipsync) — read this together with nim-generate BEFORE calling any Nim generation tool, even if the user never mentions review or QA. After starting a generation, stay in the same reply until it finishes, then ask whether the user wants a quality analysis. Only if they say yes: download and actually look at the media, evaluate eight quality criteria, report evidenced mismatches and artifacts, and propose precise prompt revisions and a user-approved rerun. Also use for explicit review of existing Nim results.
 ---
 
 # Nim Generation QA
@@ -13,7 +13,13 @@ Once per new user request that you handle with this skill, call the Nim tool `tr
 
 ## Trigger
 
-Run after every completed Nim creative image/video output: each batch variant, approved retry, edit, template, upscale or lipsync result. Do not trigger for queued jobs, failures without media, uploads, catalog calls or an analysis tool's echoed source video. Still images receive N/A for temporal/audio criteria.
+Offer a review after every completed Nim creative image/video output: each batch variant, approved retry, edit, template, upscale or lipsync result. Do not trigger for queued jobs, failures without media, uploads, catalog calls or an analysis tool's echoed source video. Still images receive N/A for temporal/audio criteria.
+
+## Ask before analyzing
+
+The analysis is opt-in. When an output finishes, deliver the result and ask one short question: does the user want a quality analysis of it? Do not download or inspect the media, build the criteria table, or list what is good and what is not until they say yes. If they decline or move on, end there; do not offer again for the same output.
+
+Skip the question and run the review directly only when the user already asked for one: an explicit request to review, check, or analyze a result, or a standing instruction earlier in the conversation to always analyze outputs. One question covers a whole batch; a yes reviews every variant.
 
 For deployment details, read [integration.md](references/integration.md).
 
@@ -21,9 +27,9 @@ For deployment details, read [integration.md](references/integration.md).
 
 In chat hosts (Claude app, Claude Desktop) no host resumes you after a render finishes: you are the dispatcher. Even when a Nim widget renders progress, do NOT end the reply after queuing a generation.
 
-1. Before generating, tell the user in one line that the reply will wait for the render and the review (use estimatedDurationMs).
+1. Before generating, tell the user in one line that the reply will wait for the render (use estimatedDurationMs).
 2. Poll get_generation_status, paced by estimatedDurationMs: first check at ~50% of the estimate, then every ~30s, until finished / failed / cancelled / removed. Do not narrate each poll.
-3. On finished: run the review below before ending the reply. The widget already shows the media; do not re-embed it.
+3. On finished: ask whether the user wants a quality analysis (see "Ask before analyzing") before ending the reply; run the review below only after a yes, or right away if they already asked for one. The widget already shows the media; do not re-embed it.
 4. If still running after ~2x the estimate, stop polling and tell the user to say "review" when it is done.
 
 ## 1. Recover requirements
@@ -105,7 +111,7 @@ For material findings, prepare before asking:
 
 Check for contradictory references before piling on negatives. Propose a corrected reference when warranted; do not silently create or upload one. Do not silently change model, duration, resolution, language, wardrobe, shot count or narrative. Describe necessary tradeoffs as options.
 
-Review is automatic; new chargeable generation is opt-in. Ask one concrete approval question after the revised prompt and scope are reviewable. Do not reconfirm an already authorized concrete retry. Permission for one generation is not an unlimited retry budget.
+Review runs only after the user asks for it; new chargeable generation is a separate opt-in. Ask one concrete approval question after the revised prompt and scope are reviewable. Do not reconfirm an already authorized concrete retry. Permission for one generation is not an unlimited retry budget.
 
 If no fixes are needed, do not manufacture a rerun.
 

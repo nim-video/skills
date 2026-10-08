@@ -10,18 +10,20 @@ Add the block below to each generation skill's successful-completion path, or on
 
 ## Completion instruction to integrate
 
-> After each successful Nim creative image/video output becomes available, invoke nim-generation-qa before declaring the task complete. Supply the latest approved brief, exact submitted prompt/settings, reference-role map, generation identifier and every actual output. Review every batch variant and approved retry. Show results with an evidence-based review; uninspectable properties remain unverified. If defects exist, prepare complete prompt changes and a bounded rerun proposal, then obtain approval unless that concrete retry is already authorized. Do not automatically spend credits on another generation based solely on review findings. Do not trigger QA for uploads, catalog calls, failed jobs without media, or describe_video's echoed source video.
+> After each successful Nim creative image/video output becomes available, show the result and ask the user whether they want a quality analysis. Invoke nim-generation-qa only if they say yes, or if they already asked for a review. Supply the latest approved brief, exact submitted prompt/settings, reference-role map, generation identifier and every actual output. Review every batch variant and approved retry. Show results with an evidence-based review; uninspectable properties remain unverified. If defects exist, prepare complete prompt changes and a bounded rerun proposal, then obtain approval unless that concrete retry is already authorized. Do not automatically spend credits on another generation based solely on review findings. Do not trigger QA for uploads, catalog calls, failed jobs without media, or describe_video's echoed source video.
 
-A widget does not perform this QA. Where the host can resume the agent with the finished media, use that. Where it cannot (Claude app, Claude Desktop and other chat hosts), the agent must poll to completion in the same reply and review before ending it, as described in SKILL.md "Same-turn completion". Do not narrate polling or re-embed media the widget already shows.
+A widget does not perform this QA. Where the host can resume the agent with the finished media, use that. Where it cannot (Claude app, Claude Desktop and other chat hosts), the agent must poll to completion in the same reply and ask about the review before ending it, as described in SKILL.md "Same-turn completion". Do not narrate polling or re-embed media the widget already shows.
 
 ## Conceptual orchestration, not an existing API
 
 ```text
 creative output finished
   → recover brief + request + references
+  → show results, ask whether the user wants an analysis
+  → no? stop here
   → for each output revision:
         reuse existing review, or invoke nim-generation-qa
-  → show results and aggregate review
+  → show aggregate review
   → findings? prepare prompt + scope + estimate
   → wait for approval unless already authorized
   → perform authorized retry once
