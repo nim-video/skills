@@ -1,0 +1,645 @@
+{
+ "id": "pack",
+ "t0": 0,
+ "_doc": "GrowUSA / Scott Wiener end card rebuilt in code after endcard_reference.webp. Use in a timeline as {\"src\": \"../shared/packshot.json\", \"at\": \"@Make\", \"z\": 9000}: numeric times count from 'at'. The photo is the client's end-card photo cut out (people/wiener_endcard_cut.png).",
+ "layers": [
+  {
+   "id": "bg",
+   "type": "rect",
+   "w": 1180,
+   "h": 2020,
+   "color": "#F2C443",
+   "x": 540,
+   "y": 960,
+   "z": 0,
+   "shadow": true,
+   "shadow_px": 14,
+   "packshot": true,
+   "in": {
+    "t": -0.2,
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 2000,
+    "spin": 0,
+    "arc": 0,
+    "dur": 0.45
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "sky_gg",
+   "type": "marker",
+   "shape": "path",
+   "color": "#DDAA3A",
+   "width": 5,
+   "z": 1,
+   "pts": [
+    [
+     40,
+     1520
+    ],
+    [
+     40,
+     1000
+    ],
+    [
+     95,
+     960
+    ],
+    [
+     150,
+     1000
+    ],
+    [
+     150,
+     1520
+    ],
+    [
+     150,
+     1150
+    ],
+    [
+     330,
+     1330
+    ],
+    [
+     480,
+     1420
+    ],
+    [
+     150,
+     1150
+    ],
+    [
+     40,
+     1150
+    ],
+    [
+     -80,
+     1300
+    ]
+   ],
+   "in": {
+    "t": 0.15,
+    "fx": "draw",
+    "dur": 0.8,
+    "sfx": "none"
+   }
+  },
+  {
+   "id": "sky_tr",
+   "type": "marker",
+   "shape": "path",
+   "color": "#DDAA3A",
+   "width": 5,
+   "z": 1,
+   "pts": [
+    [
+     820,
+     1520
+    ],
+    [
+     868,
+     760
+    ],
+    [
+     916,
+     1520
+    ],
+    [
+     820,
+     1520
+    ],
+    [
+     940,
+     1520
+    ],
+    [
+     960,
+     900
+    ],
+    [
+     1000,
+     860
+    ],
+    [
+     1040,
+     900
+    ],
+    [
+     1060,
+     1520
+    ]
+   ],
+   "in": {
+    "t": 0.25,
+    "fx": "draw",
+    "dur": 0.8,
+    "sfx": "none"
+   }
+  },
+  {
+   "id": "scott",
+   "type": "text",
+   "text": "Scott",
+   "font": "Montserrat-SemiBold.ttf",
+   "size": 118,
+   "color": "#26245e",
+   "x": 416,
+   "y": 268,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.05,
+    "fx": "pop"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "cjk",
+   "type": "text",
+   "text": "威善高",
+   "font": "NotoSansSC-ExtraBold.ttf",
+   "size": 74,
+   "color": "#26245e",
+   "x": 712,
+   "y": 284,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.12,
+    "fx": "pop"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "wiener",
+   "type": "text",
+   "text": "WIENER",
+   "font": "Montserrat-Black.ttf",
+   "size": 176,
+   "color": "#26245e",
+   "x": 494,
+   "y": 420,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.1,
+    "fx": "slam",
+    "shake": false
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r1",
+   "type": "poly",
+   "color": "#E2382F",
+   "pts": [
+    [
+     14,
+     0
+    ],
+    [
+     120,
+     0
+    ],
+    [
+     116,
+     20
+    ],
+    [
+     10,
+     20
+    ]
+   ],
+   "x": 934,
+   "y": 362,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.3,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r2",
+   "type": "poly",
+   "color": "#F08A2E",
+   "pts": [
+    [
+     11,
+     0
+    ],
+    [
+     116,
+     0
+    ],
+    [
+     112,
+     20
+    ],
+    [
+     7,
+     20
+    ]
+   ],
+   "x": 931,
+   "y": 383,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.34,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r3",
+   "type": "poly",
+   "color": "#F6D43A",
+   "pts": [
+    [
+     8,
+     0
+    ],
+    [
+     112,
+     0
+    ],
+    [
+     108,
+     20
+    ],
+    [
+     4,
+     20
+    ]
+   ],
+   "x": 928,
+   "y": 404,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.38,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r4",
+   "type": "poly",
+   "color": "#3C9A4B",
+   "pts": [
+    [
+     6,
+     0
+    ],
+    [
+     108,
+     0
+    ],
+    [
+     104,
+     20
+    ],
+    [
+     2,
+     20
+    ]
+   ],
+   "x": 925,
+   "y": 425,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.42,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r5",
+   "type": "poly",
+   "color": "#3D6FC6",
+   "pts": [
+    [
+     4,
+     0
+    ],
+    [
+     104,
+     0
+    ],
+    [
+     100,
+     20
+    ],
+    [
+     0,
+     20
+    ]
+   ],
+   "x": 922,
+   "y": 446,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.46,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "r6",
+   "type": "poly",
+   "color": "#7A43A8",
+   "pts": [
+    [
+     2,
+     0
+    ],
+    [
+     100,
+     0
+    ],
+    [
+     96,
+     20
+    ],
+    [
+     0,
+     20
+    ]
+   ],
+   "x": 919,
+   "y": 467,
+   "z": 4,
+   "shadow": false,
+   "in": {
+    "t": 0.5,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "dem",
+   "type": "text",
+   "text": "DEMOCRAT",
+   "font": "Montserrat-SemiBold.ttf",
+   "size": 56,
+   "color": "#26245e",
+   "x": 322,
+   "y": 542,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.3,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "for",
+   "type": "text",
+   "text": "FOR",
+   "font": "Montserrat-SemiBold.ttf",
+   "size": 36,
+   "color": "#26245e",
+   "x": 547,
+   "y": 549,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.36,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "congress",
+   "type": "text",
+   "text": "CONGRESS",
+   "font": "Montserrat-SemiBold.ttf",
+   "size": 56,
+   "color": "#26245e",
+   "x": 765,
+   "y": 542,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.42,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "url",
+   "type": "text",
+   "text": "www.SCOTTWIENER.com",
+   "font": "Montserrat-ExtraBold.ttf",
+   "size": 32,
+   "color": "#26245e",
+   "x": 540,
+   "y": 618,
+   "z": 5,
+   "shadow": false,
+   "in": {
+    "t": 0.5,
+    "fx": "fade"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "photo",
+   "type": "image",
+   "src": "../people/wiener_endcard_cut.png",
+   "size": 960,
+   "x": 545,
+   "y": 1110,
+   "z": 3,
+   "rim": 0,
+   "shadow": true,
+   "shadow_op": 0.22,
+   "hero": true,
+   "overlay": true,
+   "in": {
+    "t": 0.0,
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 900,
+    "spin": 0
+   }
+  },
+  {
+   "id": "band",
+   "type": "rect",
+   "w": 1180,
+   "h": 420,
+   "color": "#23215c",
+   "x": 540,
+   "y": 1730,
+   "z": 6,
+   "shadow": false,
+   "in": {
+    "t": 0.2,
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 500,
+    "spin": 0,
+    "arc": 0
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "box",
+   "type": "rect",
+   "w": 112,
+   "h": 112,
+   "radius": 18,
+   "color": "#F2C443",
+   "x": 148,
+   "y": 1640,
+   "z": 7,
+   "shadow": false,
+   "in": {
+    "t": 0.45,
+    "fx": "pop"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "tick",
+   "type": "marker",
+   "shape": "path",
+   "color": "#23215c",
+   "width": 15,
+   "z": 8,
+   "pts": [
+    [
+     118,
+     1640
+    ],
+    [
+     142,
+     1666
+    ],
+    [
+     182,
+     1612
+    ]
+   ],
+   "in": {
+    "t": 0.7,
+    "fx": "draw",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "vote",
+   "type": "text",
+   "text": "VOTE",
+   "font": "Montserrat-Black.ttf",
+   "size": 104,
+   "color": "#ffffff",
+   "x": 394,
+   "y": 1640,
+   "z": 7,
+   "shadow": false,
+   "in": {
+    "t": 0.5,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "by",
+   "type": "text",
+   "text": "BY",
+   "font": "Montserrat-ExtraBold.ttf",
+   "size": 56,
+   "color": "#F2C443",
+   "x": 616,
+   "y": 1652,
+   "z": 7,
+   "shadow": false,
+   "in": {
+    "t": 0.56,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "nov",
+   "type": "text",
+   "text": "NOV 3",
+   "font": "Montserrat-Black.ttf",
+   "size": 104,
+   "color": "#ffffff",
+   "x": 857,
+   "y": 1640,
+   "z": 7,
+   "shadow": false,
+   "in": {
+    "t": 0.62,
+    "fx": "wipe"
+   },
+   "boil": false,
+   "live": 0
+  },
+  {
+   "id": "disc1",
+   "type": "text",
+   "text": "Paid for by GrowUSA (GrowUSA.org). Not authorized by any candidate or candidate's committee.",
+   "font": "Inter.ttf",
+   "size": 20,
+   "color": "#e8e6f2",
+   "x": 540,
+   "y": 1790,
+   "z": 7,
+   "shadow": false,
+   "boil": false,
+   "live": 0,
+   "in": {
+    "t": 0.4,
+    "fx": "fade"
+   }
+  },
+  {
+   "id": "disc2",
+   "type": "text",
+   "text": "GrowUSA is responsible for the content of this advertising.",
+   "font": "Inter.ttf",
+   "size": 20,
+   "color": "#e8e6f2",
+   "x": 540,
+   "y": 1818,
+   "z": 7,
+   "shadow": false,
+   "boil": false,
+   "live": 0,
+   "in": {
+    "t": 0.4,
+    "fx": "fade"
+   }
+  }
+ ]
+}

@@ -1,0 +1,377 @@
+{
+ "id": "s1",
+ "t0": 0.0,
+ "t1": "@In",
+ "design": "design.png",
+ "layers": [
+  {
+   "id": "plate",
+   "type": "plate",
+   "src": "plate.png",
+   "z": 0
+  },
+  {
+   "id": "linemap",
+   "type": "image",
+   "src": "items/linemap.png",
+   "x": 779,
+   "y": 142,
+   "size": 736,
+   "rot": -4.8,
+   "z": 18,
+   "in": {
+    "t": -0.6,
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "rails",
+   "type": "image",
+   "src": "items/rails.png",
+   "x": 540,
+   "y": 775,
+   "size": 1180,
+   "rot": 0.0,
+   "z": 20,
+   "in": {
+    "t": -0.5,
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "train",
+   "type": "image",
+   "src": "items/train.png",
+   "x": 784,
+   "y": 499,
+   "size": 1708,
+   "rot": 0.7,
+   "z": 21,
+   "in": {
+    "t": "@fund-0.25",
+    "fx": "roll",
+    "from": "left",
+    "dist": 1900,
+    "dur": 1.2
+   }
+  },
+  {
+   "id": "plan",
+   "type": "image",
+   "src": "items/plan.png",
+   "x": 185,
+   "y": 175,
+   "size": 652,
+   "rot": -1.4,
+   "z": 23,
+   "in": {
+    "t": -0.3,
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "ticket",
+   "type": "image",
+   "src": "items/ticket.png",
+   "x": 167,
+   "y": 1615,
+   "size": 392,
+   "rot": 41.5,
+   "z": 24,
+   "in": {
+    "t": -0.4,
+    "fx": "slide",
+    "from": "left",
+    "dist": 900
+   }
+  },
+  {
+   "id": "token",
+   "type": "image",
+   "src": "items/token.png",
+   "x": 982,
+   "y": 1752,
+   "size": 310,
+   "rot": -5.7,
+   "z": 25,
+   "in": {
+    "t": -0.35,
+    "fx": "slide",
+    "from": "right",
+    "dist": 900
+   },
+   "out": {
+    "t": "@Congress",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "clipboard",
+   "type": "image",
+   "src": "items/clipboard.png",
+   "x": 70,
+   "y": 1070,
+   "size": 430,
+   "rot": -6.0,
+   "z": 26,
+   "in": {
+    "t": -0.45,
+    "fx": "slide",
+    "from": "left",
+    "dist": 900
+   }
+  },
+  {
+   "id": "hero",
+   "type": "image",
+   "hero": true,
+   "z": 30,
+   "size": 880,
+   "x": 680,
+   "y": 1182,
+   "rim": 12,
+   "in": {
+    "t": 0.0,
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 900
+   },
+   "src": "../../../people/wiener_subway_cut.png",
+   "out": {
+    "t": "@Vote+0.15",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "title1",
+   "type": "strip",
+   "z": 37,
+   "x": 540,
+   "y": 1330,
+   "rot": -3.5,
+   "parts": [
+    {
+     "text": "FUND ",
+     "fg": "ink"
+    },
+    {
+     "text": "BART AND MUNI",
+     "fg": "accent"
+    }
+   ],
+   "size": 104,
+   "bg": "accent2",
+   "overlay": true,
+   "in": {
+    "t": "@fund",
+    "fx": "wipe"
+   },
+   "font": "Anton-Regular.ttf"
+  },
+  {
+   "id": "plan_open_1",
+   "type": "image",
+   "src": "items/unroll/plan_open_1.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan-0.140",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "tear"
+   },
+   "out": {
+    "t": "@plan-0.055",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_2",
+   "type": "image",
+   "src": "items/unroll/plan_open_2.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan-0.055",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   },
+   "out": {
+    "t": "@plan+0.030",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_3",
+   "type": "image",
+   "src": "items/unroll/plan_open_3.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan+0.030",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   },
+   "out": {
+    "t": "@plan+0.115",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_4",
+   "type": "image",
+   "src": "items/unroll/plan_open_4.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan+0.115",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   },
+   "out": {
+    "t": "@plan+0.200",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_5",
+   "type": "image",
+   "src": "items/unroll/plan_open_5.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan+0.200",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   },
+   "out": {
+    "t": "@plan+0.285",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_6",
+   "type": "image",
+   "src": "items/unroll/plan_open_6.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 0,
+   "overlay": true,
+   "in": {
+    "t": "@plan+0.285",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   },
+   "out": {
+    "t": "@plan+0.370",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "plan_open_7",
+   "type": "image",
+   "src": "items/unroll/plan_open_7.png",
+   "x": 590,
+   "y": 168,
+   "size": 770,
+   "rot": -2.0,
+   "z": 22,
+   "rim": 8,
+   "live": 1,
+   "overlay": true,
+   "in": {
+    "t": "@plan+0.370",
+    "fx": "fade",
+    "dur": 0.02,
+    "sfx": "none"
+   }
+  },
+  {
+   "id": "fact",
+   "type": "strip",
+   "text": "SB 63 (2025): Bay Area transit funding measure",
+   "font": "SpecialElite.ttf",
+   "size": 34,
+   "bg": "cream",
+   "fg": "ink",
+   "x": 560,
+   "y": 1468,
+   "rot": -1.5,
+   "z": 38,
+   "overlay": true,
+   "in": {
+    "t": "@BART+0.15",
+    "fx": "wipe"
+   }
+  },
+  {
+   "id": "source",
+   "type": "strip",
+   "text": "Source: CBS News Bay Area, Oct. 14, 2025",
+   "font": "Inter.ttf",
+   "size": 24,
+   "bg": "#ffffff",
+   "fg": "#444444",
+   "x": 300,
+   "y": 1846,
+   "rot": 0,
+   "z": 39,
+   "overlay": true,
+   "in": {
+    "t": "@and",
+    "fx": "wipe"
+   }
+  }
+ ],
+ "plate": "plate.png"
+}

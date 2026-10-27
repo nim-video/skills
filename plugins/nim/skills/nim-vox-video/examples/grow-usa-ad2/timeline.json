@@ -1,0 +1,16 @@
+{
+ "size": [1080, 1920], "fps": 24, "duration": "auto", "end_hold": 1.2,
+ "palette": {"paper": "#f3eee2", "ink": "#16161a", "accent": "#23824F", "accent2": "#F2C230", "navy": "#26245e", "cream": "#efe6cf"},
+ "audio": {"vo": "../vo/vo2.wav", "words": "../vo/words2.json"},
+ "background": {"image": "pack:textures/newsprint.jpg", "world": [3240, 5760], "origin": [-1080, -1920]},
+ "camera": [{"t": 0, "x": 540, "y": 960, "zoom": 1}],
+ "captions": false,
+ "captions_reason": "ad layout like the v2 reference: every scene carries its key words as a title strip; karaoke would cover the collage and double the text",
+ "packshot": "@Vote-0.1",
+ "scenes": [
+  {"src": "scenes/s1/scene_01.json"},
+  {"src": "scenes/s2/scene_02.json"},
+  {"src": "../shared/packshot.json", "at": "@Vote-0.1", "z": 9000}
+ ],
+ "layers": []
+}

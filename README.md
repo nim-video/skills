@@ -1,8 +1,8 @@
 # Nim Skills
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.7.4-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/skills-19-orange.svg)](#skills)
+[![Version](https://img.shields.io/badge/version-0.7.5-blue.svg)](./plugins/nim/.claude-plugin/plugin.json)
+[![Skills](https://img.shields.io/badge/skills-20-orange.svg)](#skills)
 [![MCP](https://img.shields.io/badge/MCP-mcp.nim.video-purple.svg)](https://nim.video)
 
 **Turn your coding agent into a creative studio.** Nim is the AI engine for visual
@@ -89,6 +89,7 @@ Nim MCP server is registered with the plugin; you'll authenticate with Nim on fi
 | `nim-plugin-update` | `/nim:nim-plugin-update` | Checks for a newer Nim plugin at the start of a chat and installs the update in one click. |
 | `nim-multi-angle-reshoot` | `/nim:nim-multi-angle-reshoot` | Reshoot an existing video from new camera angles as a multi-camera edit, keeping the original action. |
 | `nim-replace-character` | `/nim:nim-replace-character` | Replace the people in your video with characters from your images and get back the finished video with the original sound. |
+| `nim-vox-video` | `/nim:nim-vox-video` | Make a Vox-style paper-collage explainer or ad from a topic or script, with voice-over, real photos and kinetic type. |
 
 The skill drives model discovery (`models_explore`), generation (`generate_image` /
 `generate_video`), templates (`explore_templates`, `get_template`, `run_template`),

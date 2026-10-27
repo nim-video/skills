@@ -1,0 +1,171 @@
+{
+ "id": "s2",
+ "t0": "@In",
+ "t1": "@Vote-0.1",
+ "design": "design.png",
+ "layers": [
+  {
+   "id": "plate",
+   "type": "plate",
+   "src": "plate.png",
+   "z": 0,
+   "in": {
+    "t": "@In-0.35",
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 1920,
+    "spin": 0,
+    "arc": 0,
+    "sfx": "slide"
+   }
+  },
+  {
+   "id": "train2",
+   "type": "image",
+   "src": "items/train2.png",
+   "x": 362,
+   "y": 398,
+   "size": 705,
+   "rot": -1.3,
+   "z": 20,
+   "in": {
+    "t": "@In-0.25",
+    "fx": "roll",
+    "from": "left",
+    "dist": 1300,
+    "dur": 1.0
+   }
+  },
+  {
+   "id": "gavel",
+   "type": "image",
+   "src": "items/gavel.png",
+   "x": 175,
+   "y": 876,
+   "size": 623,
+   "rot": -0.8,
+   "z": 21,
+   "in": {
+    "t": "@In-0.1",
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "rails2",
+   "type": "image",
+   "src": "items/rails2.png",
+   "x": 85,
+   "y": 1690,
+   "size": 300,
+   "rot": -18.0,
+   "z": 22,
+   "in": {
+    "t": "@In+0.1",
+    "fx": "slide",
+    "from": "left",
+    "dist": 900
+   }
+  },
+  {
+   "id": "capitol",
+   "type": "image",
+   "src": "items/capitol.png",
+   "x": 902,
+   "y": 474,
+   "size": 606,
+   "rot": -0.4,
+   "z": 23,
+   "in": {
+    "t": "@In-0.2",
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "usmap",
+   "type": "image",
+   "src": "items/usmap.png",
+   "x": 262,
+   "y": 1228,
+   "size": 540,
+   "rot": 3.0,
+   "z": 24,
+   "in": {
+    "t": "@In",
+    "fx": "drop",
+    "dist": 500
+   }
+  },
+  {
+   "id": "hero",
+   "type": "image",
+   "hero": true,
+   "z": 30,
+   "size": 1088,
+   "x": 798,
+   "y": 1356,
+   "rim": 12,
+   "in": {
+    "t": "@Congress-0.2",
+    "fx": "slide",
+    "from": "bottom",
+    "dist": 900
+   },
+   "src": "wiener_podium_clean.png",
+   "out": {
+    "t": "@Vote+0.15",
+    "fx": "fade",
+    "dur": 0.02
+   }
+  },
+  {
+   "id": "title1",
+   "type": "strip",
+   "z": 35,
+   "x": 600,
+   "y": 1503,
+   "rot": -5,
+   "parts": [
+    {
+     "text": "FIGHT FOR ",
+     "fg": "ink"
+    },
+    {
+     "text": "MORE",
+     "fg": "accent"
+    }
+   ],
+   "size": 132,
+   "bg": "accent2",
+   "overlay": true,
+   "in": {
+    "t": "@he'll",
+    "fx": "wipe"
+   },
+   "font": "Anton-Regular.ttf"
+  },
+  {
+   "id": "arrow",
+   "type": "marker",
+   "shape": "arrow",
+   "style": "brush",
+   "bend": 0.22,
+   "color": "accent",
+   "width": 24,
+   "z": 40,
+   "pts": [
+    110,
+    640,
+    800,
+    330
+   ],
+   "in": {
+    "t": "@fight-0.05",
+    "fx": "draw",
+    "dur": 0.45
+   }
+  }
+ ],
+ "plate": "plate.png"
+}
