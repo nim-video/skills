@@ -14,7 +14,7 @@ capitalised word) · `"@doom.end"` · offsets only as a trailing number: `"@crac
 {
   "size": [1080, 1920], "fps": 24, "anim_fps": 12, "duration": "auto", "end_hold": 1.2,
   "palette": {"paper": "#f3eee2", "ink": "#16161a", "accent": "#23824F", "accent2": "#F2C230", "navy": "#26245e"},
-  "audio": {"vo": "vo.wav", "words": "words.json", "sfx_vol": 0.64, "music": null},
+  "audio": {"vo": "vo.mp3", "words": "words.json", "sfx_vol": 0.64, "music": null},
   "background": {"image": "pack:textures/newsprint.jpg", "world": [3240, 5760], "origin": [-1080, -1920]},
   "captions": {"font": "Anton-Regular.ttf", "size": 58, "y": 0.9, "max_words": 3},
   "captions_reason": "only when captions are false: why (e.g. every scene carries its words as a title strip)",
