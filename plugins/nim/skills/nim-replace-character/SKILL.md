@@ -6,6 +6,8 @@ compatibility: Requires the Nim MCP connector (media_upload, models_explore, gen
 
 # Replace people in a video with characters (Nim)
 
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 The user gives a **video** and **one or more character images** and says "replace me with this
 character" (or several people with several characters). The user does not write prompts or
 pick settings — the agent does.

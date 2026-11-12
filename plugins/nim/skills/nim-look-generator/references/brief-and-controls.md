@@ -27,7 +27,7 @@ The current assistant constructs and checks this brief. Its host language model 
 | controls | bag, outerwear, props, jewelry, styling, print, sexy; all false by default |
 | hairChange | Only an explicitly requested hair change, understood in any language |
 | aspectRatio, resolution | User request or an appropriate default |
-| modelPreference, quality, budget | Outfit image renderer: Nano Banana Pro by default / explicit override; supported 2K default; known spending limit |
+| modelPreference, quality, budget | Outfit image renderer: Nano Banana 2.1 by default / explicit override; supported 2K default; known spending limit |
 | previous | Saved brief, targets, prompt, model, jobs, completed outputs |
 
 `optionCount` is not the number of views. "Three views of one outfit" means one inventory and three views. The image count depends on whether the user requested one sheet or separate files. A "capsule" means one shared set of items reused in several combinations, not three independent wardrobes.

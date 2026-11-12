@@ -2,7 +2,7 @@
 
 ## Discovery and Preflight
 
-The current assistant owns the planning and execution loop: interpret the request, apply the Skill's styling rules, prepare/check prompts, choose image models, call tools, and inspect results. Do not introduce an additional language-model service or send the Skill's system-style instructions as a Nim `system_prompt`. Image generation calls render already resolved visual prompts: Recraft V4.1 Pro for casting, Nano Banana Pro / Pro Edit for outfits by default.
+The current assistant owns the planning and execution loop: interpret the request, apply the Skill's styling rules, prepare/check prompts, choose image models, call tools, and inspect results. Do not introduce an additional language-model service or send the Skill's system-style instructions as a Nim `system_prompt`. Image generation calls render already resolved visual prompts: Recraft V4.1 Pro for casting, Nano Banana 2.1 / 2.1 Edit for outfits by default.
 
 Discover callable Nim tools and read their current schemas. The main path is `models_explore` → `media_upload` when needed → `generate_image` → `get_generation_status`. Uploads can be performed after selecting a compatible candidate; do not upload personal photos for advice/prompts delivery. `explore_templates/get_template/run_template` are needed only when the user **explicitly** requests a Nim template; an ordinary lookbook is not a reason to open the template catalog.
 

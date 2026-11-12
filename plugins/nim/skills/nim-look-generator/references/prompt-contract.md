@@ -4,7 +4,7 @@ Before the outfit prompt, prepare and complete the separate casting portrait und
 
 ## Internal plan for one variant
 
-The current assistant performs styling and prompt planning: interpret wishes, resolve constraints, build and locally check the plan, and assemble the final image prompt. No separate text-model API or Nim generation job is needed for those operations. Nano Banana Pro receives the finished visual assignment and renders the image; do not ask it to return wardrobe-planning JSON or execute the Skill's control logic.
+The current assistant performs styling and prompt planning: interpret wishes, resolve constraints, build and locally check the plan, and assemble the final image prompt. No separate text-model API or Nim generation job is needed for those operations. Nano Banana 2.1 receives the finished visual assignment and renders the image; do not ask it to return wardrobe-planning JSON or execute the Skill's control logic.
 
 The plan is the agent's working structure, **not Nim parameters**. Each variant contains:
 
@@ -60,7 +60,7 @@ Plan the requested outfits together. Where possible, distinguish them along thre
 
 ## Complete example: free outfit-only lookbook
 
-User: "Generate a photorealistic lookbook without a person: only a cream sweater, chocolate trousers, and loafers. No bags or prints." `delivery=generate`, `styleMode=free`, 1 sheet, outfit-only, 16:9, controls OFF. First create the separate Recraft V4.1 Pro casting portrait, unless the user explicitly prohibits portrait generation. The assistant assembles the outfit prompt below; Nano Banana Pro text-input renders it, with no portrait reference in this person-free image. Start with supported 2K unless requested otherwise, subject to the live contract and total budget. Count and disclose the casting asset separately from the requested outfit.
+User: "Generate a photorealistic lookbook without a person: only a cream sweater, chocolate trousers, and loafers. No bags or prints." `delivery=generate`, `styleMode=free`, 1 sheet, outfit-only, 16:9, controls OFF. First create the separate Recraft V4.1 Pro casting portrait, unless the user explicitly prohibits portrait generation. The assistant assembles the outfit prompt below; Nano Banana 2.1 text-input renders it, with no portrait reference in this person-free image. Start with supported 2K unless requested otherwise, subject to the live contract and total budget. Count and disclose the casting asset separately from the requested outfit.
 
 ```text
 Create one photorealistic outfit-only lookbook reference sheet on a clean warm-gray background under soft even studio light. Show two large views of the same complete outfit, front and back, on an invisible garment form, with small detail crops of the knit, trouser waistband and shoes. No person, body, skin, face, hands or hair.

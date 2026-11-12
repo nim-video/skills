@@ -5,6 +5,8 @@ description: Use when creating product or lifestyle b-roll videos from a user br
 
 # B-roll Seedance
 
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 Create controlled product/lifestyle b-roll videos from a brief and reference images. The workflow is intentionally staged: the user should be able to inspect and approve each meaningful step before generation.
 
 ## Usage tracking
@@ -20,7 +22,7 @@ Once per new user request that you handle with this skill, call the Nim tool `tr
 5. Build an internal `reference_map` and structured payload. Do not dump them into chat by default.
 6. Show the user a short human summary of the planned creative direction and, when image roles could be confused, a concise role confirmation in plain language.
 7. Draft the Seedance prompt internally. Share the full prompt only if the user asks or prompt approval is part of the current collaboration.
-8. Use Nim with Seedance 2 Standard, upload references in the exact internal `@img` order, generate, poll until terminal status, and return the real media URL.
+8. Use Nim with Seedance 2.5, upload references in the exact internal `@img` order, generate, poll until terminal status, and return the real media URL.
 9. Iterate from the result, then update the internal payload/prompt only after the user agrees.
 
 ## Reference Rules
@@ -33,7 +35,7 @@ Once per new user request that you handle with this skill, call the Nim tool `tr
 - Never let attachment order silently define creative meaning. The internal `reference_map` is canonical.
 - The prompt labels and Nim `fileInputs` order must match the internal `reference_map` exactly.
 - Multiple references per role are allowed. Clarify or infer whether they represent the same product from different angles, one character identity plus outfit/style references, multiple characters, one location from different angles, or multiple locations.
-- Seedance 2 supports up to 9 image references through Nim. If the user provides more than 9, prioritize product identity/detail refs, then character identity refs, then primary location refs, then secondary mood/style refs. Ask which to drop only if the choice is ambiguous.
+- Seedance 2.5 supports up to 30 image references through Nim. If the user provides more than 30, prioritize product identity/detail refs, then character identity refs, then primary location refs, then secondary mood/style refs. Ask which to drop only if the choice is ambiguous.
 
 Internal reference map shape:
 
@@ -151,9 +153,9 @@ LOCATION REFERENCES: @img5 anchors the first location. Generate additional coher
 
 Use the Nim MCP video workflow.
 
-- Preferred model: Seedance 2 Standard, not Fast. In Nim this is currently `Seedance 2` / `seedanceV2ImageToVideo`.
+- Preferred model: Seedance 2.5, not Fast. In Nim this is currently `Seedance 2.5` / `seedanceV25ImageToVideo`.
 - Always inspect the current Nim model contract with `models_explore action=get` before generation.
-- Defaults unless the user asks otherwise: `requestedAspectRatio: 9:16`, `resolution: 720p`, `mediaLength: 15000`.
+- Defaults unless the user asks otherwise: `requestedAspectRatio: 9:16`, `draft: true` (480p draft; do not send `resolution` with it), `mediaLength: 15000`. Render the final 1080p with `render_video_draft` (or pick `720p` / `1080p` explicitly) only when the user asks.
 - Upload local/attachment references with `media_upload`; use the returned file URLs in confirmed `@img` order.
 - Never pass local filesystem paths directly to `generate_video`; use `media_upload` and pass the returned `file_url`.
 - Pass only parameters allowed by the model contract.

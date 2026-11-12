@@ -19,7 +19,7 @@ If the user asks for one location (“come up with an apartment based on this po
 | 9 | “Come up with an apartment based on this portrait” | A concept using visible motifs from the portrait; do not infer a biography; the person does not appear in the location |
 | 10 | “Generate an interior for this character; they are a musician” | The occupation is a fact confirmed by the text; connect objects to it; send the portrait to an approved Edit/image-input model as design cues and explicitly exclude the person from the background |
 | 11 | “Keep this room; change only the lighting” | Image-edit; lock geometry, furniture, materials, and camera; change only the lighting |
-| 12 | “This same room based on two/four photos” | Account for all views in the contract; choose a compatible approved image-input model, such as Nano Banana Pro Edit 2K or GPT Image 2 Medium image mode at 2K |
+| 12 | “This same room based on two/four photos” | Account for all views in the contract; choose a compatible approved image-input model, such as Nano Banana 2.1 Edit 2K or GPT Image 2 Medium image mode at 2K |
 | 13 | “The same place, at night/in winter/after rain” | Preserve anchor details; change only the related lighting, weather, and seasonal elements |
 | 14 | “Another angle/a view from the window/three views of the room” | A master reference + separate, specific camera positions; not three new rooms |
 | 15 | “One apartment: living room, kitchen, bedroom” | Different connected spaces; shared palette, materials, era, and details, while acknowledging a new layout for each room |
@@ -31,7 +31,7 @@ If the user asks for one location (“come up with an apartment based on this po
 | 21 | “An advertising background in the brand colors, with space for a product” | New surroundings with a surface for the product; add the product itself only on request |
 | 22 | “Move this specific product into the location” | Preserving the product requires image-input; any Nim workflow must obey the same closed model policy and reference requirements; do not substitute a similar product |
 | 23 | “A sign saying ‘CAFE WORLD’, exactly like that” | Preserve the exact text and placement; check the lettering; typography does not automatically change the entire model policy |
-| 24 | “4:5 / 2K / the cheapest / Recraft only” | Apply the closed model router; Recraft means V4.1 Pro, Nano Pro stays 2K, GPT Image 2 stays Medium 2K; do not hide incompatibility |
+| 24 | “4:5 / 2K / the cheapest / Recraft only” | Apply the closed model router; Recraft means V4.1 Pro, Nano Banana 2.1 stays 2K, GPT Image 2 stays Medium 2K; do not hide incompatibility |
 | 25 | “Repeat option 2 / use fewer details / reuse it” | Restore the brief, settings, and actual references for result 2; change only the specified conditions |
 | 26 | “Save the location bible / give me the prompt and original” | Provide the available original media and save the description/links locally on request; do not promise a nonexistent history database |
 | 27 | “Now animate the location / a slow camera tracking shot” | A new video request: the finished frame as a reference, then current video discovery/get and `generate_video`; the closed image-model policy applies to any generated still frame |
@@ -42,7 +42,7 @@ If the user asks for one location (“come up with an apartment based on this po
 | 32 | “Generate an architectural interior with FLUX 3 at 2K” | Explicit FLUX 3 option; discover the text variant, verify `get`, and send supported 2K plus the intended ratio; no reference uploads |
 | 33 | “Use FLUX 3 for this same kitchen from two photos, 4:5 at 2K” | FLUX 3 Edit with both references and verified 4:5/2K parameters; preserve room geometry and inspect actual dimensions |
 | 34 | “Use FLUX 3 for a location; if Edit is unavailable, choose another model” | With images, select a compatible existing approved Edit/image-input fallback and explain it; keep every reference and locked Nano/GPT 2K settings |
-| 35 | “Only FLUX 3, using all 11 room photos” | Current FLUX 3 Edit accepts at most 10; explain the conflict and offer Nano Banana Pro Edit 2K if compatible; obtain a decision before replacing the required model |
+| 35 | “Only FLUX 3, using all 11 room photos” | Current FLUX 3 Edit accepts at most 10; explain the conflict and offer Nano Banana 2.1 Edit 2K if compatible; obtain a decision before replacing the required model |
 | 36 | “Make a realistic living room”, with no model preference | Retain Flux 2 Pro when compatible; an available FLUX 3 option does not change the preferred route |
 | 37 | “Generate this reference-based location in native 4K” | Consider FLUX 3 Edit if its live contract accepts all inputs and 4K; Nano/GPT stay at 2K, and an upscale is a separate request |
 | 38 | “FLUX 3 at 0.75K” | Check the intersection of model contract and generation tool enum; currently incompatible, so explain without submitting or silently substituting 1K |
@@ -85,7 +85,7 @@ For different rooms in one apartment, the bible stores the design language and p
 
 Different concepts need different prompts. Random variations of one prompt can be generated through `batchSize` if the contract allows it. The current Nim image call allows a number from 1 to 4 per call; the actual schema and model contract take precedence over this guidance. For larger quantities, split the request into permitted groups, preserving numbering and budget.
 
-“Compare Flux2 and Recraft” without a request for images means a text comparison of Flux 2 Pro and Recraft V4.1 Pro suitability and current constraints. “Generate one with each” means two images with the same brief/format, where compatible. Comparisons may also include FLUX 3, Nano Banana Pro 2K, and GPT Image 2 Medium 2K when requested. FLUX 3 is a location option, not an automatic replacement for the existing preferred models. Supplied images require the corresponding approved image modes; text-only Recraft or FLUX 3 cannot replace an unavailable Edit variant.
+“Compare Flux2 and Recraft” without a request for images means a text comparison of Flux 2 Pro and Recraft V4.1 Pro suitability and current constraints. “Generate one with each” means two images with the same brief/format, where compatible. Comparisons may also include FLUX 3, Nano Banana 2.1 2K, and GPT Image 2 Medium 2K when requested. FLUX 3 is a location option, not an automatic replacement for the existing preferred models. Supplied images require the corresponding approved image modes; text-only Recraft or FLUX 3 cannot replace an unavailable Edit variant.
 
 Do not silently multiply results: 3 directions × 2 models × 4 seeds = 24 paid jobs, not “3 variants”.
 

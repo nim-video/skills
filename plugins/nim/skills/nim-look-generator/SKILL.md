@@ -5,7 +5,9 @@ description: Use when a user wants fashion looks, outfit ideas, a lookbook, ward
 
 # Nim Look Generator
 
-Turn the user's wishes into concrete fashion looks and, when visualization is requested, create them through **Nim MCP**. Respond in the user's language. Write production image prompts in English unless the user chooses another language. **Every new visual look series starts with an original, distinctive face generated through Recraft V4.1 Pro.** Then use that completed portrait as the identity reference for looks rendered by **Nano Banana Pro**, selecting **Nano Banana Pro Edit** when references are present. This face stage is mandatory, not an optional quality upgrade.
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
+Turn the user's wishes into concrete fashion looks and, when visualization is requested, create them through **Nim MCP**. Respond in the user's language. Write production image prompts in English unless the user chooses another language. **Every new visual look series starts with an original, distinctive face generated through Recraft V4.1 Pro.** Then use that completed portrait as the identity reference for looks rendered by **Nano Banana 2.1**, selecting **Nano Banana 2.1 Edit** when references are present. This face stage is mandatory, not an optional quality upgrade.
 
 ## Usage tracking
 
@@ -15,7 +17,7 @@ Once per new user request that you handle with this skill, call the Nim tool `tr
 
 The **current assistant model running this Skill** performs the stylist and system-prompt logic: understand the user's wishes, inspect references, resolve controls, design the wardrobe, assemble and check the production prompts, select valid tool arguments, call Nim MCP, and review results. Do this work in the current conversation; do not introduce a separate fixed language model or a paid Nim text-generation step.
 
-**Recraft V4.1 Pro renders the initial face. Nano Banana Pro renders the outfits.** These are image backends called by the assistant, not replacements for the assistant that follows the Skill. Give each image call the resolved visual prompt and relevant references, not the full Skill, system conversation, or an instruction to act as the wardrobe planner. Nim receives only fields exposed by its current contract; do not invent a `system_prompt` parameter.
+**Recraft V4.1 Pro renders the initial face. Nano Banana 2.1 renders the outfits.** These are image backends called by the assistant, not replacements for the assistant that follows the Skill. Give each image call the resolved visual prompt and relevant references, not the full Skill, system conversation, or an instruction to act as the wardrobe planner. Nim receives only fields exposed by its current contract; do not invent a `system_prompt` parameter.
 
 ## Activation and delivery
 
@@ -57,14 +59,14 @@ Text-only delivery starts no jobs. An explicit request to preserve the user's su
 
 Read [model-routing.md](references/model-routing.md) before generation or editing. Use current `models_explore` results to verify model names, capabilities, and limits.
 
-Select image models separately from the host assistant. The face stage is pinned to **Recraft V4.1 Pro** unless the user explicitly overrides it. **Nano Banana Pro is the default outfit renderer**, including ordinary requests with no explicit quality upgrade. For outfit jobs, decision order is **hard requirements → explicitly selected model → compatible Nano Banana Pro variant → compatible fallback**. Respect the total budget throughout.
+Select image models separately from the host assistant. The face stage is pinned to **Recraft V4.1 Pro** unless the user explicitly overrides it. **Nano Banana 2.1 is the default outfit renderer**, including ordinary requests with no explicit quality upgrade. For outfit jobs, decision order is **hard requirements → explicitly selected model → compatible Nano Banana 2.1 variant → compatible fallback**. Respect the total budget throughout.
 
-- Face, product, or base-image references present → **Nano Banana Pro Edit**, preserving the exact ordered reference roles. This includes new looks using the generated portrait, try-on, and follow-up edits.
-- No image references in the outfit job → **Nano Banana Pro** text-input variant. This includes person-free flat lays and the explicit no-casting path without supplied images.
-- Start at supported **2K** for outfits unless the user specifies another size; get the current contract and estimate first. Do not confuse Nano Banana Pro with Nano Banana, Nano Banana 2, or Lite because they share a family label.
-- Flux 2 and Recraft are preferred fallback families only when Nano Banana Pro cannot satisfy the requirements or an explicit user preference/cost request calls for them. Recraft's text-only variant cannot preserve a face image. If those families also fail the hard constraints, find a compatible Nim model; do not discard mandatory references.
+- Face, product, or base-image references present → **Nano Banana 2.1 Edit**, preserving the exact ordered reference roles. This includes new looks using the generated portrait, try-on, and follow-up edits.
+- No image references in the outfit job → **Nano Banana 2.1** text-input variant. This includes person-free flat lays and the explicit no-casting path without supplied images.
+- Start at supported **2K** for outfits unless the user specifies another size; get the current contract and estimate first. Do not confuse Nano Banana 2.1 with Nano Banana Pro or Lite because they share a family label; Nano Banana Pro is used only when the user names it.
+- Flux 2 and Recraft are preferred fallback families only when Nano Banana 2.1 cannot satisfy the requirements or an explicit user preference/cost request calls for them. Recraft's text-only variant cannot preserve a face image. If those families also fail the hard constraints, find a compatible Nim model; do not discard mandatory references.
 
-Catalog snapshot, not a promise: on 2026-09-09, Nano Banana Pro Edit accepted 1–14 image inputs and supported 1K/2K/4K; its text variant forbade image inputs. Recraft V4.1/Pro were text-only. Even a recommended model can return `matchesConstraints=false`. Check the constraints.
+Catalog snapshot, not a promise: on 2026-11-12, Nano Banana 2.1 Edit accepted 1–14 image inputs and supported 1K/2K/4K (model default 1K); its text variant is text-input only. Recraft V4.1/Pro were text-only. Even a recommended model can return `matchesConstraints=false`. Check the constraints.
 
 ## Execute through Nim
 

@@ -10,6 +10,8 @@ description: >-
 
 # Nim Template Runner
 
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 Browse and run Nim templates through the Nim MCP. Templates are a separate path
 from ordinary image/video generation: use the template tools, not local runner
 apps or hand-built HTML.

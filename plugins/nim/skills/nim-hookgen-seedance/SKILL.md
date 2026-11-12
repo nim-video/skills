@@ -1,18 +1,20 @@
 ---
 name: nim-hookgen-seedance
 description: >-
-  Author a production-ready Seedance 2 hook video for short-form UGC (TikTok /
+  Author a production-ready Seedance 2.5 hook video for short-form UGC (TikTok /
   Reels / Shorts) and generate it through the Nim MCP. Use when the user wants a
   talking-head "hook" ad/UGC clip from a product brief, asks to "make a hook
   video", "generate a UGC hook", "spoken hook ad", or "Seedance hook". The agent
   acts as the prompt-writing LLM: it intakes the brief, proposes 5 spoken hook
   options, collects character/product/location reference images, assembles the
   Seedance brief, rewrites it into a final Seedance prompt, and generates the
-  video on Nim Seedance 2. NOT for: long scripts, code, text-only answers, or
+  video on Nim Seedance 2.5. NOT for: long scripts, code, text-only answers, or
   audio-only tasks.
 ---
 
 # HookGen Seedance
+
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Turn a product brief into one spoken-hook UGC video. This skill writes the spoken hooks and
  rewrites the assembled brief into the final Seedance prompt.
@@ -42,8 +44,8 @@ asks.
 |---|---|---|
 | Hook video duration | `6` seconds | `HOOK_VIDEO_DURATION` |
 | Aspect ratio | `9:16` | `DEFAULT_ASPECT_RATIO` |
-| Resolution | `720p` | `DEFAULT_RESOLUTION` |
-| Model | Seedance 2 (reference-to-video when images exist, else text-to-video) | `FAL_*_MODEL` |
+| Resolution | `draft: true` (480p draft; no `resolution`) | `DEFAULT_RESOLUTION` |
+| Model | Seedance 2.5 (reference-to-video when images exist, else text-to-video) | `FAL_*_MODEL` |
 | Audio | generated | `generate_audio: true` |
 | Modes | `Paid Ads` or `UGC` | `MODES` |
 | Verticals | `Beauty`, `Food & Drinks`, `Fashion`, `B2B / Apps` | `VERTICALS` |
@@ -372,11 +374,11 @@ Brief:
 {seedance_prompt_brief}
 ```
 
-Before generating, optionally confirm with the user in one short human line (no
-raw prompt unless they ask), e.g. _"I'll make a 6s vertical hook with your line
+Before generating, confirm with the user in one short human line (no
+raw prompt unless they ask) that also names the model and resolution or mode, e.g. _"I'll make a 6s vertical hook with your line
 '…', using your character and product refs. Generate?"_
 
-### Stage 6 — Generate on Nim Seedance 2
+### Stage 6 — Generate on Nim Seedance 2.5
 
 Use the Nim MCP video workflow (same as the `nim-generate` / `nim-b-roll`
 skills):
@@ -384,7 +386,7 @@ skills):
 1. **Authenticate if needed.** If a Nim tool fails with an auth error, call
    `mcp_auth` for `user-nim`, then retry.
 2. **Pick the model.** `models_explore action=recommend` with `type: "video"` and
-   `input: "image"` (when references exist), targeting Seedance 2. Then
+   `input: "image"` (when references exist), targeting Seedance 2.5. Then
    `action: "get"` on the chosen `model_id` to read its exact
    `generationContract` — that is the source of truth for allowed params.
 3. **Upload references.** For each image (in the fixed character → location →
@@ -411,7 +413,7 @@ skills):
    - `model_id` (+ `model_name`).
    - `fileInputs`: the uploaded image URLs in the exact `@Image` order; voice
      audio URL if used.
-   - `requestedAspectRatio: 9:16`, `resolution: 720p`, `mediaLength: 6000`.
+   - `requestedAspectRatio: 9:16`, `draft: true` (480p; no `resolution`), `mediaLength: 6000`.
    - keep audio generation on when supported.
 5. **Poll, then deliver.** `generate_video` is async and returns no link. Poll
    `get_generation_status` with the returned `workflowId` / `promptId` until

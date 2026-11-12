@@ -13,6 +13,8 @@ description: >-
 
 # Nim Character Consistency
 
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 Create new images of an existing subject while keeping its visual identity
 stable. Use Nim image generation with reference images and return only the
 finished media URL plus key settings unless the user asks for implementation
@@ -55,10 +57,10 @@ missing input before generating.
 
 Use Nim image generation.
 
-- Default model: Nano Banana Pro Edit.
-- Default search target: `Nano Banana Pro` with image input / edit capability.
-- Default resolution: use the model default, normally `2K`, unless the user asks
-  otherwise.
+- Default model: Nano Banana 2.1 (Edit variant).
+- Default search target: `Nano Banana 2.1` with image input / edit capability.
+- Default resolution: `2K`, passed explicitly (the model default is `1K`), unless
+  the user asks otherwise.
 - Default batch size: `1`.
 
 Always discover the current model with `models_explore`, then inspect the exact
@@ -66,8 +68,9 @@ model contract with `models_explore` using `action: "get"` before generation.
 Pass only parameters allowed by the returned `generationContract`.
 
 If the user requests another model, search for that model by name, get its
-contract, and adapt to its allowed parameters. Examples include `gpt image 2`,
-`Seedream`, `Flux`, or another Nim catalog model.
+contract, and adapt to its allowed parameters. Examples include `Nano Banana Pro`,
+`gpt image 2`, `Seedream`, `Flux`, or another Nim catalog model. An explicit user
+choice always overrides the defaults above.
 
 ## Workflow
 

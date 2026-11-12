@@ -18,6 +18,8 @@ description: >-
 
 # Nim Product Creative
 
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 Create commercial product imagery and product videos through Nim. Treat the
 user's wording as examples, not a closed trigger list: route by intent. If the
 request is about making a product, SKU, garment, package, object, or brand asset

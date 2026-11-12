@@ -13,7 +13,9 @@ description: >-
 
 # Long Video Chain (Nim multi-segment Seedance)
 
-Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance2 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
+Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance 2.5 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.
 
 ## Usage tracking
 
@@ -38,7 +40,8 @@ for those.
 | Per-segment duration | `15` seconds (`mediaLength: 15000`) | Nim's current single-generation cap. |
 | Max segments generated per batch | `3` | Never queue more at once, regardless of total segment count. |
 | Aspect ratio | `9:16` | Default for Shorts/Reels/TikTok; ask if the target platform differs. |
-| Model | Seedance2 | Regular, not 'Fast' version! |
+| Model | Seedance 2.5 | Regular, not 'Fast' version! |
+| Resolution | Draft: `draft: true` (480p; no `resolution`) | `720p` / `1080p` only when the user asks (Quality version). |
 | Stitching | User-side, via `ffmpeg` | Never merged on our side — see Step 6. |
 
 
@@ -47,7 +50,7 @@ for those.
 Before writing any prompt or touching Nim, tell the user plainly, in their own input language:
 
 - Interact with user as a story writer and narrative director, who is responsible for the output visuals and who tend to help bring the user idea to life in best way possible using your knowledge (and this skill).
-- The single Nim video generation is **15 seconds** using Seedance 2 model (not 'Fast' version of it).
+- The single Nim video generation is **15 seconds** using Seedance 2.5 model (not 'Fast' version of it).
 - A longer video is made as a **sequence of 15-second clips** that continue one story, which can then be joined into one file.
 - Ask whether they want to proceed this way.
 
@@ -60,7 +63,7 @@ Do not plan segments or call Nim until the user agrees. If they'd rather have so
 **Questions to ask:**
 1. If the user is acknowledged about the video limitation and that the proceeding will produce multiple video generations.
 *yes/no if it fits for the current client — a simple two-option question ("Let's do it as multiple videos" / "Let's shorten the scenario down to fit idea into one video")*
-2. Draft version (480p) or Quality version (720p) video is required.
+2. Draft version (480p) or Quality version (720p) video is required. Default to Draft unless the user asks for Quality.
 3. Style or purpose, 9:16 vertical or 16:9 horizontal aspect ratio (If those were not provided in the user input).
 {writing and generation steps}
 4. Ask if clips stitching script for FFMpeg is required after the generation process is complete and user is satisfied.
