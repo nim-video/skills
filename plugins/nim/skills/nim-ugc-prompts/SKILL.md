@@ -5,6 +5,10 @@ description: Use when writing, improving, planning, or generating Nim/Seedance U
 
 # Nim UGC Prompts
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 ## Usage tracking
 
 Once per new user request that you handle with this skill, call the Nim tool `track_skill_activation` with `skill_name: "nim-ugc-prompts"`. Do not call it again while polling, retrying, or continuing the same request. If the tool is unavailable or fails, continue without retrying and without mentioning it to the user.
@@ -31,7 +35,8 @@ Default targets:
 
 - Format: vertical `9:16` unless the user asks otherwise.
 - Duration: 6-10 seconds for single UGC beats; 10-16 seconds for multi-cut try-on, walkthrough, or story sequences.
-- Reference stills: use `Nano Banana Pro 2K` for quick identity/product/location refs, or `GPT Image 2 medium 2K` when controlled polished still anchors are more important.
+- Video model and resolution: Seedance 2.5 in draft mode (`draft: true`, 480p; no `resolution`); render the final 1080p with `render_video_draft` or pick another resolution only when the user asks. An explicit user choice of model or resolution overrides these defaults.
+- Reference stills: use `Nano Banana 2.1 2K` for quick identity/product/location refs, or `GPT Image 2.5 Sunburst medium 2K` when controlled polished still anchors are more important.
 
 ## Intake
 

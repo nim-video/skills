@@ -1,9 +1,13 @@
 ---
 name: nim-human-generation
-description: Use when generating believable editorial young-adult human portraits or fashion/UGC character images with Nim, especially Gen-Z fashion casting, model/person look development, aesthetic human references, or prompt-driven human generation. Asks for age or age range, sex/gender presentation, ethnicity/look, and additional notes; defaults to Nano Banana Pro in 9:16, but supports user-specified models such as GPT Image 2 by discovering the live Nim model contract.
+description: Use when generating believable editorial young-adult human portraits or fashion/UGC character images with Nim, especially Gen-Z fashion casting, model/person look development, aesthetic human references, or prompt-driven human generation. Asks for age or age range, sex/gender presentation, ethnicity/look, and additional notes; defaults to Nano Banana 2.1 in 9:16, but supports user-specified models such as GPT Image 2 by discovering the live Nim model contract.
 ---
 
 # Nim Human Generation
+
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Generate aesthetic, believable editorial young-adult humans through the Nim MCP. The goal is a castable, specific, modern person with distinctive grooming, posture, attitude, and subtle subculture styling.
 
@@ -33,15 +37,15 @@ If the user says to decide, make tasteful assumptions and state them briefly bef
 
 Use Nim image generation.
 
-- Default model: Nano Banana Pro.
-- Default search target: `Nano Banana Pro` / text-to-image.
+- Default model: Nano Banana 2.1.
+- Default search target: `Nano Banana 2.1` / text-to-image.
 - Default aspect ratio: `9:16`.
-- Default resolution: use the model default, normally `2K`, unless the user asks otherwise.
+- Default resolution: `2K`, passed explicitly (the model default is `1K`), unless the user asks otherwise.
 - Default batch size: `1`. Use `2-4` only when the user asks for options.
 
 Always discover the current model with `models_explore` and inspect the exact model contract with `models_explore action=get` before generation. Pass only parameters allowed by the returned `generationContract`.
 
-If the user requests another model, search for that model by name, get its contract, and adapt the allowed parameters. Examples: `gpt image 2`, `Seedream`, `Flux`, or another Nim catalog model.
+If the user requests another model, search for that model by name, get its contract, and adapt the allowed parameters. Examples: `Nano Banana Pro`, `gpt image 2`, `Seedream`, `Flux`, or another Nim catalog model. An explicit user choice always overrides the defaults above.
 
 ## User-Facing Flow
 

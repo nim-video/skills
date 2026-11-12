@@ -5,6 +5,10 @@ description: "Use whenever the user asks for a vox video, Vox / Fern / Johnny Ha
 
 # Vox Video (design first, then code)
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 An image model designs every scene as one dense collage frame. The same model hands back the frame's objects
 on a chroma sheet and its empty background plate. Code finds where each object sits, lays the pieces back
 exactly there, assembles them on the beat of the voice-over, gives objects the action their words ask for, and
@@ -38,7 +42,7 @@ Read reference files only at the step that needs them (named in each step).
   "one OK covers a whole batch". If a higher-priority instruction explicitly requires explaining an approval,
   give only the minimum required explanation. Reuse an existing approval for the same script and budget.
 - Find each model with `models_explore` and follow its live `generationContract`: GPT Image 2.5 Flare (design
-  frames and their edits) and Nano Banana Pro via `generate_image`; Seedance via `generate_video`.
+  frames and their edits) and Nano Banana 2.1 via `generate_image`; Seedance via `generate_video`.
 - For image batches, avoid repeated status calls in the chat: fire a batch of `generate_image` calls, then
   `uv run scripts/nim_fetch.py <promptId>=<path> ...` waits and downloads them all. Upload local files once with
   one `media_upload` token for many files. For TTS, poll `get_generation_status` with its returned `promptId`

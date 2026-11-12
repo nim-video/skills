@@ -14,6 +14,10 @@ description: >-
 
 # Nim Generate
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
+> **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
+
 Generate and edit images and videos through the Nim MCP. One skill for both: model
 discovery is shared, and the only real branch is image vs. video.
 
@@ -39,6 +43,19 @@ Once per new user request that you handle with this skill, call the Nim tool `tr
    image-to-video request, do not call `generate_image` / `generate_video` until
    every reference has a real Nim `file_url` from a successful `media_upload`
    upload. MCP generation tools and widgets do not upload local files for you.
+
+## Default models
+
+When the user has not named a model, use these defaults (canonical copy and precedence rules: the `nim-defaults` skill). An explicit user choice of any supported model, version, tier or resolution always overrides them.
+
+| Family | Default | Resolution |
+|---|---|---|
+| Nano Banana | Nano Banana 2.1 (text / Edit variants) | `2K`, passed explicitly (model default is `1K`) |
+| GPT Image | GPT Image 2.5 Sunburst, Medium variant | `2K` |
+| Seedream | Seedream 4.5 (Edit variant for image inputs) | none: the contract has no `resolution` |
+| Seedance | Seedance 2.5 (Standard, not Fast) | draft mode: `draft: true` (480p; do not send `resolution` with it). Final 1080p via `render_video_draft` only on request |
+
+Nano Banana Pro is never picked automatically; use it only when the user names it. Seedance never goes above 480p automatically.
 
 ## Workflow
 

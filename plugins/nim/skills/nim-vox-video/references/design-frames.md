@@ -11,7 +11,7 @@ Find every model with `models_explore` and follow its live `generationContract`;
 image 2.5 flare", pick the Medium text-to-image model, then `get` for its contract),
 `requestedAspectRatio` = the video's (9:16, 16:9, 4:5, 1:1), `resolution: 2K` (9:16 comes back 1440x2560), 6 cr.
 Download with `nim_fetch.py <promptId>=design.png` (no status polling in the chat). Keep the result's mediaUrl:
-both edits use it as their reference. Medium looks as good as the High tier (22 cr). Alternative: Nano Banana Pro
+both edits use it as their reference. Medium looks as good as the High tier (22 cr). Alternative (only if the user asks): Nano Banana Pro
 (25 cr, softer cut-paper rims).
 
 Prompt template (fill the brackets, keep the order):

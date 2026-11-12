@@ -10,6 +10,8 @@ description: >-
 
 # Nim Credits
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 Handle Nim credit balance and purchase flows. Do not start or retry expensive
 generation while the user is out of credits.
 
