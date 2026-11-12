@@ -5,6 +5,8 @@ description: Use on EVERY Nim image or video generation request (make, generate,
 
 # Nim Generation QA
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 Review the actual result before declaring the creative task complete. Reply in the user's language; keep proposed prompts in their existing language unless requested otherwise.
 
 ## Usage tracking

@@ -11,6 +11,8 @@ description: >-
 
 # Nim Seedance Prompt Recovery
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 Draft and revise Seedance prompts, and diagnose actual generation failures when they occur. Preserve the requested scene, motion, duration, framing, dialogue, and visual continuity unless a change is necessary and disclosed. Work with the connected generation tools when execution is requested; do not assume a particular service, model ID, or API wrapper.
 
 Write prompts in English by default and explanations in the user's language. Preserve an explicitly requested prompt language and the requested dialogue language. For a faithful translation comparison, retain the English baseline. Keep responses practical: a short diagnosis, the changes, and a copy-ready prompt. Do not expose internal planning, raw tool dumps, or a development narrative. Never promise that wording will pass a filter.

@@ -5,6 +5,8 @@ description: Use when the user wants location imagery, environment concepts, int
 
 # Nim Location Generator
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 > **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Turn the user's wishes into a coherent location: a concept, a production-ready prompt, or an image through Nim MCP. By default, create an unoccupied background suitable for adding a character later. Communicate in the user's language.

@@ -10,6 +10,8 @@ description: >-
 
 # Nim Defaults
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 Used by the other Nim skills when the user has not named a model or resolution.
 Always still discover the model with `models_explore` and follow its live
 `generationContract`; pass only parameters the contract allows.

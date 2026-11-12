@@ -13,6 +13,8 @@ description: >-
 
 # Long Video Chain (Nim multi-segment Seedance)
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 > **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Turn a "make me a 1-minute video" request into a chain of 15-second Nim Seedance 2.5 clips that tell one continuous story, then hand the generated videos to the user, offering FFMpeg stitching script.

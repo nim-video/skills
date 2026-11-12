@@ -5,6 +5,8 @@ description: Use when a user wants fashion looks, outfit ideas, a lookbook, ward
 
 # Nim Look Generator
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 > **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Turn the user's wishes into concrete fashion looks and, when visualization is requested, create them through **Nim MCP**. Respond in the user's language. Write production image prompts in English unless the user chooses another language. **Every new visual look series starts with an original, distinctive face generated through Recraft V4.1 Pro.** Then use that completed portrait as the identity reference for looks rendered by **Nano Banana 2.1**, selecting **Nano Banana 2.1 Edit** when references are present. This face stage is mandatory, not an optional quality upgrade.

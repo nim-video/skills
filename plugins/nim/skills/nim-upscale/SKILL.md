@@ -12,6 +12,8 @@ description: >-
 
 # Nim Upscale
 
+> **Version check:** once at the start of the conversation, before the first Nim tool call, run the check from `nim-plugin-update`. Say nothing if the plugin is current; only if it is outdated, ask once whether to update now, without blocking the task.
+
 > **Before any generation call:** tell the user the chosen model, resolution or mode (e.g. draft 480p), aspect ratio and duration or batch size, plus the credit estimate when known, and start only after they confirm. See `nim-defaults` → Confirm before generating.
 
 Improve existing image or video quality through Nim. This skill is for
