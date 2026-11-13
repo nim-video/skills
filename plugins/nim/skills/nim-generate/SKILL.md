@@ -51,7 +51,7 @@ When the user has not named a model, use these defaults (canonical copy and prec
 | Family | Default | Resolution |
 |---|---|---|
 | Nano Banana | Nano Banana 2.1 (text / Edit variants) | `2K`, passed explicitly (model default is `1K`) |
-| GPT Image | GPT Image 2.5 Sunburst, Medium variant | `2K` |
+| GPT Image | GPT Image 2.6 Sunburst, Medium variant | `2K` |
 | Seedream | Seedream 4.5 (Edit variant for image inputs) | none: the contract has no `resolution` |
 | Seedance | Seedance 2.5 (Standard, not Fast) | draft mode: `draft: true` (480p; do not send `resolution` with it). Final 1080p via `render_video_draft` only on request |
 

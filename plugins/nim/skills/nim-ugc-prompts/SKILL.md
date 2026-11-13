@@ -36,7 +36,7 @@ Default targets:
 - Format: vertical `9:16` unless the user asks otherwise.
 - Duration: 6-10 seconds for single UGC beats; 10-16 seconds for multi-cut try-on, walkthrough, or story sequences.
 - Video model and resolution: Seedance 2.5 in draft mode (`draft: true`, 480p; no `resolution`); render the final 1080p with `render_video_draft` or pick another resolution only when the user asks. An explicit user choice of model or resolution overrides these defaults.
-- Reference stills: use `Nano Banana 2.1 2K` for quick identity/product/location refs, or `GPT Image 2.5 Sunburst medium 2K` when controlled polished still anchors are more important.
+- Reference stills: use `Nano Banana 2.1 2K` for quick identity/product/location refs, or `GPT Image 2.6 Sunburst medium 2K` when controlled polished still anchors are more important.
 
 ## Intake
 

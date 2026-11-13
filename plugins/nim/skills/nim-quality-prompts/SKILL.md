@@ -1,6 +1,6 @@
 ---
 name: nim-quality-prompts
-description: Use when improving, writing, rewriting, planning, or executing AI video prompts for Seedance, Higgsfield, Nim MCP, UGC, cinematic generation, image-to-video, reference frames, character consistency, GPT Image 2.5 Sunburst, Nano Banana 2.1, 2K stills, LUTs, camera quality, shot lists, storyboards, beats, montage, sequence, camera angles, or visual grammar.
+description: Use when improving, writing, rewriting, planning, or executing AI video prompts for Seedance, Higgsfield, Nim MCP, UGC, cinematic generation, image-to-video, reference frames, character consistency, GPT Image 2.6 Sunburst, Nano Banana 2.1, 2K stills, LUTs, camera quality, shot lists, storyboards, beats, montage, sequence, camera angles, or visual grammar.
 ---
 
 # Nim Quality Prompts
@@ -54,7 +54,7 @@ When the user asks to actually generate images or video through Nim, follow Nim 
 Default quality preference:
 
 - For video generation, prefer the best current Seedance 2.5 / Seedance image-to-video option returned by Nim for the request, in draft mode by default (`draft: true`, 480p; no `resolution`); 1080p / 4k only when the user asks.
-- For reference still generation, prefer `GPT Image 2.5 Sunburst medium 2K` for controlled, polished, prompt-faithful anchors, or `Nano Banana 2.1 2K` for fast high-quality exploration and identity/product reference work.
+- For reference still generation, prefer `GPT Image 2.6 Sunburst medium 2K` for controlled, polished, prompt-faithful anchors, or `Nano Banana 2.1 2K` for fast high-quality exploration and identity/product reference work.
 - If the user explicitly names a model (including Nano Banana Pro), search for that model and then adapt to its exact contract; an explicit choice overrides these defaults.
 
 ## Pre-Generation Quality Plan
@@ -68,7 +68,7 @@ The plan must identify:
 - selected visual grammar and why it fits the brief;
 - intended shot scale, camera angle, camera movement, transition logic, and continuity risk;
 - whether reference frames are required before video generation;
-- which reference-frame model to use: `GPT Image 2.5 Sunburst medium 2K` or `Nano Banana 2.1 2K`;
+- which reference-frame model to use: `GPT Image 2.6 Sunburst medium 2K` or `Nano Banana 2.1 2K`;
 - which Nim model family will be discovered for final video, without hardcoding a stale model id.
 
 For scene, storyboard, shot-list, montage, sequence, or camera-angle requests, do not jump straight to final prompts. First check that angles are meaningfully chosen, transitions are edit-safe, screen direction and eyeline are plausible, and no camera move contradicts the scene physics.
@@ -94,7 +94,7 @@ For each required reference frame, output:
 ```json
 {
   "purpose": "identity/product/location/beat/transition/angle",
-  "model": "GPT Image 2.5 Sunburst medium 2K | Nano Banana 2.1 2K",
+  "model": "GPT Image 2.6 Sunburst medium 2K | Nano Banana 2.1 2K",
   "size": "2K",
   "prompt": "...",
   "used_by_video_prompt": "segment/shot id"
@@ -269,7 +269,7 @@ Return:
   "reference_frames": [
     {
       "purpose": "identity/product/location/beat/transition/angle",
-      "model": "GPT Image 2.5 Sunburst medium 2K | Nano Banana 2.1 2K",
+      "model": "GPT Image 2.6 Sunburst medium 2K | Nano Banana 2.1 2K",
       "size": "2K",
       "prompt": "...",
       "used_by_video_prompt": "shot id"
