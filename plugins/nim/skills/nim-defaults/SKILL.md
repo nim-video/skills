@@ -29,7 +29,7 @@ Always still discover the model with `models_explore` and follow its live
 | Family | Default model | Resolution / mode |
 |---|---|---|
 | Nano Banana | Nano Banana 2.1 (text / Edit variants) | `2K`, passed explicitly (model default is `1K`) |
-| GPT Image | GPT Image 2.5 Sunburst, Medium variant | `2K` |
+| GPT Image | GPT Image 2.6 Sunburst, Medium variant | `2K` |
 | Seedream | Seedream 4.5 (Edit variant for image inputs) | none: the contract has no `resolution` |
 | Seedance | Seedance 2.5 (Standard, not Fast) | draft mode: `draft: true` (480p). Do not send `resolution` with `draft` |
 
@@ -39,7 +39,7 @@ Before every generation call (`generate_image`, `generate_video`, `render_video_
 `run_template` and any other paid Nim generation), always:
 
 1. Tell the user, in one short plain-language message, what will run: the model, the
-   resolution or mode (for example "Seedance 2.5, draft 480p" or "GPT Image 2.5 Sunburst
+   resolution or mode (for example "Seedance 2.5, draft 480p" or "GPT Image 2.6 Sunburst
    Medium, 2K"), aspect ratio, duration or batch size, and the credit estimate when known.
 2. Ask them to confirm and start only after a clear yes. A "go ahead" given before the
    settings were shown does not count, even if the user named the model themselves.
